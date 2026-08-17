@@ -1,300 +1,1156 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Convite - Chá de panela</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Great+Vibes&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+<title>Amora Studio | Design e Arquitetura Exclusiva</title>
 
-  <style>
-    
-      --paper:#fbf4e8;           /* papel */
-      --gold:#b8842d;            /* dourado */
-      --accent:#6b4a1c;          /* para textos escuros */
-      --muted:#4b433f;
-      --card-bg: #fff;
-      --max-width:420px;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    *{box-sizing:border-box}
-    html,body{
-      height:100%;
-      margin:0;
-      font-family:"Montserrat",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Montserrat;
-      background: var(--paper);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      color:var(--muted);
-    }
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    /* Center the invite on the page */
-    .wrap{
-      min-height:100vh;
-      display:flex;
-      align-items:flex-start;
-      justify-content:center;
-      padding:32px 16px 80px;
-    }
+<style>
 
-    /* Invitation card */
-    .invite {
-      width:100%;
-      max-width:var(--max-width);
-      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.98));
-      border-radius:10px;
-      padding:28px 26px;
-      position:relative;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      border: 6px solid rgba(184,132,45,0.15);
-      overflow:hidden;
-      background-image:
-        radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
-      background-size: 12px 12px;
-    }
-
-    /* thin internal gold frame */
-    .invite::before{
-      content:"";
-      position:absolute;
-      inset:10px;
-      border:2px solid rgba(184,132,45,0.45);
-      pointer-events:none;
-      border-radius:6px;
-    }
-
-    /* Top quote */
-   .titulo {
-  font-family: 'Montserrat', sans-serif !important;
-  font-size: 24px;
-  font-weight: 700;
-    text-align: center;
-    color:#6F4E37;
-    
-    /* alturar a font-family*/
-    }
-
-    .surname {
-      text-align:center;
-      color:#d4af37;
-      font-size:40px;
-      font-family:"Great Vibes";
-    }
-    
-  .verse {
-      text-align:center;
-      color:#333;
-      font-sise:09px;
-      
-      }
-
- .took {
-      text-align:center;
-      color:#333;
-      font-size:21px;
-      
-    
-  
-    }
-    
-    .botoes {
-      margin-top: 23px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      align-items: center;
-    }
-
-    .botao {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      text-decoration: none;
-      background: #b7950b;
-      color: white;
-      font-size: 23px;
-      font-weight: 450;
-      padding: 12px 18px;
-      border-radius: 30px;
-      width: 70%;
-      max-width: 300px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-      transition: transform 0.2s, background 0.3s;
-    }
-
-    .botao:hover {
-      transform: scale(1.05);
-      background: #b7950b;
-    }
-
-    .icon {
-      width: 22px;
-      height: 22px;
-      fill: white;
-    }
-    
-    
-    .meu-texto {
-    color:#333;
-  font-size: 23px;   /* diminui o tamanho */
+:root{
+    --principal:#C1A897;
+    --principal-escuro:#a88e7c;
+    --creme:#f8f4f0;
+    --escuro:#262220;
+    --branco:#ffffff;
+    --cinza:#716b67;
 }
-    
-    
-    .adradecimento{
-    color:#333;
-  font-size: 23px;   /* diminui o tamanho */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
-    
 
-
-    /* date card */
-    .date-row{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:16px;
-      margin: 8px 0 16px;
-    }
-
-    .date-box{
-      border: 2px solid var(--accent-2);
-      border-radius:10px;
-      padding:10px 18px;
-      min-width:100px;
-      box-sizing:border-box;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      background:#b7950b;
-     
-      
-    }
-
-    .date-box.left, .date-box.right{
-      flex:1;
-      font-weight:700;
-      color:#ffffff;
-      font-size:20px;
-      text-transform:uppercase;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      padding:12px;
-      font-family: 'Rubik';
-    }
-
-    .date-box.left, .date-box.right {
-      font-weight:300;
-      font-size:20px;
-      color: #ffffff;
-      margin-top:6px;
-    }
-
-  
-    
-    .address{
-      margin-top:16px;
-      font-size:20px;
-      color:#ffffff;
-      font-weight:500;
-      }
-   
-    
-    .dashed-underline {
-  font-family: 'Rubik';
-  font-size: 12px;
-  font-weight: 200;
-  color: #333;
-  text-decoration: underline dashed #333; 
-  text-align: center;
+html{
+    scroll-behavior:smooth;
 }
-    
-  </style>
+
+body{
+    font-family:"Montserrat", sans-serif;
+    color:var(--escuro);
+    background:var(--branco);
+}
+
+/* =========================
+   MENU
+========================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(255,255,255,0.94);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(193,168,151,0.25);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    height:78px;
+    padding:0 25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-family:"DM Serif Display",serif;
+    font-size:30px;
+    color:var(--escuro);
+    text-decoration:none;
+}
+
+.logo span{
+    color:var(--principal-escuro);
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:var(--escuro);
+    font-size:13px;
+    font-weight:500;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--principal-escuro);
+}
+
+.menu-btn{
+    display:none;
+    border:0;
+    background:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    padding:120px 7% 70px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:60px;
+    background:
+    linear-gradient(
+        90deg,
+        #f8f4f0 0%,
+        #f8f4f0 52%,
+        #eee4dc 52%,
+        #eee4dc 100%
+    );
+}
+
+.hero-text{
+    max-width:600px;
+}
+
+.small-title{
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-size:12px;
+    color:var(--principal-escuro);
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-family:"DM Serif Display",serif;
+    font-size:clamp(50px,6vw,82px);
+    line-height:1;
+    font-weight:400;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:var(--principal-escuro);
+}
+
+.hero p{
+    color:var(--cinza);
+    line-height:1.8;
+    max-width:520px;
+    font-size:15px;
+    margin-bottom:35px;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 25px;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:.5px;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:var(--escuro);
+    color:white;
+}
+
+.btn-primary:hover{
+    background:var(--principal-escuro);
+}
+
+.btn-outline{
+    border:1px solid var(--escuro);
+    color:var(--escuro);
+}
+
+.btn-outline:hover{
+    background:var(--escuro);
+    color:white;
+}
+
+.hero-image{
+    height:650px;
+    overflow:hidden;
+    position:relative;
+}
+
+.hero-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.hero-card{
+    position:absolute;
+    bottom:25px;
+    left:25px;
+    background:white;
+    padding:20px 25px;
+    max-width:250px;
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
+}
+
+.hero-card strong{
+    display:block;
+    font-family:"DM Serif Display",serif;
+    font-size:22px;
+    margin-bottom:5px;
+}
+
+.hero-card span{
+    font-size:11px;
+    color:var(--cinza);
+}
+
+/* =========================
+   SOBRE
+========================= */
+
+section{
+    padding:100px 7%;
+}
+
+.about{
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:80px;
+    align-items:center;
+}
+
+.about-image{
+    height:560px;
+    overflow:hidden;
+}
+
+.about-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.about-text h2,
+.section-title{
+    font-family:"DM Serif Display",serif;
+    font-size:50px;
+    font-weight:400;
+    line-height:1.1;
+    margin-bottom:25px;
+}
+
+.about-text h2 span,
+.section-title span{
+    color:var(--principal-escuro);
+}
+
+.about-text p{
+    color:var(--cinza);
+    line-height:1.9;
+    margin-bottom:18px;
+    font-size:14px;
+}
+
+.signature{
+    margin-top:30px;
+    font-family:"DM Serif Display",serif;
+    font-size:24px;
+}
+
+/* =========================
+   SERVIÇOS
+========================= */
+
+.services-section{
+    background:var(--creme);
+}
+
+.section-heading{
+    text-align:center;
+    max-width:650px;
+    margin:0 auto 55px;
+}
+
+.section-heading p{
+    color:var(--cinza);
+    line-height:1.8;
+    font-size:14px;
+}
+
+.services{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:18px;
+}
+
+.service{
+    background:white;
+    padding:35px 25px;
+    min-height:280px;
+    transition:.35s;
+    border-bottom:3px solid transparent;
+}
+
+.service:hover{
+    transform:translateY(-8px);
+    border-bottom:3px solid var(--principal);
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+.service-number{
+    font-family:"DM Serif Display",serif;
+    font-size:20px;
+    color:var(--principal-escuro);
+    margin-bottom:35px;
+}
+
+.service h3{
+    font-family:"DM Serif Display",serif;
+    font-size:25px;
+    font-weight:400;
+    margin-bottom:15px;
+}
+
+.service p{
+    color:var(--cinza);
+    font-size:13px;
+    line-height:1.8;
+}
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.highlight{
+    min-height:500px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:
+    linear-gradient(
+        rgba(38,34,32,.62),
+        rgba(38,34,32,.62)
+    ),
+    url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=85");
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.highlight-content{
+    max-width:750px;
+}
+
+.highlight h2{
+    font-family:"DM Serif Display",serif;
+    font-size:clamp(40px,5vw,65px);
+    font-weight:400;
+    margin-bottom:20px;
+}
+
+.highlight p{
+    line-height:1.8;
+    font-size:15px;
+    opacity:.9;
+}
+
+/* =========================
+   PORTFÓLIO
+========================= */
+
+.portfolio{
+    max-width:1250px;
+    margin:auto;
+}
+
+.portfolio-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.portfolio-item{
+    height:380px;
+    overflow:hidden;
+    position:relative;
+}
+
+.portfolio-item.large{
+    grid-column:span 2;
+}
+
+.portfolio-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.portfolio-item:hover img{
+    transform:scale(1.07);
+}
+
+.portfolio-overlay{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    padding:25px;
+    color:white;
+    background:linear-gradient(transparent,rgba(0,0,0,.7));
+}
+
+.portfolio-overlay h3{
+    font-family:"DM Serif Display",serif;
+    font-size:25px;
+    font-weight:400;
+}
+
+/* =========================
+   CONTACTO
+========================= */
+
+.contact{
+    background:var(--creme);
+    text-align:center;
+}
+
+.contact h2{
+    font-family:"DM Serif Display",serif;
+    font-size:55px;
+    font-weight:400;
+    margin-bottom:20px;
+}
+
+.contact p{
+    max-width:600px;
+    margin:0 auto 30px;
+    color:var(--cinza);
+    line-height:1.8;
+}
+
+.whatsapp{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    padding:16px 28px;
+    font-weight:600;
+    font-size:13px;
+    transition:.3s;
+}
+
+.whatsapp:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(37,211,102,.25);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:var(--escuro);
+    color:white;
+    padding:55px 7% 25px;
+}
+
+.footer-content{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.footer-logo{
+    font-family:"DM Serif Display",serif;
+    font-size:32px;
+}
+
+.footer-logo span{
+    color:var(--principal);
+}
+
+.footer-text{
+    max-width:350px;
+    color:#b9b2ae;
+    font-size:13px;
+    line-height:1.8;
+}
+
+.footer-links{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.footer-links a{
+    color:#ddd;
+    text-decoration:none;
+    font-size:13px;
+}
+
+.footer-links a:hover{
+    color:var(--principal);
+}
+
+.copyright{
+    max-width:1200px;
+    margin:40px auto 0;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.12);
+    color:#999;
+    font-size:11px;
+}
+
+/* =========================
+   WHATSAPP FLUTUANTE
+========================= */
+
+.whatsapp-float{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:#25D366;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-size:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.2);
+    z-index:999;
+    transition:.3s;
+}
+
+.whatsapp-float:hover{
+    transform:scale(1.08);
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:1000px){
+
+    .services{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:800px){
+
+    .nav-links{
+        position:absolute;
+        top:78px;
+        left:0;
+        width:100%;
+        background:white;
+        display:none;
+        flex-direction:column;
+        padding:25px;
+        gap:20px;
+        border-bottom:1px solid #eee;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        background:#f8f4f0;
+        padding-top:120px;
+    }
+
+    .hero-image{
+        height:500px;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .about-image{
+        height:450px;
+    }
+
+    .portfolio-grid{
+        grid-template-columns:1fr;
+    }
+
+    .portfolio-item.large{
+        grid-column:span 1;
+    }
+
+}
+
+@media(max-width:600px){
+
+    section{
+        padding:70px 6%;
+    }
+
+    .hero{
+        padding-left:6%;
+        padding-right:6%;
+    }
+
+    .hero h1{
+        font-size:52px;
+    }
+
+    .hero-image{
+        height:420px;
+    }
+
+    .services{
+        grid-template-columns:1fr;
+    }
+
+    .service{
+        min-height:auto;
+    }
+
+    .about-text h2,
+    .section-title{
+        font-size:42px;
+    }
+
+    .contact h2{
+        font-size:43px;
+    }
+
+    .portfolio-item{
+        height:300px;
+    }
+
+}
+
+</style>
 </head>
+
+
 <body>
 
-  <div class="wrap">
-    <div class="invite" role="article" aria-label="Convite de casamento">
-      <!-- Optional corner florals: put 'corner-left.png' and 'corner-right.png' in same folder -->
-      <img class="corner left" src="corner-left.png" alt="" style="display:none">
-      <img class="corner right" src="corner-right.png" alt="" style="display:none">
+<!-- =========================
+     MENU
+========================= -->
 
-   
-      
-      <div class="titulo">
-  Chá de Panela<br>
-  <span>da</span>
+<header>
+
+<nav class="navbar">
+
+<a href="#inicio" class="logo">
+Amora <span>Studio</span>
+</a>
+
+<button class="menu-btn" onclick="abrirMenu()">☰</button>
+
+<ul class="nav-links" id="menu">
+
+<li><a href="#inicio">Início</a></li>
+<li><a href="#sobre">Sobre</a></li>
+<li><a href="#servicos">Serviços</a></li>
+<li><a href="#portfolio">Portfólio</a></li>
+<li><a href="#contacto">Contacto</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="inicio">
+
+<div class="hero-text">
+
+<div class="small-title">
+Amora Studio
 </div>
-      
-      
-         <div class="surname">
-          <div>Amora Augusto
-          </div>
-      
 
-<div class="meu-texto">Neste dia especial, sua presença e conselhos serão o meu maior presente e o seu bom gosto é essencial para ajudar a montar a minha cozinha </div>
+<h1>
+Design que<br>
+<span>transforma.</span>
+</h1>
 
-      <div class="date-row" aria-hidden="false">
-        <div class="date-box left" aria-label="Dia">
-          <div style="font-weight:800; font-size:17px; color:var(--accent);font-family:font-family: Rubik;">Sábado</div>
-         19h30
-        </div>
+<p>
+Criamos espaços, identidades e experiências visuais
+pensadas para representar a essência de cada projeto.
+</p>
 
-        <div class=aria-label="Dia do mês; color:#333; font-size:15px;">13</div>
+<div class="buttons">
 
-        <div class="date-box right" aria-label="Mês e ano">
-          <div style="font-weight:800; font-size:16px; 
-color:var(--accent); font-family: Rubik;"
->Setembro</div>
-         2025
-        </div>
-      </div>
+<a href="#servicos" class="btn btn-primary">
+Conhecer serviços
+</a>
 
- 
+<a href="https://wa.me/244951031634?text=Olá%20Amora%20Studio,%20gostaria%20de%20solicitar%20um%20orçamento."
+class="btn btn-outline">
+Solicitar orçamento
+</a>
 
-        <div class="took">📍Catetão- junto as bombas da sonangol.</div>
+</div>
 
-<div class="adradecimento">Espero você para juntos aproveitarmos esse dia tão especial. 🤎 </div>
+</div>
 
-          <div class="botoes">
-      <!-- Lista de presentes -->
-      <a href="https://amorastudio-listadepresentes.netlify.app/" class="botao" target="_blank">
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 6h-2.18c.11-.31.18-.65.18-1a3 3 0 0 0-6 0c0 .35.07.69.18 1H12.82c.11-.31.18-.65.18-1a3 3 0 0 0-6 0c0 .35.07.69.18 1H4a2 2 0 0 0-2 2v3h20V8a2 2 0 0 0-2-2zM2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-7H2v7z"/></svg>
-        Lista de Presentes
-      </a>
 
-      <!-- Confirmar presença -->
-      <a href="https://wa.me/244922713439" class="botao" target="_blank">
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 
-        7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 
-        16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 
-        6.86-8.55 11.54L12 21.35z"/></svg>
-        Confirmar Presença
-      </a>
+<div class="hero-image">
 
-      <!-- Endereço -->
-      <a href="https://maps.app.goo.gl/kXFWRue9J8FxF8G57?g_st=ip" class="botao" target="_blank">
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 
-        5.25 7 13 7 13s7-7.75 
-        7-13c0-3.87-3.13-7-7-7zm0 
-        9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 
-        2.5-2.5 2.5 1.12 
-        2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-        Endereço
-        
-                
-      </a>
-        
-        <p class="dashed-underline">Clique nos botões a cima para interagir</p>
-        
-        
-     
-    </div>
-  </div>
+<img
+src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
+alt="Projeto de interiores">
+
+<div class="hero-card">
+
+<strong>Design & Arquitetura</strong>
+
+<span>
+design e arquitetura exclusiva
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SOBRE
+========================= -->
+
+<section id="sobre">
+
+<div class="about">
+
+<div class="about-image">
+
+<img
+src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85"
+alt="Interior sofisticado">
+
+</div>
+
+
+<div class="about-text">
+
+<div class="small-title">
+Sobre a Amora Studio
+</div>
+
+<h2>
+Criamos com<br>
+<span>propósito.</span>
+</h2>
+
+<p>
+A Amora Studio é um estúdio criativo dedicado ao
+desenvolvimento de projetos que unem estética,
+funcionalidade e identidade.
+</p>
+
+<p>
+Trabalhamos desde a criação de ambientes e projetos
+arquitetônicos até à comunicação visual, convites e
+desenvolvimento de websites.
+</p>
+
+<p>
+Cada projeto é pensado de forma personalizada,
+respeitando a essência, os objetivos e a visão de cada cliente.
+</p>
+
+<div class="signature">
+Amora Studio
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SERVIÇOS
+========================= -->
+
+<section class="services-section" id="servicos">
+
+<div class="section-heading">
+
+<div class="small-title">
+O que fazemos
+</div>
+
+<h2 class="section-title">
+Nossos <span>serviços</span>
+</h2>
+
+<p>
+Soluções criativas para transformar ideias em projetos
+visuais, espaços e experiências memoráveis.
+</p>
+
+</div>
+
+
+<div class="services">
+
+
+<div class="service">
+
+<div class="service-number">01</div>
+
+<h3>
+Design de Interiores
+</h3>
+
+<p>
+Projetamos ambientes elegantes, funcionais e personalizados,
+pensados para refletir a personalidade de cada cliente.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-number">02</div>
+
+<h3>
+Projetos Arquitetônicos
+</h3>
+
+<p>
+Desenvolvimento de projetos arquitetônicos com atenção
+à estética, funcionalidade e organização dos espaços.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-number">03</div>
+
+<h3>
+Design Gráfico
+</h3>
+
+<p>
+Identidades visuais, materiais gráficos e soluções
+visuais para marcas e projetos.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-number">04</div>
+
+<h3>
+Convites
+</h3>
+
+<p>
+Convites digitais e físicos personalizados para casamentos,
+eventos, aniversários e ocasiões especiais.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-number">05</div>
+
+<h3>
+Websites
+</h3>
+
+<p>
+Criação de websites modernos, responsivos e pensados
+para apresentar marcas, serviços e projetos.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     DESTAQUE
+========================= -->
+
+<section class="highlight">
+
+<div class="highlight-content">
+
+<div class="small-title">
+Do conceito à realidade
+</div>
+
+<h2>
+A sua ideia merece<br>
+um design exclusivo.
+</h2>
+
+<p>
+Projetamos experiências que unem criatividade,
+sofisticação e funcionalidade.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PORTFÓLIO
+========================= -->
+
+<section id="portfolio">
+
+<div class="portfolio">
+
+<div class="section-heading">
+
+<div class="small-title">
+Projetos selecionados
+</div>
+
+<h2 class="section-title">
+Nosso <span>portfólio</span>
+</h2>
+
+<p>
+Algumas das áreas onde transformamos ideias
+em soluções visuais.
+</p>
+
+</div>
+
+
+<div class="portfolio-grid">
+
+
+<div class="portfolio-item large">
+
+<img
+src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85"
+alt="Design de interiores">
+
+<div class="portfolio-overlay">
+<h3>Design de Interiores</h3>
+</div>
+
+</div>
+
+
+<div class="portfolio-item">
+
+<img
+src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=85"
+alt="Arquitetura">
+
+<div class="portfolio-overlay">
+<h3>Arquitetura</h3>
+</div>
+
+</div>
+
+
+<div class="portfolio-item">
+
+<img
+src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=900&q=85"
+alt="Design gráfico">
+
+<div class="portfolio-overlay">
+<h3>Design Gráfico</h3>
+</div>
+
+</div>
+
+
+<div class="portfolio-item large">
+
+<img
+src="https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&w=1200&q=85"
+alt="Website">
+
+<div class="portfolio-overlay">
+<h3>Web Design</h3>
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CONTACTO
+========================= -->
+
+<section class="contact" id="contacto">
+
+<div class="small-title">
+Vamos criar juntos
+</div>
+
+<h2>
+Tem um projeto<br>
+em mente?
+</h2>
+
+<p>
+Fale connosco e conte-nos a sua ideia.
+Será um prazer transformar o seu projeto em algo único.
+</p>
+
+<a
+href="https://wa.me/244951031634?text=Olá%20Amora%20Studio,%20vim%20através%20do%20site%20e%20gostaria%20de%20falar%20sobre%20um%20projeto."
+class="whatsapp">
+
+WhatsApp · 951 031 634
+
+</a>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="footer-content">
+
+<div>
+
+<div class="footer-logo">
+Amora <span>Studio</span>
+</div>
+
+<p class="footer-text">
+design e arquitetura exclusiva
+</p>
+
+</div>
+
+
+<div class="footer-links">
+
+<a href="#inicio">Início</a>
+<a href="#sobre">Sobre nós</a>
+<a href="#servicos">Serviços</a>
+<a href="#portfolio">Portfólio</a>
+<a href="#contacto">Contacto</a>
+
+</div>
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 Amora Studio. Todos os direitos reservados.
+
+</div>
+
+</footer>
+
+
+<!-- =========================
+     WHATSAPP FLUTUANTE
+========================= -->
+
+<a
+class="whatsapp-float"
+href="https://wa.me/244951031634?text=Olá%20Amora%20Studio,%20gostaria%20de%20solicitar%20informações."
+aria-label="Falar com a Amora Studio pelo WhatsApp">
+
+☏
+
+</a>
+
+
+<script>
+
+function abrirMenu(){
+
+    document
+    .getElementById("menu")
+    .classList
+    .toggle("active");
+
+}
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        document
+        .getElementById("menu")
+        .classList
+        .remove("active");
+
+    });
+
+});
+
+</script>
+
 </body>
 </html>
-          
