@@ -4,24 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Amora Studio — Design & Arquitetura Exclusiva</title>
-
-<meta name="description" content="Amora Studio — Design de Interiores, Convites Digitais Interativos e Artes Gráficas Premium.">
+<title>Amora Studio | Design e Arquitetura Exclusiva</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
-    --bege:#C1A897;
-    --bege-claro:#F5F0EC;
-    --creme:#FAF8F6;
-    --escuro:#211E1C;
-    --cinza:#716B67;
-    --branco:#FFFFFF;
+    --principal:#C1A897;
+    --principal-escuro:#a88e7c;
+    --creme:#f8f4f0;
+    --escuro:#262220;
+    --branco:#ffffff;
+    --cinza:#716b67;
 }
 
 *{
@@ -35,28 +33,13 @@ html{
 }
 
 body{
-    font-family:"Inter", sans-serif;
+    font-family:"Montserrat", sans-serif;
     color:var(--escuro);
     background:var(--branco);
-    overflow-x:hidden;
-}
-
-img{
-    display:block;
-    width:100%;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-button{
-    font-family:inherit;
 }
 
 /* =========================
-   HEADER
+   MENU
 ========================= */
 
 header{
@@ -64,71 +47,68 @@ header{
     top:0;
     left:0;
     width:100%;
-    height:78px;
-    background:rgba(255,255,255,.94);
-    backdrop-filter:blur(15px);
-    border-bottom:1px solid rgba(193,168,151,.2);
     z-index:1000;
+    background:rgba(255,255,255,0.94);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(193,168,151,0.25);
 }
 
 .navbar{
-    max-width:1250px;
-    height:100%;
+    max-width:1200px;
     margin:auto;
-    padding:0 30px;
-
+    height:78px;
+    padding:0 25px;
     display:flex;
     align-items:center;
     justify-content:space-between;
 }
 
 .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
     font-family:"DM Serif Display",serif;
-    font-size:31px;
+    font-size:28px;
     letter-spacing:-1px;
 }
 
-.logo span{
-    color:var(--bege);
+.logo img{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid #C1A897;
 }
 
-.nav-menu{
+.logo span{
+    color:#C1A897;
+}
+
+.nav-links{
     display:flex;
-    align-items:center;
-    gap:32px;
+    gap:30px;
     list-style:none;
 }
 
-.nav-menu a{
-    font-size:12px;
+.nav-links a{
+    text-decoration:none;
+    color:var(--escuro);
+    font-size:13px;
     font-weight:500;
     transition:.3s;
 }
 
-.nav-menu a:hover{
-    color:var(--bege);
+.nav-links a:hover{
+    color:var(--principal-escuro);
 }
 
-.nav-button{
-    background:var(--escuro);
-    color:white;
-    padding:12px 20px;
-    font-size:11px;
-    border-radius:3px;
-}
-
-.nav-button:hover{
-    background:var(--bege);
-}
-
-.menu-toggle{
+.menu-btn{
     display:none;
-    border:none;
+    border:0;
     background:none;
-    font-size:27px;
+    font-size:28px;
     cursor:pointer;
 }
-
 
 /* =========================
    HERO
@@ -136,108 +116,87 @@ header{
 
 .hero{
     min-height:100vh;
-    padding:145px 7% 80px;
-
+    padding:120px 7% 70px;
     display:grid;
     grid-template-columns:1fr 1fr;
     align-items:center;
-    gap:70px;
-
+    gap:60px;
     background:
     linear-gradient(
-        110deg,
-        #ffffff 0%,
-        #ffffff 48%,
-        #f5f0ec 48%,
-        #f5f0ec 100%
+        90deg,
+        #f8f4f0 0%,
+        #f8f4f0 52%,
+        #eee4dc 52%,
+        #eee4dc 100%
     );
 }
 
-.hero-content{
-    max-width:610px;
+.hero-text{
+    max-width:600px;
 }
 
-.eyebrow{
-    color:var(--bege);
+.small-title{
     text-transform:uppercase;
     letter-spacing:4px;
-    font-size:11px;
-    font-weight:700;
-    margin-bottom:22px;
+    font-size:12px;
+    color:var(--principal-escuro);
+    font-weight:600;
+    margin-bottom:20px;
 }
 
 .hero h1{
     font-family:"DM Serif Display",serif;
-    font-weight:400;
     font-size:clamp(50px,6vw,82px);
-    line-height:1.02;
-    letter-spacing:-2px;
+    line-height:1;
+    font-weight:400;
     margin-bottom:25px;
 }
 
 .hero h1 span{
-    color:var(--bege);
+    color:var(--principal-escuro);
 }
 
-.hero-description{
+.hero p{
     color:var(--cinza);
     line-height:1.8;
+    max-width:520px;
     font-size:15px;
-    max-width:570px;
-    margin-bottom:32px;
+    margin-bottom:35px;
 }
 
-.hero-buttons{
+.buttons{
     display:flex;
-    gap:14px;
+    gap:15px;
     flex-wrap:wrap;
 }
 
 .btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
+    display:inline-block;
     padding:15px 25px;
-    font-size:11px;
+    text-decoration:none;
+    font-size:12px;
     font-weight:600;
+    letter-spacing:.5px;
     transition:.3s;
-    border-radius:3px;
 }
 
-.btn-dark{
+.btn-primary{
     background:var(--escuro);
     color:white;
 }
 
-.btn-dark:hover{
-    background:var(--bege);
+.btn-primary:hover{
+    background:var(--principal-escuro);
 }
 
-.btn-light{
-    border:1px solid #d5cbc4;
-    background:white;
+.btn-outline{
+    border:1px solid var(--escuro);
+    color:var(--escuro);
 }
 
-.btn-light:hover{
-    background:var(--bege-claro);
-}
-
-.hero-info{
-    display:flex;
-    align-items:center;
-    gap:18px;
-    margin-top:30px;
-}
-
-.hero-info-number{
-    font-family:"DM Serif Display",serif;
-    font-size:27px;
-}
-
-.hero-info-text{
-    font-size:11px;
-    color:var(--cinza);
-    line-height:1.5;
+.btn-outline:hover{
+    background:var(--escuro);
+    color:white;
 }
 
 .hero-image{
@@ -247,362 +206,213 @@ header{
 }
 
 .hero-image img{
+    width:100%;
     height:100%;
     object-fit:cover;
 }
 
-.hero-image::after{
-    content:"";
+.hero-card{
     position:absolute;
-    inset:0;
-    background:linear-gradient(
-        to top,
-        rgba(0,0,0,.15),
-        transparent 45%
-    );
+    bottom:25px;
+    left:25px;
+    background:white;
+    padding:20px 25px;
+    max-width:250px;
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
 }
 
+.hero-card strong{
+    display:block;
+    font-family:"DM Serif Display",serif;
+    font-size:22px;
+    margin-bottom:5px;
+}
+
+.hero-card span{
+    font-size:11px;
+    color:var(--cinza);
+}
 
 /* =========================
-   ABOUT
+   SOBRE
 ========================= */
 
-.section{
-    padding:110px 7%;
+section{
+    padding:100px 7%;
 }
 
 .about{
-    max-width:1200px;
-    margin:auto;
-
     display:grid;
     grid-template-columns:.9fr 1.1fr;
-    gap:85px;
+    gap:80px;
     align-items:center;
 }
 
-.about-images{
-    position:relative;
-    height:580px;
+.about-image{
+    height:560px;
+    overflow:hidden;
 }
 
-.about-main{
-    width:82%;
-    height:500px;
+.about-image img{
+    width:100%;
+    height:100%;
     object-fit:cover;
 }
 
-.about-small{
-    position:absolute;
-    right:0;
-    bottom:0;
-    width:43%;
-    height:245px;
-    object-fit:cover;
-    border:10px solid white;
-}
-
-.about-content{
-    max-width:570px;
-}
-
-.section-label{
-    text-transform:uppercase;
-    letter-spacing:4px;
-    color:var(--bege);
-    font-size:10px;
-    font-weight:700;
-    margin-bottom:18px;
-}
-
+.about-text h2,
 .section-title{
     font-family:"DM Serif Display",serif;
-    font-size:52px;
+    font-size:50px;
     font-weight:400;
-    line-height:1.08;
-    margin-bottom:24px;
+    line-height:1.1;
+    margin-bottom:25px;
 }
 
+.about-text h2 span,
 .section-title span{
-    color:var(--bege);
+    color:var(--principal-escuro);
 }
 
-.section-text{
+.about-text p{
     color:var(--cinza);
-    font-size:14px;
     line-height:1.9;
-    margin-bottom:22px;
+    margin-bottom:18px;
+    font-size:14px;
 }
 
-.about-values{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-    margin-top:35px;
+.signature{
+    margin-top:30px;
+    font-family:"DM Serif Display",serif;
+    font-size:24px;
 }
-
-.value{
-    border-top:1px solid #ddd4ce;
-    padding-top:17px;
-}
-
-.value h4{
-    font-size:12px;
-    margin-bottom:8px;
-}
-
-.value p{
-    color:var(--cinza);
-    font-size:11px;
-    line-height:1.6;
-}
-
 
 /* =========================
-   SERVICES
+   SERVIÇOS
 ========================= */
 
 .services-section{
     background:var(--creme);
 }
 
-.center-heading{
-    max-width:700px;
-    margin:0 auto 55px;
+.section-heading{
     text-align:center;
+    max-width:650px;
+    margin:0 auto 55px;
 }
 
-.center-heading .section-title{
-    margin-bottom:15px;
-}
-
-.center-heading p{
+.section-heading p{
     color:var(--cinza);
-    font-size:14px;
     line-height:1.8;
+    font-size:14px;
 }
 
 .services{
     max-width:1200px;
     margin:auto;
-
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
+    grid-template-columns:repeat(5,1fr);
+    gap:18px;
 }
 
-.service-card{
+.service{
     background:white;
-    overflow:hidden;
-    transition:.4s;
-    border:1px solid rgba(193,168,151,.12);
+    padding:35px 25px;
+    min-height:280px;
+    transition:.35s;
+    border-bottom:3px solid transparent;
 }
 
-.service-card:hover{
-    transform:translateY(-7px);
-    box-shadow:0 20px 50px rgba(50,40,35,.1);
+.service:hover{
+    transform:translateY(-8px);
+    border-bottom:3px solid var(--principal);
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
 }
 
-.service-image{
-    height:290px;
-    overflow:hidden;
-}
-
-.service-image img{
-    height:100%;
-    object-fit:cover;
-    transition:.6s;
-}
-
-.service-card:hover .service-image img{
-    transform:scale(1.06);
-}
-
-.service-body{
-    padding:28px;
-}
-
-.price{
-    color:var(--bege);
-    font-size:11px;
-    font-weight:600;
-    margin-bottom:12px;
-}
-
-.service-body h3{
+.service-number{
     font-family:"DM Serif Display",serif;
-    font-size:28px;
-    font-weight:400;
-    margin-bottom:13px;
+    font-size:20px;
+    color:var(--principal-escuro);
+    margin-bottom:35px;
 }
 
-.service-body > p{
+.service h3{
+    font-family:"DM Serif Display",serif;
+    font-size:25px;
+    font-weight:400;
+    margin-bottom:15px;
+}
+
+.service p{
     color:var(--cinza);
-    font-size:12px;
+    font-size:13px;
     line-height:1.8;
+}
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.highlight{
+    min-height:500px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:
+    linear-gradient(
+        rgba(38,34,32,.62),
+        rgba(38,34,32,.62)
+    ),
+    url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=85");
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.highlight-content{
+    max-width:750px;
+}
+
+.highlight h2{
+    font-family:"DM Serif Display",serif;
+    font-size:clamp(40px,5vw,65px);
+    font-weight:400;
     margin-bottom:20px;
 }
 
-.service-list{
-    list-style:none;
-    margin-bottom:25px;
+.highlight p{
+    line-height:1.8;
+    font-size:15px;
+    opacity:.9;
 }
-
-.service-list li{
-    font-size:11px;
-    margin-bottom:9px;
-    color:#625c58;
-}
-
-.service-list li::before{
-    content:"✓";
-    color:var(--bege);
-    margin-right:8px;
-}
-
-.service-link{
-    display:inline-block;
-    font-size:11px;
-    font-weight:700;
-    border-bottom:1px solid var(--bege);
-    padding-bottom:4px;
-}
-
 
 /* =========================
-   WHY AMORA
-========================= */
-
-.why{
-    max-width:1200px;
-    margin:auto;
-}
-
-.why-top{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:70px;
-    align-items:end;
-    margin-bottom:55px;
-}
-
-.why-top p{
-    color:var(--cinza);
-    line-height:1.9;
-    font-size:14px;
-}
-
-.why-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    border-top:1px solid #ddd4ce;
-    border-bottom:1px solid #ddd4ce;
-}
-
-.why-card{
-    padding:35px 25px;
-    border-right:1px solid #ddd4ce;
-}
-
-.why-card:last-child{
-    border-right:none;
-}
-
-.why-number{
-    font-family:"DM Serif Display",serif;
-    font-size:25px;
-    color:var(--bege);
-    margin-bottom:30px;
-}
-
-.why-card h3{
-    font-family:"DM Serif Display",serif;
-    font-weight:400;
-    font-size:21px;
-    margin-bottom:12px;
-}
-
-.why-card p{
-    color:var(--cinza);
-    font-size:11px;
-    line-height:1.7;
-}
-
-
-/* =========================
-   NUMBERS
-========================= */
-
-.numbers{
-    background:var(--escuro);
-    color:white;
-    padding:75px 7%;
-}
-
-.numbers-grid{
-    max-width:1200px;
-    margin:auto;
-
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-}
-
-.number-item{
-    text-align:center;
-    border-right:1px solid rgba(255,255,255,.15);
-}
-
-.number-item:last-child{
-    border-right:none;
-}
-
-.number{
-    font-family:"DM Serif Display",serif;
-    color:var(--bege);
-    font-size:48px;
-}
-
-.number-label{
-    color:#c4bfbc;
-    font-size:11px;
-    margin-top:8px;
-}
-
-
-/* =========================
-   PORTFOLIO
+   PORTFÓLIO
 ========================= */
 
 .portfolio{
-    max-width:1200px;
+    max-width:1250px;
     margin:auto;
-}
-
-.portfolio-heading{
-    display:flex;
-    justify-content:space-between;
-    align-items:end;
-    margin-bottom:45px;
-    gap:30px;
 }
 
 .portfolio-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:16px;
+    gap:15px;
 }
 
 .portfolio-item{
-    height:360px;
-    position:relative;
+    height:380px;
     overflow:hidden;
+    position:relative;
 }
 
-.portfolio-item:nth-child(1){
+.portfolio-item.large{
     grid-column:span 2;
 }
 
 .portfolio-item img{
+    width:100%;
     height:100%;
     object-fit:cover;
     transition:.6s;
@@ -617,405 +427,184 @@ header{
     bottom:0;
     left:0;
     width:100%;
-    padding:35px 25px 25px;
+    padding:25px;
     color:white;
-    background:linear-gradient(
-        transparent,
-        rgba(0,0,0,.75)
-    );
-}
-
-.portfolio-category{
-    color:#e0cfc3;
-    font-size:10px;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    margin-bottom:6px;
+    background:linear-gradient(transparent,rgba(0,0,0,.7));
 }
 
 .portfolio-overlay h3{
     font-family:"DM Serif Display",serif;
-    font-weight:400;
     font-size:25px;
+    font-weight:400;
 }
-
 
 /* =========================
-   TESTIMONIALS
-========================= */
-
-.testimonials{
-    background:var(--creme);
-}
-
-.testimonial-grid{
-    max-width:1100px;
-    margin:auto;
-
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.testimonial{
-    background:white;
-    padding:35px;
-}
-
-.quote{
-    color:var(--bege);
-    font-family:"DM Serif Display",serif;
-    font-size:40px;
-    line-height:.7;
-    margin-bottom:20px;
-}
-
-.testimonial p{
-    color:#5e5854;
-    font-size:12px;
-    line-height:1.9;
-    margin-bottom:25px;
-}
-
-.client{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.client-letter{
-    width:38px;
-    height:38px;
-    border-radius:50%;
-    background:var(--bege-claro);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:var(--bege);
-    font-family:"DM Serif Display",serif;
-}
-
-.client strong{
-    display:block;
-    font-size:11px;
-}
-
-.client span{
-    color:var(--cinza);
-    font-size:9px;
-}
-
-
-/* =========================
-   FAQ
-========================= */
-
-.faq{
-    max-width:800px;
-    margin:auto;
-}
-
-.faq-item{
-    border-bottom:1px solid #ddd4ce;
-}
-
-.faq-question{
-    width:100%;
-    background:none;
-    border:none;
-    padding:22px 0;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    text-align:left;
-    cursor:pointer;
-    font-size:13px;
-    font-weight:600;
-    color:var(--escuro);
-}
-
-.faq-icon{
-    color:var(--bege);
-    font-size:20px;
-    transition:.3s;
-}
-
-.faq-answer{
-    max-height:0;
-    overflow:hidden;
-    transition:.4s;
-}
-
-.faq-answer p{
-    color:var(--cinza);
-    font-size:12px;
-    line-height:1.8;
-    padding-bottom:20px;
-}
-
-.faq-item.active .faq-answer{
-    max-height:200px;
-}
-
-.faq-item.active .faq-icon{
-    transform:rotate(45deg);
-}
-
-
-/* =========================
-   CONTACT
+   CONTACTO
 ========================= */
 
 .contact{
-    background:
-    linear-gradient(
-        rgba(193,168,151,.87),
-        rgba(193,168,151,.87)
-    ),
-    url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=85");
-
-    background-size:cover;
-    background-position:center;
-
-    padding:110px 7%;
-}
-
-.contact-container{
-    max-width:1100px;
-    margin:auto;
-
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:70px;
-    align-items:center;
+    background:var(--creme);
+    text-align:center;
 }
 
 .contact h2{
     font-family:"DM Serif Display",serif;
     font-size:55px;
     font-weight:400;
-    line-height:1.05;
     margin-bottom:20px;
 }
 
-.contact-description{
-    color:#4f4843;
-    font-size:13px;
+.contact p{
+    max-width:600px;
+    margin:0 auto 30px;
+    color:var(--cinza);
     line-height:1.8;
-    max-width:500px;
 }
 
-.contact-form{
-    background:white;
-    padding:35px;
-    box-shadow:0 20px 50px rgba(0,0,0,.12);
-}
-
-.form-group{
-    margin-bottom:17px;
-}
-
-.form-group label{
-    display:block;
-    font-size:10px;
-    font-weight:600;
-    margin-bottom:7px;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea{
-    width:100%;
-    border:1px solid #ddd5cf;
-    padding:13px;
-    font-family:inherit;
-    font-size:11px;
-    outline:none;
-    background:white;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus{
-    border-color:var(--bege);
-}
-
-.form-group textarea{
-    height:100px;
-    resize:none;
-}
-
-.form-button{
-    width:100%;
-    border:none;
-    background:var(--escuro);
+.whatsapp{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:#25D366;
     color:white;
-    padding:15px;
-    cursor:pointer;
-    font-size:11px;
+    text-decoration:none;
+    padding:16px 28px;
     font-weight:600;
+    font-size:13px;
     transition:.3s;
 }
 
-.form-button:hover{
-    background:var(--bege);
+.whatsapp:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(37,211,102,.25);
 }
-
 
 /* =========================
    FOOTER
 ========================= */
 
 footer{
-    background:#191715;
+    background:var(--escuro);
     color:white;
-    padding:65px 7% 25px;
+    padding:55px 7% 25px;
 }
 
-.footer-grid{
+.footer-content{
     max-width:1200px;
     margin:auto;
-
-    display:grid;
-    grid-template-columns:1.4fr 1fr 1fr;
-    gap:60px;
+    display:flex;
+    justify-content:space-between;
+    gap:40px;
+    flex-wrap:wrap;
 }
 
 .footer-logo{
     font-family:"DM Serif Display",serif;
-    font-size:34px;
-    margin-bottom:10px;
+    font-size:32px;
 }
 
 .footer-logo span{
-    color:var(--bege);
+    color:var(--principal);
 }
 
-.footer-description{
+.footer-text{
     max-width:350px;
-    color:#aaa39e;
-    font-size:11px;
+    color:#b9b2ae;
+    font-size:13px;
     line-height:1.8;
 }
 
-.footer-column h4{
-    font-size:11px;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    margin-bottom:20px;
-    color:var(--bege);
-}
-
-.footer-column p,
-.footer-column a{
-    display:block;
-    color:#aaa39e;
-    font-size:11px;
-    line-height:2;
-}
-
-.footer-column a:hover{
-    color:white;
-}
-
-.footer-bottom{
-    max-width:1200px;
-    margin:45px auto 0;
-    padding-top:20px;
-    border-top:1px solid rgba(255,255,255,.1);
+.footer-links{
     display:flex;
-    justify-content:space-between;
-    color:#77716d;
-    font-size:9px;
+    flex-direction:column;
+    gap:12px;
 }
 
+.footer-links a{
+    color:#ddd;
+    text-decoration:none;
+    font-size:13px;
+}
+
+.footer-links a:hover{
+    color:var(--principal);
+}
+
+.copyright{
+    max-width:1200px;
+    margin:40px auto 0;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.12);
+    color:#999;
+    font-size:11px;
+}
 
 /* =========================
-   WHATSAPP
+   WHATSAPP FLUTUANTE
 ========================= */
 
-.whatsapp{
+.whatsapp-float{
     position:fixed;
     right:22px;
     bottom:22px;
-
     width:58px;
     height:58px;
-
     border-radius:50%;
-
     background:#25D366;
     color:white;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
+    text-decoration:none;
     font-size:25px;
-
     box-shadow:0 8px 25px rgba(0,0,0,.2);
-
     z-index:999;
-
     transition:.3s;
 }
 
-.whatsapp:hover{
+.whatsapp-float:hover{
     transform:scale(1.08);
 }
-
-
-/* =========================
-   REVEAL ANIMATION
-========================= */
-
-.reveal{
-    opacity:0;
-    transform:translateY(30px);
-    transition:opacity .8s ease, transform .8s ease;
-}
-
-.reveal.visible{
-    opacity:1;
-    transform:translateY(0);
-}
-
 
 /* =========================
    RESPONSIVO
 ========================= */
 
-@media(max-width:950px){
+@media(max-width:1000px){
 
-    .nav-menu{
+    .services{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:800px){
+
+    .nav-links{
         position:absolute;
         top:78px;
         left:0;
         width:100%;
-
         background:white;
-
-        flex-direction:column;
-        align-items:flex-start;
-
-        padding:25px 30px;
-
         display:none;
-
+        flex-direction:column;
+        padding:25px;
+        gap:20px;
         border-bottom:1px solid #eee;
     }
 
-    .nav-menu.active{
+    .nav-links.active{
         display:flex;
     }
 
-    .menu-toggle{
+    .menu-btn{
         display:block;
     }
 
     .hero{
         grid-template-columns:1fr;
-        background:#fff;
+        background:#f8f4f0;
+        padding-top:120px;
     }
 
     .hero-image{
@@ -1024,75 +613,32 @@ footer{
 
     .about{
         grid-template-columns:1fr;
+        gap:40px;
     }
 
-    .services{
-        grid-template-columns:1fr;
-    }
-
-    .why-top{
-        grid-template-columns:1fr;
-    }
-
-    .why-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .why-card:nth-child(2){
-        border-right:none;
-    }
-
-    .why-card:nth-child(1),
-    .why-card:nth-child(2){
-        border-bottom:1px solid #ddd4ce;
-    }
-
-    .numbers-grid{
-        grid-template-columns:1fr 1fr;
-        gap:35px 0;
-    }
-
-    .number-item:nth-child(2){
-        border-right:none;
-    }
-
-    .number-item:nth-child(1),
-    .number-item:nth-child(2){
-        padding-bottom:30px;
-        border-bottom:1px solid rgba(255,255,255,.15);
+    .about-image{
+        height:450px;
     }
 
     .portfolio-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .portfolio-item:nth-child(1){
-        grid-column:span 2;
-    }
-
-    .testimonial-grid{
         grid-template-columns:1fr;
     }
 
-    .contact-container{
-        grid-template-columns:1fr;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr 1fr;
+    .portfolio-item.large{
+        grid-column:span 1;
     }
 
 }
 
-
 @media(max-width:600px){
 
-    .navbar{
-        padding:0 20px;
+    section{
+        padding:70px 6%;
     }
 
     .hero{
-        padding:120px 6% 60px;
+        padding-left:6%;
+        padding-right:6%;
     }
 
     .hero h1{
@@ -1100,85 +646,28 @@ footer{
     }
 
     .hero-image{
-        height:430px;
-    }
-
-    .section{
-        padding:75px 6%;
-    }
-
-    .section-title{
-        font-size:42px;
-    }
-
-    .about-images{
-        height:450px;
-    }
-
-    .about-main{
-        height:380px;
-    }
-
-    .about-values{
-        grid-template-columns:1fr;
+        height:420px;
     }
 
     .services{
         grid-template-columns:1fr;
     }
 
-    .why-grid{
-        grid-template-columns:1fr;
+    .service{
+        min-height:auto;
     }
 
-    .why-card{
-        border-right:none !important;
-        border-bottom:1px solid #ddd4ce;
-    }
-
-    .why-card:last-child{
-        border-bottom:none;
-    }
-
-    .numbers-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .portfolio-heading{
-        display:block;
-    }
-
-    .portfolio-grid{
-        grid-template-columns:1fr;
-    }
-
-    .portfolio-item:nth-child(1){
-        grid-column:span 1;
-    }
-
-    .portfolio-item{
-        height:300px;
-    }
-
-    .contact{
-        padding:75px 6%;
+    .about-text h2,
+    .section-title{
+        font-size:42px;
     }
 
     .contact h2{
         font-size:43px;
     }
 
-    .contact-form{
-        padding:25px;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr;
-    }
-
-    .footer-bottom{
-        display:block;
-        line-height:2;
+    .portfolio-item{
+        height:300px;
     }
 
 }
@@ -1189,9 +678,8 @@ footer{
 
 <body>
 
-
 <!-- =========================
-     HEADER
+     MENU
 ========================= -->
 
 <header>
@@ -1199,36 +687,19 @@ footer{
 <nav class="navbar">
 
 <a href="#inicio" class="logo">
-Amora <span>Studio</span>
+    <img src="imagens/logo-amora.png" alt="Amora Studio">
+    <span>Amora Studio</span>
 </a>
 
-<button class="menu-toggle" onclick="toggleMenu()">
-☰
-</button>
+<button class="menu-btn" onclick="abrirMenu()">☰</button>
 
-<ul class="nav-menu" id="navMenu">
+<ul class="nav-links" id="menu">
 
-<li>
-<a href="#sobre">Sobre nós</a>
-</li>
-
-<li>
-<a href="#servicos">Serviços</a>
-</li>
-
-<li>
-<a href="#portfolio">Portfólio</a>
-</li>
-
-<li>
-<a href="#depoimentos">Depoimentos</a>
-</li>
-
-<li>
-<a href="#contacto" class="nav-button">
-Solicitar orçamento
-</a>
-</li>
+<li><a href="#inicio">Início</a></li>
+<li><a href="#sobre">Sobre</a></li>
+<li><a href="#servicos">Serviços</a></li>
+<li><a href="#portfolio">Portfólio</a></li>
+<li><a href="#contacto">Contacto</a></li>
 
 </ul>
 
@@ -1237,145 +708,112 @@ Solicitar orçamento
 </header>
 
 
-
 <!-- =========================
      HERO
 ========================= -->
 
 <section class="hero" id="inicio">
 
-<div class="hero-content reveal">
+<div class="hero-text">
 
-<div class="eyebrow">
-Design & Arquitetura Exclusiva
+<div class="small-title">
+Amora Studio
 </div>
 
 <h1>
-Damos vida a espaços e <span>momentos inesquecíveis.</span>
+Design que<br>
+<span>transforma.</span>
 </h1>
 
-<p class="hero-description">
-Do design de interiores a convites digitais interativos e
-artes gráficas premium — transformamos a sua visão numa
-experiência elegante, moderna e memorável.
+<p>
+Criamos espaços, identidades e experiências visuais
+pensadas para representar a essência de cada projeto.
 </p>
 
-<div class="hero-buttons">
+<div class="buttons">
 
-<a href="#contacto" class="btn btn-dark">
-Solicitar Orçamento
+<a href="#servicos" class="btn btn-primary">
+Conhecer serviços
 </a>
 
-<a href="#servicos" class="btn btn-light">
-Ver Serviços
+<a href="https://wa.me/244951031634?text=Olá%20Amora%20Studio,%20gostaria%20de%20solicitar%20um%20orçamento."
+class="btn btn-outline">
+Solicitar orçamento
 </a>
 
 </div>
 
-<div class="hero-info">
-
-<div class="hero-info-number">
-+200
-</div>
-
-<div class="hero-info-text">
-clientes satisfeitos<br>
-em Angola
-</div>
-
-</div>
-
 </div>
 
 
-<div class="hero-image reveal">
+<div class="hero-image">
 
 <img
-src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85"
-alt="Interior premium desenhado pela Amora Studio">
+src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
+alt="Projeto de interiores">
+
+<div class="hero-card">
+
+<strong>Design & Arquitetura</strong>
+
+<span>
+design e arquitetura exclusiva
+</span>
+
+</div>
 
 </div>
 
 </section>
-
 
 
 <!-- =========================
      SOBRE
 ========================= -->
 
-<section class="section" id="sobre">
+<section id="sobre">
 
 <div class="about">
 
-<div class="about-images reveal">
+<div class="about-image">
 
 <img
-class="about-main"
-src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85"
-alt="Projeto Amora Studio">
-
-<img
-class="about-small"
-src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=700&q=85"
-alt="Detalhe de interior">
+src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85"
+alt="Interior sofisticado">
 
 </div>
 
 
-<div class="about-content reveal">
+<div class="about-text">
 
-<div class="section-label">
-Sobre nós
+<div class="small-title">
+Sobre a Amora Studio
 </div>
 
-<h2 class="section-title">
-Um estúdio onde estética e <span>emoção</span> se encontram.
+<h2>
+Criamos com<br>
+<span>propósito.</span>
 </h2>
 
-<p class="section-text">
-A Amora Studio nasceu do desejo de criar experiências
-visuais que contam histórias. Combinamos design de
-interiores exclusivo, convites digitais interativos e
-artes gráficas de alto padrão para elevar cada projeto
-ao nível premium que merece.
+<p>
+A Amora Studio é um estúdio criativo dedicado ao
+desenvolvimento de projetos que unem estética,
+funcionalidade e identidade.
 </p>
-
-
-<div class="about-values">
-
-<div class="value">
-
-<h4>Missão</h4>
 
 <p>
-Transformar espaços e momentos em memórias eternas.
+Trabalhamos desde a criação de ambientes e projetos
+arquitetônicos até à comunicação visual, convites e
+desenvolvimento de websites.
 </p>
-
-</div>
-
-
-<div class="value">
-
-<h4>Visão</h4>
 
 <p>
-Ser referência premium em design e arquitetura em Angola.
+Cada projeto é pensado de forma personalizada,
+respeitando a essência, os objetivos e a visão de cada cliente.
 </p>
 
-</div>
-
-
-<div class="value">
-
-<h4>Valores</h4>
-
-<p>
-Excelência, elegância, confiança e criatividade.
-</p>
-
-</div>
-
+<div class="signature">
+Amora Studio
 </div>
 
 </div>
@@ -1385,25 +823,25 @@ Excelência, elegância, confiança e criatividade.
 </section>
 
 
-
 <!-- =========================
      SERVIÇOS
 ========================= -->
 
-<section class="section services-section" id="servicos">
+<section class="services-section" id="servicos">
 
-<div class="center-heading reveal">
+<div class="section-heading">
 
-<div class="section-label">
-Serviços
+<div class="small-title">
+O que fazemos
 </div>
 
 <h2 class="section-title">
-Soluções criativas para cada detalhe do seu <span>projeto.</span>
+Nossos <span>serviços</span>
 </h2>
 
 <p>
-Três universos, uma mesma exigência de qualidade e elegância.
+Soluções criativas para transformar ideias em projetos
+visuais, espaços e experiências memoráveis.
 </p>
 
 </div>
@@ -1412,139 +850,82 @@ Três universos, uma mesma exigência de qualidade e elegância.
 <div class="services">
 
 
-<!-- SERVIÇO 1 -->
+<div class="service">
 
-<div class="service-card reveal">
-
-<div class="service-image">
-
-<img
-src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85"
-alt="Design de Interiores">
-
-</div>
-
-<div class="service-body">
-
-<div class="price">
-Sob consulta
-</div>
+<div class="service-number">01</div>
 
 <h3>
 Design de Interiores
 </h3>
 
 <p>
-Projetos residenciais e comerciais com planeamento
-inteligente de layout, escolha estratégica de cores,
-materiais e iluminação.
+Projetamos ambientes elegantes, funcionais e personalizados,
+pensados para refletir a personalidade de cada cliente.
 </p>
 
-<ul class="service-list">
-
-<li>Projetos 3D realistas</li>
-<li>Consultoria decorativa</li>
-<li>Acompanhamento na execução</li>
-
-</ul>
-
-<a href="#contacto" class="service-link">
-Solicitar orçamento →
-</a>
-
-</div>
-
 </div>
 
 
+<div class="service">
 
-<!-- SERVIÇO 2 -->
-
-<div class="service-card reveal">
-
-<div class="service-image">
-
-<img
-src="https://images.unsplash.com/photo-1523726491678-bf852e717f6a?auto=format&fit=crop&w=1000&q=85"
-alt="Convites Digitais">
-
-</div>
-
-<div class="service-body">
-
-<div class="price">
-Desde 6.000 Kz
-</div>
+<div class="service-number">02</div>
 
 <h3>
-Convites Digitais Interativos
+Projetos Arquitetônicos
 </h3>
 
 <p>
-Convites modernos, elegantes e personalizados com
-confirmação de presença, GPS, manual do convidado
-e muito mais.
+Desenvolvimento de projetos arquitetônicos com atenção
+à estética, funcionalidade e organização dos espaços.
 </p>
 
-<ul class="service-list">
-
-<li>Save the date</li>
-<li>RSVP via WhatsApp</li>
-<li>Localização GPS integrada</li>
-
-</ul>
-
-<a href="#contacto" class="service-link">
-Solicitar orçamento →
-</a>
-
-</div>
-
 </div>
 
 
+<div class="service">
 
-<!-- SERVIÇO 3 -->
-
-<div class="service-card reveal">
-
-<div class="service-image">
-
-<img
-src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1000&q=85"
-alt="Artes Gráficas Premium">
-
-</div>
-
-<div class="service-body">
-
-<div class="price">
-Desde 3.000 Kz
-</div>
+<div class="service-number">03</div>
 
 <h3>
-Artes Gráficas Premium
+Design Gráfico
 </h3>
 
 <p>
-Tabelas de preços, políticas de pagamento, catálogos,
-cardápios e artes personalizadas que transmitem
-profissionalismo.
+Identidades visuais, materiais gráficos e soluções
+visuais para marcas e projetos.
 </p>
 
-<ul class="service-list">
+</div>
 
-<li>Tabelas de preços elegantes</li>
-<li>Cardápios e catálogos</li>
-<li>Flyers e anúncios</li>
 
-</ul>
+<div class="service">
 
-<a href="#contacto" class="service-link">
-Solicitar orçamento →
-</a>
+<div class="service-number">04</div>
+
+<h3>
+Convites
+</h3>
+
+<p>
+Convites digitais e físicos personalizados para casamentos,
+eventos, aniversários e ocasiões especiais.
+</p>
 
 </div>
+
+
+<div class="service">
+
+<div class="service-number">05</div>
+
+<h3>
+Websites
+</h3>
+
+<p>
+Criação de websites modernos, responsivos e pensados
+para apresentar marcas, serviços e projetos.
+</p>
 
 </div>
 
@@ -1553,205 +934,55 @@ Solicitar orçamento →
 </section>
 
 
-
 <!-- =========================
-     PORQUÊ AMORA
+     DESTAQUE
 ========================= -->
 
-<section class="section">
+<section class="highlight">
 
-<div class="why">
+<div class="highlight-content">
 
-<div class="why-top reveal">
-
-<div>
-
-<div class="section-label">
-Porquê Amora
+<div class="small-title">
+Do conceito à realidade
 </div>
 
-<h2 class="section-title">
-Confiança e autoridade em <span>cada detalhe.</span>
+<h2>
+A sua ideia merece<br>
+um design exclusivo.
 </h2>
 
-</div>
-
 <p>
-Escolher a Amora Studio é escolher uma parceria criativa
-focada em resultado, elegância e experiência do cliente.
+Projetamos experiências que unem criatividade,
+sofisticação e funcionalidade.
 </p>
-
-</div>
-
-
-<div class="why-grid">
-
-
-<div class="why-card reveal">
-
-<div class="why-number">
-01
-</div>
-
-<h3>
-Qualidade premium
-</h3>
-
-<p>
-Cada projeto é tratado com o mesmo cuidado editorial.
-</p>
-
-</div>
-
-
-<div class="why-card reveal">
-
-<div class="why-number">
-02
-</div>
-
-<h3>
-Equipa dedicada
-</h3>
-
-<p>
-Profissionais criativos ao seu lado do briefing à entrega.
-</p>
-
-</div>
-
-
-<div class="why-card reveal">
-
-<div class="why-number">
-03
-</div>
-
-<h3>
-Processo completo
-</h3>
-
-<p>
-Conceito, design, produção e acompanhamento.
-</p>
-
-</div>
-
-
-<div class="why-card reveal">
-
-<div class="why-number">
-04
-</div>
-
-<h3>
-Design 2026
-</h3>
-
-<p>
-Estética moderna, atual e visualmente marcante.
-</p>
-
-</div>
-
-</div>
 
 </div>
 
 </section>
-
-
-
-<!-- =========================
-     NÚMEROS
-========================= -->
-
-<section class="numbers">
-
-<div class="numbers-grid">
-
-<div class="number-item">
-
-<div class="number" data-target="150">
-0+
-</div>
-
-<div class="number-label">
-Projetos entregues
-</div>
-
-</div>
-
-
-<div class="number-item">
-
-<div class="number" data-target="200">
-0+
-</div>
-
-<div class="number-label">
-Clientes felizes
-</div>
-
-</div>
-
-
-<div class="number-item">
-
-<div class="number" data-target="7">
-0
-</div>
-
-<div class="number-label">
-Anos de estúdio
-</div>
-
-</div>
-
-
-<div class="number-item">
-
-<div class="number" data-target="100">
-0%
-</div>
-
-<div class="number-label">
-Satisfação
-</div>
-
-</div>
-
-</div>
-
-</section>
-
 
 
 <!-- =========================
      PORTFÓLIO
 ========================= -->
 
-<section class="section" id="portfolio">
+<section id="portfolio">
 
 <div class="portfolio">
 
-<div class="portfolio-heading reveal">
+<div class="section-heading">
 
-<div>
-
-<div class="section-label">
-Portfólio
+<div class="small-title">
+Projetos selecionados
 </div>
 
 <h2 class="section-title">
-Projetos que traduzem a nossa <span>assinatura.</span>
+Nosso <span>portfólio</span>
 </h2>
 
-</div>
-
-<a href="#contacto" class="btn btn-dark">
-Iniciar o seu projeto
-</a>
+<p>
+Algumas das áreas onde transformamos ideias
+em soluções visuais.
+</p>
 
 </div>
 
@@ -1759,127 +990,53 @@ Iniciar o seu projeto
 <div class="portfolio-grid">
 
 
-<div class="portfolio-item reveal">
+<div class="portfolio-item large">
 
 <img
 src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85"
-alt="Sala clássica">
+alt="Design de interiores">
 
 <div class="portfolio-overlay">
-
-<div class="portfolio-category">
-Interiores
-</div>
-
-<h3>
-Sala clássica
-</h3>
-
+<h3>Design de Interiores</h3>
 </div>
 
 </div>
 
 
-<div class="portfolio-item reveal">
+<div class="portfolio-item">
 
 <img
-src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85"
-alt="Banho em travertino">
+src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=85"
+alt="Arquitetura">
 
 <div class="portfolio-overlay">
-
-<div class="portfolio-category">
-Interiores
-</div>
-
-<h3>
-Banho em travertino
-</h3>
-
+<h3>Arquitetura</h3>
 </div>
 
 </div>
 
 
-<div class="portfolio-item reveal">
+<div class="portfolio-item">
 
 <img
-src="https://images.unsplash.com/photo-1593476550610-87baa860004a?auto=format&fit=crop&w=900&q=85"
-alt="Home office premium">
+src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=900&q=85"
+alt="Design gráfico">
 
 <div class="portfolio-overlay">
-
-<div class="portfolio-category">
-Interiores
-</div>
-
-<h3>
-Home office premium
-</h3>
-
+<h3>Design Gráfico</h3>
 </div>
 
 </div>
 
 
-<div class="portfolio-item reveal">
+<div class="portfolio-item large">
 
 <img
-src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=85"
-alt="Convite Ricardo e Ariela">
+src="https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&w=1200&q=85"
+alt="Website">
 
 <div class="portfolio-overlay">
-
-<div class="portfolio-category">
-Digital
-</div>
-
-<h3>
-Convite Ricardo & Ariela
-</h3>
-
-</div>
-
-</div>
-
-
-<div class="portfolio-item reveal">
-
-<img
-src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=85"
-alt="Cardápio Cascata Bar">
-
-<div class="portfolio-overlay">
-
-<div class="portfolio-category">
-Gráfico
-</div>
-
-<h3>
-Cardápio Cascata Bar
-</h3>
-
-</div>
-
-</div>
-
-
-<div class="portfolio-item reveal">
-
-<img
-src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=85"
-alt="Suite principal">
-
-<div class="portfolio-overlay">
-
-<div class="portfolio-category">
-Interiores
-</div>
-
-<h3>
-Suite principal
-</h3>
-
+<h3>Web Design</h3>
 </div>
 
 </div>
@@ -1890,252 +1047,6 @@ Suite principal
 </div>
 
 </section>
-
-
-
-<!-- =========================
-     DEPOIMENTOS
-========================= -->
-
-<section class="section testimonials" id="depoimentos">
-
-<div class="center-heading reveal">
-
-<div class="section-label">
-Depoimentos
-</div>
-
-<h2 class="section-title">
-O que dizem os nossos <span>clientes.</span>
-</h2>
-
-</div>
-
-
-<div class="testimonial-grid">
-
-
-<div class="testimonial reveal">
-
-<div class="quote">
-“
-</div>
-
-<p>
-O convite digital ficou perfeito! Os convidados adoraram
-a interatividade e a elegância. Superou tudo o que imaginávamos.
-</p>
-
-<div class="client">
-
-<div class="client-letter">
-A
-</div>
-
-<div>
-
-<strong>
-Ariela Mendes
-</strong>
-
-<span>
-Noiva
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<div class="testimonial reveal">
-
-<div class="quote">
-“
-</div>
-
-<p>
-A tabela de preços transformou a imagem do restaurante.
-Profissionalismo e criatividade em cada detalhe.
-</p>
-
-<div class="client">
-
-<div class="client-letter">
-N
-</div>
-
-<div>
-
-<strong>
-Nelson Cabral
-</strong>
-
-<span>
-Proprietário — Cascata Bar
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<div class="testimonial reveal">
-
-<div class="quote">
-“
-</div>
-
-<p>
-Reformámos a sala com a Amora e o resultado foi um sonho.
-Elegante, funcional e absolutamente premium.
-</p>
-
-<div class="client">
-
-<div class="client-letter">
-S
-</div>
-
-<div>
-
-<strong>
-Sílvia Domingos
-</strong>
-
-<span>
-Cliente residencial
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     FAQ
-========================= -->
-
-<section class="section">
-
-<div class="faq">
-
-<div class="center-heading reveal">
-
-<div class="section-label">
-FAQ
-</div>
-
-<h2 class="section-title">
-Perguntas <span>frequentes</span>
-</h2>
-
-</div>
-
-
-<div class="faq-item">
-
-<button class="faq-question">
-Quais serviços a Amora Studio oferece?
-
-<span class="faq-icon">+</span>
-
-</button>
-
-<div class="faq-answer">
-
-<p>
-Design de interiores residenciais e comerciais, convites
-digitais interativos e artes gráficas premium como
-tabelas de preços, cardápios, catálogos e flyers.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="faq-item">
-
-<button class="faq-question">
-Como funciona o processo de contratação?
-
-<span class="faq-icon">+</span>
-
-</button>
-
-<div class="faq-answer">
-
-<p>
-O processo começa com uma conversa para compreender
-as necessidades do projeto. Depois definimos o serviço,
-briefing, orçamento e prazo antes de iniciar o trabalho.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="faq-item">
-
-<button class="faq-question">
-Trabalham em toda Angola?
-
-<span class="faq-icon">+</span>
-
-</button>
-
-<div class="faq-answer">
-
-<p>
-Sim. A Amora Studio atende clientes em diferentes
-localidades de Angola, incluindo projetos realizados
-remotamente.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="faq-item">
-
-<button class="faq-question">
-Quanto tempo leva um projeto?
-
-<span class="faq-icon">+</span>
-
-</button>
-
-<div class="faq-answer">
-
-<p>
-O prazo depende do tipo e da complexidade do projeto.
-Após analisarmos o briefing, apresentamos o prazo
-estimado juntamente com a proposta.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
 
 
 <!-- =========================
@@ -2144,122 +1055,29 @@ estimado juntamente com a proposta.
 
 <section class="contact" id="contacto">
 
-<div class="contact-container">
-
-<div class="reveal">
-
-<div class="section-label">
+<div class="small-title">
 Vamos criar juntos
 </div>
 
 <h2>
-Pronto para elevar o seu projeto?
+Tem um projeto<br>
+em mente?
 </h2>
 
-<p class="contact-description">
-Fale connosco agora mesmo e receba uma proposta personalizada.
-Do primeiro esboço à entrega final, cuidamos de tudo com elegância.
+<p>
+Fale connosco e conte-nos a sua ideia.
+Será um prazer transformar o seu projeto em algo único.
 </p>
 
-<br>
-
 <a
-href="https://wa.me/244951031634"
-class="btn btn-dark">
+href="https://wa.me/244951031634?text=Olá%20Amora%20Studio,%20vim%20através%20do%20site%20e%20gostaria%20de%20falar%20sobre%20um%20projeto."
+class="whatsapp">
 
-WhatsApp direto · 951 031 634
+WhatsApp · 951 031 634
 
 </a>
 
-</div>
-
-
-<form class="contact-form reveal" id="contactForm">
-
-<div class="form-group">
-
-<label>
-Nome
-</label>
-
-<input
-type="text"
-id="nome"
-placeholder="O seu nome"
-required>
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-Serviço de interesse
-</label>
-
-<select id="servico" required>
-
-<option value="">
-Selecione um serviço
-</option>
-
-<option>
-Design de Interiores
-</option>
-
-<option>
-Projetos Arquitetônicos
-</option>
-
-<option>
-Convites Digitais
-</option>
-
-<option>
-Convites Físicos
-</option>
-
-<option>
-Design Gráfico
-</option>
-
-<option>
-Websites
-</option>
-
-</select>
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-Mensagem
-</label>
-
-<textarea
-id="mensagem"
-placeholder="Conte-nos um pouco sobre o seu projeto..."
-required></textarea>
-
-</div>
-
-
-<button
-type="submit"
-class="form-button">
-
-Enviar via WhatsApp
-
-</button>
-
-</form>
-
-</div>
-
 </section>
-
 
 
 <!-- =========================
@@ -2268,8 +1086,7 @@ Enviar via WhatsApp
 
 <footer>
 
-<div class="footer-grid">
-
+<div class="footer-content">
 
 <div>
 
@@ -2277,89 +1094,33 @@ Enviar via WhatsApp
 Amora <span>Studio</span>
 </div>
 
-<p class="footer-description">
-Design & Arquitetura exclusiva.
-Convites digitais interativos, interiores premium
-e artes gráficas que valorizam o seu negócio.
+<p class="footer-text">
+design e arquitetura exclusiva
 </p>
 
 </div>
 
 
-<div class="footer-column">
+<div class="footer-links">
 
-<h4>
-Contacto
-</h4>
-
-<p>
-951 031 634
-</p>
-
-<p>
-933 091 670
-</p>
-
-<p>
-hello@amorastudio.ao
-</p>
-
-<p>
-Luanda, Angola
-</p>
-
-<p>
-Seg – Sáb • 08:00 – 19:00
-</p>
-
-</div>
-
-
-<div class="footer-column">
-
-<h4>
-Explorar
-</h4>
-
-<a href="#sobre">
-Sobre nós
-</a>
-
-<a href="#servicos">
-Serviços
-</a>
-
-<a href="#portfolio">
-Portfólio
-</a>
-
-<a href="#depoimentos">
-Depoimentos
-</a>
-
-<a href="#contacto">
-Contacto
-</a>
+<a href="#inicio">Início</a>
+<a href="#sobre">Sobre nós</a>
+<a href="#servicos">Serviços</a>
+<a href="#portfolio">Portfólio</a>
+<a href="#contacto">Contacto</a>
 
 </div>
 
 </div>
 
 
-<div class="footer-bottom">
+<div class="copyright">
 
-<span>
 © 2026 Amora Studio. Todos os direitos reservados.
-</span>
-
-<span>
-Design & Arquitetura Exclusiva
-</span>
 
 </div>
 
 </footer>
-
 
 
 <!-- =========================
@@ -2367,38 +1128,32 @@ Design & Arquitetura Exclusiva
 ========================= -->
 
 <a
-href="https://wa.me/244951031634"
-class="whatsapp"
-aria-label="WhatsApp">
+class="whatsapp-float"
+href="https://wa.me/244951031634?text=Olá%20Amora%20Studio,%20gostaria%20de%20solicitar%20informações."
+aria-label="Falar com a Amora Studio pelo WhatsApp">
 
 ☏
 
 </a>
 
 
-
 <script>
 
-/* =========================
-   MENU MOBILE
-========================= */
-
-function toggleMenu(){
+function abrirMenu(){
 
     document
-    .getElementById("navMenu")
+    .getElementById("menu")
     .classList
     .toggle("active");
 
 }
 
-
-document.querySelectorAll(".nav-menu a").forEach(link => {
+document.querySelectorAll(".nav-links a").forEach(link => {
 
     link.addEventListener("click", () => {
 
         document
-        .getElementById("navMenu")
+        .getElementById("menu")
         .classList
         .remove("active");
 
@@ -2406,191 +1161,7 @@ document.querySelectorAll(".nav-menu a").forEach(link => {
 
 });
 
-
-/* =========================
-   FAQ
-========================= */
-
-document.querySelectorAll(".faq-question").forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        const item = button.parentElement;
-
-        document.querySelectorAll(".faq-item").forEach(other => {
-
-            if(other !== item){
-                other.classList.remove("active");
-            }
-
-        });
-
-        item.classList.toggle("active");
-
-    });
-
-});
-
-
-/* =========================
-   FORMULÁRIO → WHATSAPP
-========================= */
-
-document
-.getElementById("contactForm")
-.addEventListener("submit", function(event){
-
-    event.preventDefault();
-
-    const nome =
-    document.getElementById("nome").value;
-
-    const servico =
-    document.getElementById("servico").value;
-
-    const mensagem =
-    document.getElementById("mensagem").value;
-
-    const texto =
-    `Olá Amora Studio!
-
-Meu nome é ${nome}.
-
-Tenho interesse no serviço:
-${servico}
-
-Mensagem:
-${mensagem}`;
-
-    const url =
-    "https://wa.me/244951031634?text="
-    + encodeURIComponent(texto);
-
-    window.open(url,"_blank");
-
-});
-
-
-/* =========================
-   REVEAL
-========================= */
-
-const reveals =
-document.querySelectorAll(".reveal");
-
-const observer =
-new IntersectionObserver(
-
-(entries) => {
-
-entries.forEach(entry => {
-
-if(entry.isIntersecting){
-
-entry.target.classList.add("visible");
-
-}
-
-});
-
-},
-
-{
-threshold:.12
-}
-
-);
-
-reveals.forEach(element => {
-
-observer.observe(element);
-
-});
-
-
-/* =========================
-   CONTADORES
-========================= */
-
-const counters =
-document.querySelectorAll(".number");
-
-let countersStarted = false;
-
-
-function startCounters(){
-
-    if(countersStarted) return;
-
-    countersStarted = true;
-
-    counters.forEach(counter => {
-
-        const target =
-        Number(counter.dataset.target);
-
-        let current = 0;
-
-        const increment =
-        target / 60;
-
-        const update = () => {
-
-            current += increment;
-
-            if(current < target){
-
-                counter.textContent =
-                Math.floor(current) +
-                (target === 100 ? "%" : "+");
-
-                requestAnimationFrame(update);
-
-            }else{
-
-                counter.textContent =
-                target +
-                (target === 100 ? "%" : "+");
-
-            }
-
-        };
-
-        update();
-
-    });
-
-}
-
-
-const numberSection =
-document.querySelector(".numbers");
-
-
-const numberObserver =
-new IntersectionObserver(
-
-(entries) => {
-
-if(entries[0].isIntersecting){
-
-startCounters();
-
-}
-
-},
-
-{
-threshold:.4
-}
-
-);
-
-
-numberObserver.observe(numberSection);
-
 </script>
-
 
 </body>
 </html>
