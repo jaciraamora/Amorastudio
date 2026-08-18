@@ -42,7 +42,6 @@ body{
    MENU
 ========================= */
 
-
 header{
     position:fixed;
     top:0;
@@ -810,6 +809,33 @@ footer{
     margin-top:8px;
 }
 
+.service-card{
+    background:white;
+    overflow:hidden;
+    transition:.4s;
+    border:1px solid rgba(193,168,151,.12);
+}
+
+.service-card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 20px 50px rgba(50,40,35,.1);
+}
+
+.service-image{
+    height:290px;
+    overflow:hidden;
+}
+
+.service-image img{
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.service-card:hover .service-image img{
+    transform:scale(1.06);
+}
+
 
 </style>
 </head>
@@ -1176,7 +1202,7 @@ alt="Design gráfico">
 <div class="service-image">
 
 <img
-src="fotoc.jpg"
+src="fotoc.jpg.jpg"
 alt="Convites Digitais">
 
 </div>
@@ -1420,6 +1446,70 @@ document.querySelectorAll(".nav-links a").forEach(link => {
     });
 
 });
+
+   const target =
+        Number(counter.dataset.target);
+
+        let current = 0;
+
+        const increment =
+        target / 60;
+
+        const update = () => {
+
+            current += increment;
+
+            if(current < target){
+
+                counter.textContent =
+                Math.floor(current) +
+                (target === 100 ? "%" : "+");
+
+                requestAnimationFrame(update);
+
+            }else{
+
+                counter.textContent =
+                target +
+                (target === 100 ? "%" : "+");
+
+            }
+
+        };
+
+        update();
+
+    });
+
+}
+
+
+const numberSection =
+document.querySelector(".numbers");
+
+
+const numberObserver =
+new IntersectionObserver(
+
+(entries) => {
+
+if(entries[0].isIntersecting){
+
+startCounters();
+
+}
+
+},
+
+{
+threshold:.4
+}
+
+);
+
+
+numberObserver.observe(numberSection);
+
 
 </script>
 
