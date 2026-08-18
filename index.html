@@ -138,7 +138,7 @@ header{
 .small-title{
     text-transform:uppercase;
     letter-spacing:4px;
-    font-size:14px;
+    font-size:12px;
     color:var(--principal-escuro);
     font-weight:600;
     margin-bottom:12px;
@@ -222,7 +222,7 @@ header{
     position:absolute;
     bottom:25px;
     left:25px;
-    background: rgba(255, 255, 255, 0.70);
+    background: rgba(255, 255, 255, 0.60);
 backdrop-filter: blur(10px);
 -webkit-backdrop-filter: blur(10px);
     padding:20px 25px;
@@ -372,8 +372,11 @@ section{
     text-align:center;
     background:
     linear-gradient(
-        rgba(38,34,32,.62),
-        rgba(38,34,32,.62)
+        linear-gradient(
+
+        rgba(38,34,32,.75),
+
+        rgba(38,34,32,.75)
     ),
     url("pro.jpg");
     background-size:cover;
@@ -444,6 +447,16 @@ section{
     background:linear-gradient(transparent,rgba(0,0,0,.7));
 }
 
+.portfolio-overlay2{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    padding:25px;
+    color:#ffffff;
+    background:linear-gradient(transparent,rgba(0,0,0,.7));
+}
+
 .portfolio-overlay h3{
     font-family:"DM Serif Display",serif;
     font-size:25px;
@@ -477,13 +490,14 @@ section{
     display:inline-flex;
     align-items:center;
     gap:10px;
-    background:#25D366;
+    background:#C1A897;
     color:white;
     text-decoration:none;
     padding:16px 28px;
     font-weight:600;
     font-size:13px;
     transition:.3s;
+    border-radius:16px;
 }
 
 .whatsapp:hover{
@@ -569,7 +583,7 @@ footer{
     width:58px;
     height:58px;
     border-radius:50%;
-    background:#C1A897;
+    background:ffffff;
     color:white;
     display:flex;
     align-items:center;
@@ -579,7 +593,7 @@ footer{
     box-shadow:0 8px 25px rgba(0,0,0,.2);
     z-index:999;
     transition:.3s;
-    border-radius:10px;
+    
 }
 
 .whatsapp-float:hover{
@@ -1136,9 +1150,11 @@ um design exclusivo.
 </h2>
 
 <p>
+<div class= "con">
 Projetamos experiências que unem criatividade,
 sofisticação e funcionalidade.
 </p>
+</div>
 
 </div>
 
@@ -1203,7 +1219,7 @@ alt="Arquitetura">
 <div class="portfolio-item">
 
 <img
-src="ga.jpj"
+src="ga.jpg"
 alt="Design gráfico">
 
 <div class="portfolio-overlay">
@@ -1230,7 +1246,7 @@ alt="Website">
 src="fotoc.jpg.jpg"
 alt="convites digitais">
 
-<div class="portfolio-overlay">
+<div class="portfolio-overlay2">
 <h3>Convites Digitais A partir de 6.000kz</h3>
 
 <h5 class="con"> 
