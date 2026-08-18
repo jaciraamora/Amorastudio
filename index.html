@@ -42,6 +42,7 @@ body{
    MENU
 ========================= */
 
+
 header{
     position:fixed;
     top:0;
@@ -91,7 +92,7 @@ header{
 .nav-links a{
     text-decoration:none;
     color:var(--escuro);
-    font-size:13px;
+    font-size:18px;
     font-weight:500;
     transition:.3s;
 }
@@ -166,6 +167,7 @@ header{
     display:flex;
     gap:15px;
     flex-wrap:wrap;
+    border-radius:20px;
 }
 
 .btn{
@@ -176,24 +178,29 @@ header{
     font-weight:600;
     letter-spacing:.5px;
     transition:.3s;
+    border-radius:20px;
 }
 
 .btn-primary{
     background:var(--escuro);
     color:white;
+    border-radius:20px;
 }
 
 .btn-primary:hover{
     background:var(--principal-escuro);
+    border-radius:20px;
 }
 
 .btn-outline{
     border:1px solid var(--escuro);
     color:var(--escuro);
+    border-radius:20px;
 }
 
 .btn-outline:hover{
     background:var(--escuro);
+    border-radius:20px;
     color:white;
 }
 
@@ -569,6 +576,7 @@ footer{
 
 .whatsapp-float:hover{
     transform:scale(1.08);
+    border-radius:20px;
 }
 
 /* =========================
@@ -635,7 +643,6 @@ footer{
 
 }
 
-@media(max-width:600px){
 
     section{
         padding:70px 6%;
@@ -676,6 +683,133 @@ footer{
     }
 
 }
+
+.footer-column{
+    width:100%;
+}
+
+.footer-column h4{
+    font-size:20px;
+    font-weight:400;
+    margin-bottom:20px;
+    color:white;
+}
+
+.footer-column a{
+    display:block;
+    color:#aaa39e;
+    font-size:15px;
+    line-height:2.2;
+}
+
+
+.footer-column p,
+.footer-column a{
+    display:block;
+    color:#aaa39e;
+    font-size:11px;
+    line-height:2;
+}
+
+.footer-column a:hover{
+    color:white;
+}
+
+.footer-bottom{
+    max-width:1200px;
+    margin:45px auto 0;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.1);
+    display:flex;
+    justify-content:space-between;
+    color:#77716d;
+    font-size:9px;
+}
+.footer-grid{
+    max-width:1200px;
+    margin:auto;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:35px;
+}
+
+.footer-brand{
+    width:100%;
+}
+
+.footer-column{
+    width:100%;
+}
+
+.footer-column h4{
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    margin:0 0 20px 0;
+}
+
+.footer-column a{
+    display:block;
+    color:#aaa39e;
+    font-size:12px;
+    line-height:2.2;
+    margin:0;
+}
+
+.footer-column a:hover{
+    color:#C1A897;
+}
+.footer-description{
+    max-width:350px;
+    color:#aaa39e;
+    font-size:11px;
+    line-height:1.8;
+}
+
+
+/* =========================
+   NUMBERS
+========================= */
+
+.numbers{
+    background:var(--escuro);
+    color:white;
+    padding:75px 7%;
+}
+
+.numbers-grid{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
+
+.number-item{
+    text-align:center;
+    border-right:1px solid rgba(255,255,255,.15);
+}
+
+.number-item:last-child{
+    border-right:none;
+}
+
+.number{
+    font-family:"DM Serif Display",serif;
+    color:var(--bege);
+    font-size:48px;
+}
+
+.number-label{
+    color:#c4bfbc;
+    font-size:11px;
+    margin-top:8px;
+}
+
 
 </style>
 </head>
@@ -1037,6 +1171,44 @@ alt="Design gráfico">
 
 </div>
 
+<div class="service-card reveal">
+
+<div class="service-image">
+
+<img
+src="fotoc.jpg"
+alt="Convites Digitais">
+
+</div>
+
+<div class="service-body">
+
+<div class="price">
+Desde 6.000 Kz
+</div>
+
+<h3>
+Convites Digitais Interativos
+</h3>
+
+<p>
+Convites modernos, elegantes e personalizados com
+confirmação de presença, GPS, manual do convidado
+e muito mais.
+</p>
+
+<ul class="service-list">
+
+<li>Save the date</li>
+<li>Confirmação de presença com lista dos convidados</li>
+<li>Localização GPS integrada</li>
+<li>Mural de carinho</li>
+
+</ul>
+
+<a href="#contacto" class="service-link">
+Solicitar orçamento →
+</a>
 
 <div class="portfolio-item large">
 
@@ -1050,6 +1222,68 @@ alt="Website">
 
 </div>
 
+
+</div>
+
+</div>
+
+</section>
+<!-- =========================
+     NÚMEROS
+========================= -->
+
+<section class="numbers">
+
+<div class="numbers-grid">
+
+<div class="number-item">
+
+<div class="number" data-target="150">
+0+
+</div>
+
+<div class="number-label">
+Projetos entregues
+</div>
+
+</div>
+
+
+<div class="number-item">
+
+<div class="number" data-target="200">
+0+
+</div>
+
+<div class="number-label">
+Clientes felizes
+</div>
+
+</div>
+
+
+<div class="number-item">
+
+<div class="number" data-target="7">
+0
+</div>
+
+<div class="number-label">
+Anos de estúdio
+</div>
+
+</div>
+
+
+<div class="number-item">
+
+<div class="number" data-target="100">
+0%
+</div>
+
+<div class="number-label">
+Satisfação
+</div>
 
 </div>
 
@@ -1093,41 +1327,58 @@ WhatsApp · 951 031 634
      FOOTER
 ========================= -->
 
+
 <footer>
 
-<div class="footer-content">
+    <div class="footer-grid">
 
-<div>
+        <!-- AMORA STUDIO -->
+        <div class="footer-brand">
 
-<div class="footer-logo">
-Amora <span>Studio</span>
-</div>
+            <div class="footer-logo">
+                Amora <span>Studio</span>
+            </div>
 
-<p class="footer-text">
-design e arquitetura exclusiva
+            <p class="footer-description">
+                <p class="footer-description">
+Design & Arquitetura exclusiva.
+Convites digitais interativos, interiores premium
+e artes gráficas que valorizam o seu negócio.
 </p>
 
-</div>
+           
+
+        </div>
 
 
-<div class="footer-links">
+        <!-- EXPLORAR -->
+        <div class="footer-column">
 
-<a href="#inicio">Início</a>
-<a href="#sobre">Sobre nós</a>
-<a href="#servicos">Serviços</a>
-<a href="#portfolio">Portfólio</a>
-<a href="#contacto">Contacto</a>
+            <h4>Explorar</h4>
 
-</div>
+            <a href="#sobre">Sobre nós</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#portfolio">Portfólio</a>
+            <a href="#depoimentos">Depoimentos</a>
+            <a href="#contacto">Contacto</a>
 
-</div>
+        </div>
+
+    </div>
 
 
-<div class="copyright">
+    <div class="footer-bottom">
 
-© 2026 Amora Studio. Todos os direitos reservados.
+        <span>
+            © 2026 Amora Studio. Todos os direitos reservados.
+        </span>
 
-</div>
+        <span>
+            Design & Arquitetura Exclusiva
+        </span>
+
+    </div>
+
 
 </footer>
 
