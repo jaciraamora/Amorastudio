@@ -837,6 +837,12 @@ footer{
 }
 
 
+.con {
+font-size:10px;
+font-family:"DM Serif Display",serif;
+
+}
+
 </style>
 </head>
 
@@ -1197,44 +1203,26 @@ alt="Design gráfico">
 
 </div>
 
-<div class="service-card reveal">
-
-<div class="service-image">
+<div class="portfolio-item">
 
 <img
-src="fotoc.jpg.jpg"
-alt="Convites Digitais">
+src="fotocjpg.jpg"
+alt="convites digitais">
 
-</div>
-
-<div class="service-body">
-
-<div class="price">
-Desde 6.000 Kz
-</div>
-
-<h3>
-Convites Digitais Interativos
-</h3>
+<div class="portfolio-overlay">
+<h3>Convites Digitais A partir de 6.000kz</h3>
 
 <p>
+<h5 class="con"> 
 Convites modernos, elegantes e personalizados com
 confirmação de presença, GPS, manual do convidado
-e muito mais.
+e muito mais. 
 </p>
+</h5>
+
+</div>
 
 <ul class="service-list">
-
-<li>Save the date</li>
-<li>Confirmação de presença com lista dos convidados</li>
-<li>Localização GPS integrada</li>
-<li>Mural de carinho</li>
-
-</ul>
-
-<a href="#contacto" class="service-link">
-Solicitar orçamento →
-</a>
 
 <div class="portfolio-item large">
 
@@ -1447,7 +1435,21 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 
 });
 
-   const target =
+   const counters =
+document.querySelectorAll(".number");
+
+let countersStarted = false;
+
+
+function startCounters(){
+
+    if(countersStarted) return;
+
+    countersStarted = true;
+
+    counters.forEach(counter => {
+
+        const target =
         Number(counter.dataset.target);
 
         let current = 0;
