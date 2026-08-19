@@ -83,6 +83,10 @@ header{
     color:#C1A897;
 }
 
+.nav-links.active{
+    display:flex;
+}
+
 .nav-links{
     display:flex;
     gap:30px;
@@ -142,7 +146,7 @@ header{
     font-weight:600;
     margin-bottom:12px;
 }
-
+ 
 .hero h1{
     font-family:"DM Serif Display",serif;
     font-size:clamp(50px,6vw,82px);
@@ -221,7 +225,7 @@ header{
     position:absolute;
     bottom:25px;
     left:25px;
-    background:rgba(255,255,255,0.50);
+    background:rgba(255,255,255,0.35);
     backdrop-filter:blur(10px);
     -webkit-backdrop-filter:blur(10px);
     padding:20px 25px;
@@ -466,9 +470,6 @@ section{
     font-weight:400;
 }
 
-.con{
-    font-size:10px;
-    font-family:"DM Serif Display",serif;
 }
 
 /* =========================
@@ -761,7 +762,7 @@ footer{
     position:absolute;
     inset:0;
     padding:25px;
-    color:black;
+    color:white;
     background:linear-gradient(
         transparent 30%,
         rgba(0,0,0,.75)
@@ -776,11 +777,11 @@ footer{
     font-family:"DM Serif Display",serif;
     font-size:26px;
     font-weight:400;
-    margin-bottom:145px;
+    margin-bottom:200px;
 }
 
 .portfolio-overlay2 .con{
-    font-size:10px;
+    font-size:15px;
     font-family:"DM Serif Display",serif;
     line-height:1.6;
     margin:0;
@@ -788,11 +789,27 @@ footer{
 
 .con { 
 color:White;
-font-size:9px;
+font-size:12px;
 top:-2px;
 position:relative;
 margin-bottom:5px;
 }
+.portfolio-overlay3{
+    position:absolute;
+    inset:0;
+    padding:25px;
+    color:white;
+    background:linear-gradient(
+        transparent 30%,
+        rgba(0,0,0,.75)
+    );
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+}
+
+
 
 </style>
 </head>
@@ -820,7 +837,7 @@ Amora <span>Studio</span>
 <ul class="nav-links" id="menu">
 
 <li><a href="#inicio">Início</a></li>
-<li><a href="#quem somos">Quem Somos </a></li>
+<li><a href="#sobre">Quem Somos </a></li>
 <li><a href="#servicos">Serviços</a></li>
 <li><a href="#portfolio">Portfólio</a></li>
 <li><a href="#contacto">Contacto</a></li>
@@ -917,20 +934,15 @@ Criamos com<br>
 
 <p>
 A Amora Studio é um estúdio criativo dedicado ao
-desenvolvimento de projetos que unem estética,
-funcionalidade e identidade.
+desenvolvimento de projetos arquitetônicos, design de interiores, Design gráfico, convites e web sites
+
 </p>
 
 <p>
-Trabalhamos desde a criação de ambientes e projetos
-arquitetônicos até à comunicação visual, convites e
-desenvolvimento de websites.
+há mais de 5 anos somos motivados e apaixonados por 
+criar espaços que combinem funcionalidades com estética excepcional, e a personalização de cada design 
 </p>
 
-<p>
-Cada projeto é pensado de forma personalizada,
-respeitando a essência, os objetivos e a visão de cada cliente.
-</p>
 
 <div class="signature">
 Amora Studio
@@ -970,17 +982,21 @@ visuais, espaços e experiências memoráveis.
 <div class="services">
 
 
-<div class="service" onclick="abrirImagem('inter.jpg')">
+<div class="service" onclick="abrirImagem('fotoc.jpg')">
 
 <div class="service-number">01</div>
 
 <h3>
-Design de Interiores
+Convites
 </h3>
 
 <p>
-Projetamos ambientes elegantes, funcionais e personalizados,
-pensados para refletir a personalidade de cada cliente.
+Fazemos convites digitais e interativos para casamentos,
+eventos, aniversários e ocasiões especiais, chás,e.t.c
+Convites modernos, elegantes e personalizados.
+• Com confirmação de presença com lista dos confirmados<br>
+• Localização via GPS<br>
+• Com nomes ou sem nomes dos convidados <br>
 </p>
 
 </div>
@@ -1011,25 +1027,23 @@ Design Gráfico
 </h3>
 
 <p>
-Identidades visuais, materiais gráficos e soluções
+Cuidamos da sua Identidade visual, materiais gráficos, personalizados e soluções
 visuais para marcas e projetos.
 </p>
 
 </div>
 
 
-<div class="service" onclick="abrirImagem('fotoc.jpg.jpg')">
+<div class="service" onclick="abrirImagem('inter.jpg.jpg')">
 
 <div class="service-number">04</div>
-
 <h3>
-Convites
+Design de Interiores
 </h3>
 
 <p>
-Convites digitais e físicos para casamentos,
-eventos, aniversários e ocasiões especiais.
-Convites modernos, elegantes e personalizados.
+Projetamos ambientes elegantes, funcionais e funcionalidade e organização dos espaços.
+pensados para refletir a personalidade de cada cliente.
 </p>
 
 </div>
@@ -1044,8 +1058,8 @@ Websites
 </h3>
 
 <p>
-Criação de websites modernos, responsivos e pensados
-para apresentar marcas, serviços e projetos.
+Criação de websites Corporativos, Lojas virtuais e Sites personalizados 
+Soluções digitais que conectam, representam e fazem o seu negócio crescer.
 </p>
 
 </div>
@@ -1060,14 +1074,22 @@ para apresentar marcas, serviços e projetos.
      MODAL DAS IMAGENS
 ========================= -->
 
-<div id="imagemModal" class="imagem-modal" onclick="fecharImagem()">
-
-<span class="fechar">&times;</span>
-
-<img id="imagemAmpliada" src="" alt="Projeto Amora Studio">
+<div class="about-image">
+<img
+src="servis.jpg"
+alt="serviços">
 
 </div>
 
+<div class="buttons">
+
+<a href="https://wa.me/244951031634?text=Olá%20Amora%20Studio,%20gostaria%20de%20solicitar%20um%20orçamento."
+class="btn btn-outline"
+style="display:block; width:max-content; margin:30px auto 30px;">
+Solicitar orçamento
+</a>
+
+</div>
 
 
 <!-- =========================
@@ -1177,22 +1199,11 @@ alt="Website">
 src="fotoc.jpg.jpg"
 alt="Convites digitais">
 
-<div class="portfolio-overlay2">
+<div class="portfolio-overlay">
+<h3>Convites digitaisv e interativos </h3><br>
+<h5 class="con">A partir de 6.000 Kz</h5>
 
-<h3>Convites Digitais a partir de 6.000 Kz<br></h3>
- 
- 
-<h5 class="con">
-
-
-
-
-
-• Com confirmação de presença com lista dos confirmados<br>
-• Localização via GPS<br>
-• Com nomes ou sem nomes dos convidados <br>
-• Manual do convidado e outros
-</h5>
+</div> 
 
 </div>
 
@@ -1359,27 +1370,22 @@ aria-label="Falar com a Amora Studio pelo WhatsApp">
 
 <script>
 
-function abrirMenu(){
+<script>
 
-    document
-    .getElementById("menu")
-    .classList
-    .toggle("active");
-
+function abrirMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("active");
 }
 
-document.querySelectorAll(".nav-links a").forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        document
-        .getElementById("menu")
-        .classList
-        .remove("active");
-
+document.querySelectorAll(".nav-links a").forEach(function(link) {
+    link.addEventListener("click", function() {
+        document.getElementById("menu").classList.remove("active");
     });
-
 });
+
+/* =========================
+   CONTADORES
+========================= */
 
 const counters =
 document.querySelectorAll(".number");
@@ -1454,17 +1460,7 @@ threshold:.4
 
 numberObserver.observe(numberSection);
 
-function abrirImagem(imagem){
 
-    document.getElementById("imagemAmpliada").src = imagem;
-
-    document.getElementById("imagemModal").style.display = "flex";
-
-}
-
-function fecharImagem(){
-
-    document.getElementById("imagemModal").style.display = "none";
 </script>
 
 </body>
