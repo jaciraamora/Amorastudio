@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Depoimentos | Amora Studio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --principal:#C1A897;
+    --principal-escuro:#a88e7c;
+    --creme:#f8f4f0;
+    --escuro:#262220;
+    --branco:#ffffff;
+    --cinza:#716b67;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Montserrat",sans-serif;
+    color:var(--escuro);
+    background:var(--creme);
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(193,168,151,.25);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    height:78px;
+    padding:0 25px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+    color:var(--escuro);
+}
+
+.logo-area img{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid var(--principal);
+}
+
+.logo-text{
+    font-family:"DM Serif Display",serif;
+    font-size:27px;
+}
+
+.logo-text span{
+    color:var(--principal);
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:var(--escuro);
+    font-size:14px;
+    font-weight:500;
+}
+
+.nav-links a:hover{
+    color:var(--principal-escuro);
+}
+
+.menu-btn{
+    display:none;
+    border:0;
+    background:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.depoimentos{
+    min-height:100vh;
+    padding:140px 7% 80px;
+}
+
+.section-heading{
+    text-align:center;
+    max-width:600px;
+    margin:0 auto 50px;
+}
+
+.small-title{
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-size:11px;
+    color:var(--principal-escuro);
+    font-weight:600;
+    margin-bottom:12px;
+}
+
+.section-title{
+    font-family:"DM Serif Display",serif;
+    font-size:52px;
+    font-weight:400;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.section-title span{
+    color:var(--principal-escuro);
+}
+
+.section-heading p{
+    color:var(--cinza);
+    line-height:1.8;
+    font-size:14px;
+}
+
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+.comentario-form{
+    max-width:600px;
+    margin:0 auto 60px;
+
+    background:white;
+    padding:30px;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.07);
+
+}
+
+.comentario-form h3{
+    font-family:"DM Serif Display",serif;
+    font-size:28px;
+    font-weight:400;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.comentario-form input,
+.comentario-form textarea{
+
+    width:100%;
+
+    border:1px solid rgba(193,168,151,.4);
+
+    background:#fff;
+
+    padding:15px;
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:13px;
+
+    outline:none;
+
+    border-radius:10px;
+
+    margin-bottom:15px;
+}
+
+.comentario-form textarea{
+
+    min-height:120px;
+
+    resize:vertical;
+
+}
+
+.comentario-form input:focus,
+.comentario-form textarea:focus{
+
+    border-color:var(--principal);
+
+}
+
+
+/* =========================
+   ESTRELAS
+========================= */
+
+.estrelas{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:6px;
+
+    margin:5px 0 20px;
+
+}
+
+.estrelas span{
+
+    font-size:30px;
+
+    color:#d8d2ce;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.estrelas span.ativa{
+
+    color:var(--principal);
+
+}
+
+
+/* =========================
+   BOTÃO
+========================= */
+
+.btn-enviar{
+
+    display:block;
+
+    margin:0 auto;
+
+    border:0;
+
+    background:var(--escuro);
+
+    color:white;
+
+    padding:15px 28px;
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.btn-enviar:hover{
+
+    background:var(--principal-escuro);
+
+    transform:translateY(-2px);
+
+}
+
+#mensagemComentario{
+
+    text-align:center;
+
+    margin-top:15px;
+
+    font-size:12px;
+
+    color:var(--cinza);
+
+}
+
+
+/* =========================
+   LISTA DE COMENTÁRIOS
+========================= */
+
+.lista-comentarios{
+
+    max-width:1000px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+.comentario-card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:16px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.06);
+
+}
+
+.comentario-nome{
+
+    font-family:"DM Serif Display",serif;
+
+    font-size:21px;
+
+    margin-bottom:8px;
+
+}
+
+.comentario-estrelas{
+
+    color:var(--principal);
+
+    font-size:17px;
+
+    margin-bottom:12px;
+
+}
+
+.comentario-texto{
+
+    color:var(--cinza);
+
+    font-size:13px;
+
+    line-height:1.8;
+
+}
+
+.carregando{
+
+    grid-column:1/-1;
+
+    text-align:center;
+
+    color:var(--cinza);
+
+    font-size:13px;
+
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer{
+
+    background:var(--escuro);
+
+    color:white;
+
+    padding:45px 7% 25px;
+
+    text-align:center;
+
+}
+
+.footer-logo{
+
+    font-family:"DM Serif Display",serif;
+
+    font-size:30px;
+
+    margin-bottom:10px;
+
+}
+
+.footer-logo span{
+
+    color:var(--principal);
+
+}
+
+.footer-description{
+
+    color:#aaa39e;
+
+    font-size:11px;
+
+    line-height:1.8;
+
+    max-width:350px;
+
+    margin:auto;
+
+}
+
+.voltar{
+
+    display:inline-block;
+
+    margin-top:25px;
+
+    color:var(--principal);
+
+    text-decoration:none;
+
+    font-size:12px;
+
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:800px){
+
+    .nav-links{
+
+        position:absolute;
+
+        top:78px;
+
+        left:0;
+
+        width:100%;
+
+        background:white;
+
+        display:none;
+
+        flex-direction:column;
+
+        padding:25px;
+
+        gap:20px;
+
+        border-bottom:1px solid #eee;
+
+    }
+
+    .nav-links.active{
+
+        display:flex;
+
+    }
+
+    .menu-btn{
+
+        display:block;
+
+    }
+
+    .depoimentos{
+
+        padding:120px 6% 60px;
+
+    }
+
+    .section-title{
+
+        font-size:42px;
+
+    }
+
+    .lista-comentarios{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     MENU
+========================= -->
+
+<header>
+
+<nav class="navbar">
+
+
+<a href="index.html" class="logo-area">
+
+<img
+src="logoamora.png"
+alt="Amora Studio">
+
+<div class="logo-text">
+Amora <span>Studio</span>
+</div>
+
+</a>
+
+
+<button
+class="menu-btn"
+onclick="abrirMenu()">
+
+☰
+
+</button>
+
+
+<ul class="nav-links" id="menu">
+
+<li>
+<a href="index.html">Início</a>
+</li>
+
+<li>
+<a href="index.html#sobre">Quem somos</a>
+</li>
+
+<li>
+<a href="index.html#servicos">Serviços</a>
+</li>
+
+<li>
+<a href="index.html#portfolio">Portfólio</a>
+</li>
+
+<li>
+<a href="depoimentos.html">Depoimentos</a>
+</li>
+
+<li>
+<a href="index.html#contacto">Contacto</a>
+</li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+
+<!-- =========================
+     DEPOIMENTOS
+========================= -->
+
+<section class="depoimentos">
+
+
+<div class="section-heading">
+
+<div class="small-title">
+A experiência dos nossos clientes
+</div>
+
+<h1 class="section-title">
+
+O que dizem sobre a
+<span>Amora Studio</span>
+
+</h1>
+
+<p>
+
+A sua opinião é muito importante para nós.
+Conte-nos como foi a sua experiência.
+
+</p>
+
+</div>
+
+
+
+<!-- FORMULÁRIO -->
+
+<div class="comentario-form">
+
+<h3>
+Deixe o seu comentário
+</h3>
+
+
+<input
+type="text"
+id="nomeComentario"
+placeholder="Seu nome"
+maxlength="50">
+
+
+<textarea
+id="textoComentario"
+placeholder="Escreva o que achou..."
+maxlength="300"></textarea>
+
+
+<div class="estrelas" id="estrelas">
+
+<span data-star="1">★</span>
+<span data-star="2">★</span>
+<span data-star="3">★</span>
+<span data-star="4">★</span>
+<span data-star="5">★</span>
+
+</div>
+
+
+<button
+type="button"
+class="btn-enviar"
+onclick="enviarComentario()">
+
+Enviar comentário
+
+</button>
+
+
+<p id="mensagemComentario"></p>
+
+</div>
+
+
+
+<!-- COMENTÁRIOS -->
+
+<div
+id="listaComentarios"
+class="lista-comentarios">
+
+<p class="carregando">
+A carregar comentários...
+</p>
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="footer-logo">
+
+Amora <span>Studio</span>
+
+</div>
+
+<p class="footer-description">
+
+Design & Arquitetura Exclusiva.
+
+</p>
+
+<a
+href="index.html"
+class="voltar">
+
+← Voltar ao site
+
+</a>
+
+</footer>
+
+
+
+<!-- =========================
+     FIREBASE
+========================= -->
+
+<script type="module">
+
+import { initializeApp }
+
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+
+import {
+
+getDatabase,
+ref,
+push,
+onValue
+
+}
+
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+
+
+const firebaseConfig = {
+
+apiKey:
+"AIzaSyCWJzfI7ZyC56IWSN0CGf8N9etxVb0HPq0",
+
+authDomain:
+"lista-de-presentes-da.firebaseapp.com",
+
+databaseURL:
+"https://lista-de-presentes-da-default-rtdb.firebaseio.com",
+
+projectId:
+"lista-de-presentes-da",
+
+storageBucket:
+"lista-de-presentes-da.firebasestorage.app",
+
+messagingSenderId:
+"884088309111",
+
+appId:
+"1:884088309111:web:14004f508ccccb563f8d72"
+
+};
+
+
+
+const app =
+initializeApp(firebaseConfig);
+
+
+const database =
+getDatabase(app);
+
+
+const comentariosRef =
+ref(database,"comentarios");
+
+
+
+/* =========================
+   ESTRELAS
+========================= */
+
+let estrelaSelecionada = 5;
+
+
+document
+.querySelectorAll("#estrelas span")
+.forEach(star => {
+
+
+star.addEventListener("click",() => {
+
+
+estrelaSelecionada =
+Number(star.dataset.star);
+
+
+atualizarEstrelas();
+
+
+});
+
+
+});
+
+
+
+function atualizarEstrelas(){
+
+
+document
+.querySelectorAll("#estrelas span")
+.forEach(star => {
+
+
+const numero =
+Number(star.dataset.star);
+
+
+star.classList.toggle(
+
+"ativa",
+
+numero <= estrelaSelecionada
+
+);
+
+
+});
+
+
+}
+
+
+atualizarEstrelas();
+
+
+
+/* =========================
+   ENVIAR COMENTÁRIO
+========================= */
+
+window.enviarComentario =
+function(){
+
+
+const nome =
+document
+.getElementById("nomeComentario")
+.value
+.trim();
+
+
+const texto =
+document
+.getElementById("textoComentario")
+.value
+.trim();
+
+
+const mensagem =
+document
+.getElementById("mensagemComentario");
+
+
+
+if(!nome){
+
+mensagem.textContent =
+"Por favor, coloque o seu nome.";
+
+return;
+
+}
+
+
+if(!texto){
+
+mensagem.textContent =
+"Por favor, escreva o seu comentário.";
+
+return;
+
+}
+
+
+
+push(
+
+comentariosRef,
+
+{
+
+nome:nome,
+
+comentario:texto,
+
+estrelas:estrelaSelecionada,
+
+data:Date.now()
+
+}
+
+)
+
+
+.then(() => {
+
+
+document
+.getElementById("nomeComentario")
+.value="";
+
+
+document
+.getElementById("textoComentario")
+.value="";
+
+
+mensagem.textContent =
+"Comentário enviado com sucesso! ❤️";
+
+
+})
+
+
+.catch(error => {
+
+
+console.error(error);
+
+
+mensagem.textContent =
+"Não foi possível enviar o comentário.";
+
+});
+
+
+};
+
+
+
+/* =========================
+   MOSTRAR COMENTÁRIOS
+========================= */
+
+onValue(
+
+comentariosRef,
+
+snapshot => {
+
+
+const lista =
+document
+.getElementById("listaComentarios");
+
+
+lista.innerHTML="";
+
+
+
+if(!snapshot.exists()){
+
+
+lista.innerHTML =
+
+'<p class="carregando">Ainda não existem comentários. Seja o primeiro! ❤️</p>';
+
+return;
+
+}
+
+
+
+const comentarios=[];
+
+
+
+snapshot.forEach(item => {
+
+
+comentarios.push(item.val());
+
+
+});
+
+
+
+comentarios.reverse();
+
+
+
+comentarios.forEach(item => {
+
+
+let estrelas="";
+
+
+for(let i=1;i<=5;i++){
+
+
+estrelas +=
+
+i <= item.estrelas
+? "★"
+: "☆";
+
+
+}
+
+
+
+const card =
+document.createElement("div");
+
+
+card.className =
+"comentario-card";
+
+
+card.innerHTML = `
+
+<div class="comentario-nome">
+
+${escaparHTML(item.nome)}
+
+</div>
+
+<div class="comentario-estrelas">
+
+${estrelas}
+
+</div>
+
+<div class="comentario-texto">
+
+${escaparHTML(item.comentario)}
+
+</div>
+
+`;
+
+
+lista.appendChild(card);
+
+
+});
+
+
+});
+
+
+
+/* =========================
+   SEGURANÇA
+========================= */
+
+function escaparHTML(texto){
+
+const div =
+document.createElement("div");
+
+div.textContent=texto;
+
+return div.innerHTML;
+
+}
+
+
+
+</script>
+
+
+
+<!-- =========================
+     MENU JAVASCRIPT
+========================= -->
+
+<script>
+
+function abrirMenu(){
+
+document
+.getElementById("menu")
+.classList
+.toggle("active");
+
+}
+
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(link => {
+
+
+link.addEventListener("click",() => {
+
+
+document
+.getElementById("menu")
+.classList
+.remove("active");
+
+
+});
+
+
+});
+
+</script>
+
+
+</body>
+
+</html>
