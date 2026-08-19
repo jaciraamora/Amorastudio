@@ -13,6 +13,7 @@
 
 <style>
 
+
 :root{
     --principal:#C1A897;
     --principal-escuro:#a88e7c;
@@ -33,7 +34,7 @@ html{
 }
 
 body{
-    font-family:"Montserrat", sans-serif;
+    font-family:"DM Serif Display",serif;
     color:var(--escuro);
     background:var(--branco);
     margin:0;
@@ -220,7 +221,7 @@ header{
     position:absolute;
     bottom:25px;
     left:25px;
-    background:rgba(255,255,255,0.60);
+    background:rgba(255,255,255,0.50);
     backdrop-filter:blur(10px);
     -webkit-backdrop-filter:blur(10px);
     padding:20px 25px;
@@ -434,8 +435,7 @@ section{
     transform:scale(1.07);
 }
 
-.portfolio-overlay,
-.portfolio-overlay2{
+.portfolio-overlay{
     position:absolute;
     bottom:0;
     left:0;
@@ -444,6 +444,20 @@ section{
     color:white;
     background:linear-gradient(transparent,rgba(0,0,0,.7));
 }
+
+.portfolio-overlay2{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    padding:25px;
+    color:black;
+    background:linear-gradient(transparent,rgba(0,0,0,.7));
+    top:-8px;
+    
+}
+
+ 
 
 .portfolio-overlay h3,
 .portfolio-overlay2 h3{
@@ -484,7 +498,7 @@ section{
     display:inline-flex;
     align-items:center;
     gap:10px;
-    background:#C1A897;
+    background:black;
     color:white;
     text-decoration:none;
     padding:16px 28px;
@@ -584,7 +598,7 @@ footer{
     width:58px;
     height:58px;
     border-radius:50%;
-    background:#ffffff;
+    background:black;
     color:white;
     display:flex;
     align-items:center;
@@ -739,6 +753,78 @@ footer{
         height:300px;
     }
 
+.service{
+    cursor:pointer;
+}
+
+.imagem-modal{
+    display:none;
+    position:fixed;
+    z-index:2000;
+    inset:0;
+    background:rgba(0,0,0,.85);
+    align-items:center;
+    justify-content:center;
+    padding:30px;
+}
+
+.imagem-modal img{
+    max-width:90%;
+    max-height:90vh;
+    object-fit:contain;
+    border-radius:15px;
+    box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+
+.fechar{
+    position:absolute;
+    top:15px;
+    right:30px;
+    color:white;
+    font-size:45px;
+    font-weight:300;
+    cursor:pointer;
+    z-index:2001;
+}
+
+
+}
+
+.portfolio-overlay2{
+    position:absolute;
+    inset:0;
+    padding:25px;
+    color:white;
+    background:linear-gradient(
+        transparent 30%,
+        rgba(0,0,0,.75)
+    );
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+}
+
+.portfolio-overlay2 h3{
+    font-family:"DM Serif Display",serif;
+    font-size:25px;
+    font-weight:400;
+    margin-bottom:120px;
+}
+
+.portfolio-overlay2 .con{
+    font-size:10px;
+    font-family:"DM Serif Display",serif;
+    line-height:1.6;
+    margin:0;
+}
+
+.con { 
+color:#C1A897;
+font-size:10px;
+top:-2px;
+position:relative;
+margin-bottom:5px;
 }
 
 </style>
@@ -767,7 +853,7 @@ Amora <span>Studio</span>
 <ul class="nav-links" id="menu">
 
 <li><a href="#inicio">Início</a></li>
-<li><a href="#sobre">Sobre</a></li>
+<li><a href="#sobre">Quem Somos </a></li>
 <li><a href="#servicos">Serviços</a></li>
 <li><a href="#portfolio">Portfólio</a></li>
 <li><a href="#contacto">Contacto</a></li>
@@ -889,6 +975,7 @@ Amora Studio
 
 </section>
 
+
 <!-- =========================
      SERVIÇOS
 ========================= -->
@@ -912,9 +999,11 @@ visuais, espaços e experiências memoráveis.
 
 </div>
 
+
 <div class="services">
 
-<div class="service">
+
+<div class="service" onclick="abrirImagem('inter.jpg')">
 
 <div class="service-number">01</div>
 
@@ -929,7 +1018,8 @@ pensados para refletir a personalidade de cada cliente.
 
 </div>
 
-<div class="service">
+
+<div class="service" onclick="abrirImagem('arq.jpg')">
 
 <div class="service-number">02</div>
 
@@ -944,7 +1034,8 @@ Desenvolvimento de projetos arquitetônicos com atenção
 
 </div>
 
-<div class="service">
+
+<div class="service" onclick="abrirImagem('ga.jpg')">
 
 <div class="service-number">03</div>
 
@@ -959,7 +1050,8 @@ visuais para marcas e projetos.
 
 </div>
 
-<div class="service">
+
+<div class="service" onclick="abrirImagem('fotoc.jpg.jpg')">
 
 <div class="service-number">04</div>
 
@@ -970,12 +1062,13 @@ Convites
 <p>
 Convites digitais e físicos para casamentos,
 eventos, aniversários e ocasiões especiais.
-Convites modernos, elegantes e personalizados;
+Convites modernos, elegantes e personalizados.
 </p>
 
 </div>
 
-<div class="service">
+
+<div class="service" onclick="abrirImagem('web.jpg')">
 
 <div class="service-number">05</div>
 
@@ -990,9 +1083,25 @@ para apresentar marcas, serviços e projetos.
 
 </div>
 
+
 </div>
 
 </section>
+
+
+<!-- =========================
+     MODAL DAS IMAGENS
+========================= -->
+
+<div id="imagemModal" class="imagem-modal" onclick="fecharImagem()">
+
+<span class="fechar">&times;</span>
+
+<img id="imagemAmpliada" src="" alt="Projeto Amora Studio">
+
+</div>
+
+
 
 <!-- =========================
      DESTAQUE
@@ -1103,11 +1212,18 @@ alt="Convites digitais">
 
 <div class="portfolio-overlay2">
 
-<h3>Convites Digitais A partir de 6.000 Kz</h3>
-
+<h3>Convites Digitais a partir de 6.000 Kz<br></h3>
+ 
+ 
 <h5 class="con">
+
+
+
+
+
 • Com confirmação de presença com lista dos confirmados<br>
 • Localização via GPS<br>
+• Com nomes ou sem nomes dos convidados <br>
 • Manual do convidado e outros
 </h5>
 
@@ -1237,7 +1353,7 @@ e artes gráficas que valorizam o seu negócio.
 
 <h4>Explorar</h4>
 
-<a href="#sobre">Sobre nós</a>
+<a href="#Quek Somos">Sobre nós</a>
 <a href="#servicos">Serviços</a>
 <a href="#portfolio">Portfólio</a>
 <a href="#depoimentos">Depoimentos</a>
@@ -1371,6 +1487,17 @@ threshold:.4
 
 numberObserver.observe(numberSection);
 
+function abrirImagem(imagem){
+
+    document.getElementById("imagemAmpliada").src = imagem;
+
+    document.getElementById("imagemModal").style.display = "flex";
+
+}
+
+function fecharImagem(){
+
+    document.getElementById("imagemModal").style.display = "none";
 </script>
 
 </body>
