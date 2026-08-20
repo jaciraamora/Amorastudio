@@ -39,7 +39,6 @@ body{
     background:var(--creme);
 }
 
-
 /* =========================
    MENU
 ========================= */
@@ -50,22 +49,16 @@ header{
     left:0;
     width:100%;
     z-index:1000;
-
     background:rgba(255,255,255,.94);
-
     backdrop-filter:blur(12px);
-
     border-bottom:1px solid rgba(193,168,151,.25);
 }
 
 .navbar{
     max-width:1200px;
     margin:auto;
-
     height:78px;
-
     padding:0 25px;
-
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -75,7 +68,6 @@ header{
     display:flex;
     align-items:center;
     gap:12px;
-
     text-decoration:none;
     color:var(--escuro);
 }
@@ -83,11 +75,8 @@ header{
 .logo-area img{
     width:44px;
     height:44px;
-
     border-radius:50%;
-
     object-fit:cover;
-
     border:2px solid var(--principal);
 }
 
@@ -103,18 +92,14 @@ header{
 .nav-links{
     display:flex;
     gap:30px;
-
     list-style:none;
 }
 
 .nav-links a{
     text-decoration:none;
-
     color:var(--escuro);
-
     font-size:14px;
     font-weight:500;
-
     transition:.3s;
 }
 
@@ -124,15 +109,11 @@ header{
 
 .menu-btn{
     display:none;
-
     border:0;
     background:none;
-
     font-size:28px;
-
     cursor:pointer;
 }
-
 
 /* =========================
    CABEÇALHO
@@ -140,41 +121,29 @@ header{
 
 .depoimentos{
     min-height:100vh;
-
     padding:140px 7% 80px;
 }
 
 .section-heading{
     text-align:center;
-
     max-width:600px;
-
     margin:0 auto 50px;
 }
 
 .small-title{
     text-transform:uppercase;
-
     letter-spacing:4px;
-
     font-size:11px;
-
     color:var(--principal-escuro);
-
     font-weight:600;
-
     margin-bottom:12px;
 }
 
 .section-title{
     font-family:"DM Serif Display",serif;
-
     font-size:52px;
-
     font-weight:400;
-
     line-height:1.1;
-
     margin-bottom:20px;
 }
 
@@ -184,12 +153,9 @@ header{
 
 .section-heading p{
     color:var(--cinza);
-
     line-height:1.8;
-
     font-size:14px;
 }
-
 
 /* =========================
    FORMULÁRIO
@@ -197,329 +163,216 @@ header{
 
 .comentario-form{
     max-width:600px;
-
     margin:0 auto 60px;
-
     background:white;
-
     padding:30px;
-
     border-radius:18px;
-
-    box-shadow:
-    0 15px 40px rgba(0,0,0,.07);
+    box-shadow:0 15px 40px rgba(0,0,0,.07);
 }
 
 .comentario-form h3{
     font-family:"DM Serif Display",serif;
-
     font-size:28px;
-
     font-weight:400;
-
     margin-bottom:20px;
-
     text-align:center;
 }
 
 .comentario-form input,
 .comentario-form textarea{
-
     width:100%;
-
     border:1px solid rgba(193,168,151,.4);
-
     background:#fff;
-
     padding:15px;
-
     font-family:"Montserrat",sans-serif;
-
     font-size:13px;
-
     outline:none;
-
     border-radius:10px;
-
     margin-bottom:15px;
 }
 
 .comentario-form textarea{
-
     min-height:120px;
-
     resize:vertical;
 }
 
 .comentario-form input:focus,
 .comentario-form textarea:focus{
-
     border-color:var(--principal);
 }
-
 
 /* =========================
    ESTRELAS
 ========================= */
 
 .estrelas{
-
     display:flex;
-
     justify-content:center;
-
     gap:6px;
-
     margin:5px 0 20px;
 }
 
 .estrelas span{
-
     font-size:30px;
-
     color:#d8d2ce;
-
     cursor:pointer;
-
     transition:.2s;
 }
 
 .estrelas span.ativa{
-
     color:var(--principal);
 }
-
 
 /* =========================
    BOTÃO
 ========================= */
 
 .btn-enviar{
-
     display:block;
-
     margin:0 auto;
-
     border:0;
-
     background:var(--escuro);
-
     color:white;
-
     padding:15px 28px;
-
     font-family:"Montserrat",sans-serif;
-
     font-size:12px;
-
     font-weight:600;
-
     border-radius:20px;
-
     cursor:pointer;
-
     transition:.3s;
 }
 
 .btn-enviar:hover{
-
     background:var(--principal-escuro);
-
     transform:translateY(-2px);
 }
 
 #mensagemComentario{
-
     text-align:center;
-
     margin-top:15px;
-
     font-size:12px;
-
     color:var(--cinza);
 }
 
-
 /* =========================
-   LISTA DE COMENTÁRIOS
+   LISTA
 ========================= */
 
 .lista-comentarios{
-
     max-width:1000px;
-
     margin:auto;
-
     display:grid;
-
     grid-template-columns:repeat(2,1fr);
-
     gap:20px;
 }
 
 .comentario-card{
-
     background:white;
-
     padding:25px;
-
     border-radius:16px;
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,.06);
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
 }
 
 .comentario-nome{
-
     font-family:"DM Serif Display",serif;
-
     font-size:21px;
-
     margin-bottom:8px;
 }
 
 .comentario-estrelas{
-
     color:var(--principal);
-
     font-size:17px;
-
     margin-bottom:12px;
 }
 
 .comentario-texto{
-
     color:var(--cinza);
-
     font-size:13px;
-
     line-height:1.8;
 }
 
 .carregando{
-
     grid-column:1/-1;
-
     text-align:center;
-
     color:var(--cinza);
-
     font-size:13px;
 }
-
 
 /* =========================
    NÚMEROS
 ========================= */
 
 .numbers{
-
     background:var(--escuro);
-
     color:white;
-
     padding:75px 7%;
-
     margin-top:80px;
 }
 
 .numbers-grid{
-
     max-width:1200px;
-
     margin:auto;
-
     display:grid;
-
     grid-template-columns:repeat(4,1fr);
 }
 
 .number-item{
-
     text-align:center;
-
     border-right:1px solid rgba(255,255,255,.15);
 }
 
 .number-item:last-child{
-
     border-right:none;
 }
 
 .number{
-
     font-family:"DM Serif Display",serif;
-
     color:var(--principal);
-
     font-size:48px;
 }
 
 .number-label{
-
     color:#c4bfbc;
-
     font-size:11px;
-
     margin-top:8px;
 }
-
 
 /* =========================
    RODAPÉ
 ========================= */
 
 footer{
-
     background:var(--escuro);
-
     color:white;
-
     padding:45px 7% 25px;
-
     text-align:center;
 }
 
 .footer-logo{
-
     font-family:"DM Serif Display",serif;
-
     font-size:30px;
-
     margin-bottom:10px;
 }
 
 .footer-logo span{
-
     color:var(--principal);
 }
 
 .footer-description{
-
     color:#aaa39e;
-
     font-size:11px;
-
     line-height:1.8;
-
     max-width:350px;
-
     margin:auto;
 }
 
 .voltar{
-
     display:inline-block;
-
     margin-top:25px;
-
     color:var(--principal);
-
     text-decoration:none;
-
     font-size:12px;
 }
-
 
 /* =========================
    RESPONSIVO
@@ -528,83 +381,61 @@ footer{
 @media(max-width:800px){
 
     .nav-links{
-
         position:absolute;
-
         top:78px;
         left:0;
-
         width:100%;
-
         background:white;
-
         display:none;
-
         flex-direction:column;
-
         padding:25px;
-
         gap:20px;
-
         border-bottom:1px solid #eee;
     }
 
     .nav-links.active{
-
         display:flex;
     }
 
     .menu-btn{
-
         display:block;
     }
 
     .depoimentos{
-
         padding:120px 6% 60px;
     }
 
     .section-title{
-
         font-size:42px;
     }
 
     .lista-comentarios{
-
         grid-template-columns:1fr;
     }
 
     .numbers{
-
         padding:60px 6%;
     }
 
     .numbers-grid{
-
         grid-template-columns:repeat(2,1fr);
-
         gap:35px 0;
     }
 
     .number-item{
-
         border-right:none;
     }
 
     .number{
-
         font-size:40px;
     }
-
 }
 
 </style>
 
 </head>
 
-
 <body>
-
 
 <!-- =========================
      MENU
@@ -613,7 +444,6 @@ footer{
 <header>
 
 <nav class="navbar">
-
 
 <a href="index.html" class="logo-area">
 
@@ -627,7 +457,6 @@ Amora <span>Studio</span>
 
 </a>
 
-
 <button
 class="menu-btn"
 onclick="abrirMenu()"
@@ -636,7 +465,6 @@ aria-label="Abrir menu">
 ☰
 
 </button>
-
 
 <ul class="nav-links" id="menu">
 
@@ -671,13 +499,11 @@ aria-label="Abrir menu">
 </header>
 
 
-
 <!-- =========================
      DEPOIMENTOS
 ========================= -->
 
 <section class="depoimentos">
-
 
 <div class="section-heading">
 
@@ -702,7 +528,6 @@ Conte-nos como foi a sua experiência.
 </div>
 
 
-
 <!-- =========================
      FORMULÁRIO
 ========================= -->
@@ -713,19 +538,16 @@ Conte-nos como foi a sua experiência.
 Deixe o seu comentário
 </h3>
 
-
 <input
 type="text"
 id="nomeComentario"
 placeholder="Seu nome"
 maxlength="50">
 
-
 <textarea
 id="textoComentario"
 placeholder="Escreva o que achou..."
 maxlength="300"></textarea>
-
 
 <div class="estrelas" id="estrelas">
 
@@ -737,7 +559,6 @@ maxlength="300"></textarea>
 
 </div>
 
-
 <button
 type="button"
 class="btn-enviar"
@@ -747,11 +568,9 @@ Enviar comentário
 
 </button>
 
-
 <p id="mensagemComentario"></p>
 
 </div>
-
 
 
 <!-- =========================
@@ -769,7 +588,6 @@ A carregar comentários...
 </div>
 
 
-
 <!-- =========================
      NÚMEROS
 ========================= -->
@@ -777,7 +595,6 @@ A carregar comentários...
 <section class="numbers">
 
 <div class="numbers-grid">
-
 
 <div class="number-item">
 
@@ -800,8 +617,7 @@ Projetos entregues
 
 <div
 class="number"
-id="clientesFelizes"
-data-target="250">
+id="clientesFelizes">
 
 250+
 
@@ -847,11 +663,11 @@ Satisfação
 
 </div>
 
-
 </div>
 
 </section>
 
+</section>
 
 
 <!-- =========================
@@ -883,7 +699,6 @@ class="voltar">
 </footer>
 
 
-
 <!-- =========================
      JAVASCRIPT DO MENU
 ========================= -->
@@ -898,7 +713,6 @@ function abrirMenu(){
     .toggle("active");
 
 }
-
 
 document
 .querySelectorAll(".nav-links a")
@@ -916,7 +730,6 @@ document
 });
 
 </script>
-
 
 
 <!-- =========================
@@ -940,7 +753,6 @@ import {
 }
 
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
-
 
 
 const firebaseConfig = {
@@ -969,18 +781,14 @@ const firebaseConfig = {
 };
 
 
-
 const app =
 initializeApp(firebaseConfig);
-
 
 const database =
 getDatabase(app);
 
-
 const comentariosRef =
 ref(database,"comentarios");
-
 
 
 /* =========================
@@ -988,7 +796,6 @@ ref(database,"comentarios");
 ========================= */
 
 let estrelaSelecionada = 5;
-
 
 document
 .querySelectorAll("#estrelas span")
@@ -1024,9 +831,7 @@ function atualizarEstrelas(){
 
 }
 
-
 atualizarEstrelas();
-
 
 
 /* =========================
@@ -1042,13 +847,11 @@ function(){
     .value
     .trim();
 
-
     const texto =
     document
     .getElementById("textoComentario")
     .value
     .trim();
-
 
     const mensagem =
     document
@@ -1099,11 +902,9 @@ function(){
         .getElementById("nomeComentario")
         .value="";
 
-
         document
         .getElementById("textoComentario")
         .value="";
-
 
         mensagem.textContent =
         "Comentário enviado com sucesso! ❤️";
@@ -1120,7 +921,6 @@ function(){
     });
 
 };
-
 
 
 /* =========================
@@ -1141,265 +941,104 @@ onValue(
         lista.innerHTML="";
 
 
+        let quantidadeComentarios = 0;
+
+
+        if(snapshot.exists()){
+
+            snapshot.forEach(item => {
+
+                quantidadeComentarios++;
+
+            });
+
+        }
+
+
         if(!snapshot.exists()){
 
             lista.innerHTML =
             '<p class="carregando">Ainda não existem comentários. Seja o primeiro! ❤️</p>';
 
-            atualizarClientesFelizes(0);
+        }else{
 
-            return;
+            const comentarios=[];
+
+
+            snapshot.forEach(item => {
+
+                comentarios.push(item.val());
+
+            });
+
+
+            comentarios.reverse();
+
+
+            comentarios.forEach(item => {
+
+                let estrelas="";
+
+
+                for(let i=1;i<=5;i++){
+
+                    estrelas +=
+                    i <= item.estrelas
+                    ? "★"
+                    : "☆";
+
+                }
+
+
+                const card =
+                document.createElement("div");
+
+
+                card.className =
+                "comentario-card";
+
+
+                card.innerHTML = `
+
+                    <div class="comentario-nome">
+                        ${escaparHTML(item.nome)}
+                    </div>
+
+                    <div class="comentario-estrelas">
+                        ${estrelas}
+                    </div>
+
+                    <div class="comentario-texto">
+                        ${escaparHTML(item.comentario)}
+                    </div>
+
+                `;
+
+
+                lista.appendChild(card);
+
+            });
 
         }
 
 
-        const comentarios=[];
-
-
-        snapshot.forEach(item => {
-
-            comentarios.push(item.val());
-
-        });
-
-
-        comentarios.reverse();
-
-
-        comentarios.forEach(item => {
-
-            let estrelas="";
-
-
-            for(let i=1;i<=5;i++){
-
-                estrelas +=
-                i <= item.estrelas
-                ? "★"
-                : "☆";
-
-            }
-
-
-            const card =
-            document.createElement("div");
-
-
-            card.className =
-            "comentario-card";
-
-
-            card.innerHTML = `
-
-                <div class="comentario-nome">
-                    ${escaparHTML(item.nome)}
-                </div>
-
-                <div class="comentario-estrelas">
-                    ${estrelas}
-                </div>
-
-                <div class="comentario-texto">
-                    ${escaparHTML(item.comentario)}
-                </div>
-
-            `;
-
-
-            lista.appendChild(card);
-
-        });
-
-
         /*
-        O número de clientes felizes
-        é exatamente a quantidade
-        de comentários existentes.
+        O site principal começa com 250 clientes.
+        Cada comentário existente acrescenta 1.
         */
 
-        atualizarClientesFelizes(
-            comentarios.length
-        );
+        const clientesFelizes =
+        250 + quantidadeComentarios;
+
+
+        document
+        .getElementById("clientesFelizes")
+        .textContent =
+        clientesFelizes + "+";
 
     }
 
 );
-
-
-
-/* =========================
-   CLIENTES FELIZES
-========================= */
-
-let valorClientes = 0;
-
-
-function atualizarClientesFelizes(novoValor){
-
-    const contador =
-    document.getElementById("clientesFelizes");
-
-
-    if(!contador)
-    return;
-
-
-    const valorAnterior =
-    valorClientes;
-
-
-    valorClientes =
-    novoValor;
-
-
-    contador.dataset.target =
-    novoValor;
-
-
-    /*
-    Primeira carga
-    */
-
-    if(valorAnterior === 0){
-
-        animarContador(
-            contador,
-            novoValor
-        );
-
-        return;
-
-    }
-
-
-    /*
-    Se aumentou,
-    anima até o novo número.
-    */
-
-    if(novoValor > valorAnterior){
-
-        animarDeValor(
-            contador,
-            valorAnterior,
-            novoValor
-        );
-
-        return;
-
-    }
-
-
-    /*
-    Se diminuiu,
-    atualiza imediatamente.
-    */
-
-    if(novoValor < valorAnterior){
-
-        contador.textContent =
-        novoValor + "+";
-
-    }
-
-}
-
-
-
-/* =========================
-   ANIMAÇÃO INICIAL
-========================= */
-
-function animarContador(
-    contador,
-    alvo
-){
-
-    let atual = 0;
-
-
-    if(alvo === 0){
-
-        contador.textContent =
-        "0+";
-
-        return;
-
-    }
-
-
-    const incremento =
-    alvo / 60;
-
-
-    function atualizar(){
-
-        atual += incremento;
-
-
-        if(atual < alvo){
-
-            contador.textContent =
-            Math.floor(atual) + "+";
-
-            requestAnimationFrame(
-                atualizar
-            );
-
-        }else{
-
-            contador.textContent =
-            alvo + "+";
-
-        }
-
-    }
-
-
-    atualizar();
-
-}
-
-
-
-/* =========================
-   ANIMAÇÃO DE NOVOS CLIENTES
-========================= */
-
-function animarDeValor(
-    contador,
-    inicio,
-    alvo
-){
-
-    let atual = inicio;
-
-
-    function atualizar(){
-
-        if(atual < alvo){
-
-            atual++;
-
-
-            contador.textContent =
-            atual + "+";
-
-
-            setTimeout(
-                atualizar,
-                80
-            );
-
-        }
-
-    }
-
-
-    atualizar();
-
-}
-
 
 
 /* =========================
@@ -1410,7 +1049,6 @@ const outrosContadores =
 document.querySelectorAll(
     ".number:not(#clientesFelizes)"
 );
-
 
 let outrosIniciados = false;
 
@@ -1474,7 +1112,6 @@ function iniciarOutrosContadores(){
 }
 
 
-
 /* =========================
    OBSERVAR NÚMEROS
 ========================= */
@@ -1510,7 +1147,6 @@ if(numberSection){
 }
 
 
-
 /* =========================
    SEGURANÇA
 ========================= */
@@ -1520,10 +1156,8 @@ function escaparHTML(texto){
     const div =
     document.createElement("div");
 
-
     div.textContent =
     texto;
-
 
     return div.innerHTML;
 
@@ -1532,4 +1166,4 @@ function escaparHTML(texto){
 </script>
 
 </body>
-</html> 
+</html>
