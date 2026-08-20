@@ -50,15 +50,20 @@ header{
     left:0;
     width:100%;
     z-index:1000;
+
     background:rgba(255,255,255,.94);
+
     backdrop-filter:blur(12px);
+
     border-bottom:1px solid rgba(193,168,151,.25);
 }
 
 .navbar{
     max-width:1200px;
     margin:auto;
+
     height:78px;
+
     padding:0 25px;
 
     display:flex;
@@ -70,6 +75,7 @@ header{
     display:flex;
     align-items:center;
     gap:12px;
+
     text-decoration:none;
     color:var(--escuro);
 }
@@ -77,8 +83,11 @@ header{
 .logo-area img{
     width:44px;
     height:44px;
+
     border-radius:50%;
+
     object-fit:cover;
+
     border:2px solid var(--principal);
 }
 
@@ -94,14 +103,19 @@ header{
 .nav-links{
     display:flex;
     gap:30px;
+
     list-style:none;
 }
 
 .nav-links a{
     text-decoration:none;
+
     color:var(--escuro);
+
     font-size:14px;
     font-weight:500;
+
+    transition:.3s;
 }
 
 .nav-links a:hover{
@@ -110,9 +124,12 @@ header{
 
 .menu-btn{
     display:none;
+
     border:0;
     background:none;
+
     font-size:28px;
+
     cursor:pointer;
 }
 
@@ -123,29 +140,41 @@ header{
 
 .depoimentos{
     min-height:100vh;
+
     padding:140px 7% 80px;
 }
 
 .section-heading{
     text-align:center;
+
     max-width:600px;
+
     margin:0 auto 50px;
 }
 
 .small-title{
     text-transform:uppercase;
+
     letter-spacing:4px;
+
     font-size:11px;
+
     color:var(--principal-escuro);
+
     font-weight:600;
+
     margin-bottom:12px;
 }
 
 .section-title{
     font-family:"DM Serif Display",serif;
+
     font-size:52px;
+
     font-weight:400;
+
     line-height:1.1;
+
     margin-bottom:20px;
 }
 
@@ -155,7 +184,9 @@ header{
 
 .section-heading p{
     color:var(--cinza);
+
     line-height:1.8;
+
     font-size:14px;
 }
 
@@ -166,23 +197,28 @@ header{
 
 .comentario-form{
     max-width:600px;
+
     margin:0 auto 60px;
 
     background:white;
+
     padding:30px;
 
     border-radius:18px;
 
     box-shadow:
-        0 15px 40px rgba(0,0,0,.07);
-
+    0 15px 40px rgba(0,0,0,.07);
 }
 
 .comentario-form h3{
     font-family:"DM Serif Display",serif;
+
     font-size:28px;
+
     font-weight:400;
+
     margin-bottom:20px;
+
     text-align:center;
 }
 
@@ -213,14 +249,12 @@ header{
     min-height:120px;
 
     resize:vertical;
-
 }
 
 .comentario-form input:focus,
 .comentario-form textarea:focus{
 
     border-color:var(--principal);
-
 }
 
 
@@ -237,7 +271,6 @@ header{
     gap:6px;
 
     margin:5px 0 20px;
-
 }
 
 .estrelas span{
@@ -249,13 +282,11 @@ header{
     cursor:pointer;
 
     transition:.2s;
-
 }
 
 .estrelas span.ativa{
 
     color:var(--principal);
-
 }
 
 
@@ -288,7 +319,6 @@ header{
     cursor:pointer;
 
     transition:.3s;
-
 }
 
 .btn-enviar:hover{
@@ -296,7 +326,6 @@ header{
     background:var(--principal-escuro);
 
     transform:translateY(-2px);
-
 }
 
 #mensagemComentario{
@@ -308,7 +337,6 @@ header{
     font-size:12px;
 
     color:var(--cinza);
-
 }
 
 
@@ -324,11 +352,9 @@ header{
 
     display:grid;
 
-    grid-template-columns:
-    repeat(2,1fr);
+    grid-template-columns:repeat(2,1fr);
 
     gap:20px;
-
 }
 
 .comentario-card{
@@ -340,8 +366,7 @@ header{
     border-radius:16px;
 
     box-shadow:
-        0 10px 30px rgba(0,0,0,.06);
-
+    0 10px 30px rgba(0,0,0,.06);
 }
 
 .comentario-nome{
@@ -351,7 +376,6 @@ header{
     font-size:21px;
 
     margin-bottom:8px;
-
 }
 
 .comentario-estrelas{
@@ -361,7 +385,6 @@ header{
     font-size:17px;
 
     margin-bottom:12px;
-
 }
 
 .comentario-texto{
@@ -371,7 +394,6 @@ header{
     font-size:13px;
 
     line-height:1.8;
-
 }
 
 .carregando{
@@ -383,7 +405,63 @@ header{
     color:var(--cinza);
 
     font-size:13px;
+}
 
+
+/* =========================
+   NÚMEROS
+========================= */
+
+.numbers{
+
+    background:var(--escuro);
+
+    color:white;
+
+    padding:75px 7%;
+
+    margin-top:80px;
+}
+
+.numbers-grid{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+}
+
+.number-item{
+
+    text-align:center;
+
+    border-right:1px solid rgba(255,255,255,.15);
+}
+
+.number-item:last-child{
+
+    border-right:none;
+}
+
+.number{
+
+    font-family:"DM Serif Display",serif;
+
+    color:var(--principal);
+
+    font-size:48px;
+}
+
+.number-label{
+
+    color:#c4bfbc;
+
+    font-size:11px;
+
+    margin-top:8px;
 }
 
 
@@ -400,7 +478,6 @@ footer{
     padding:45px 7% 25px;
 
     text-align:center;
-
 }
 
 .footer-logo{
@@ -410,13 +487,11 @@ footer{
     font-size:30px;
 
     margin-bottom:10px;
-
 }
 
 .footer-logo span{
 
     color:var(--principal);
-
 }
 
 .footer-description{
@@ -430,7 +505,6 @@ footer{
     max-width:350px;
 
     margin:auto;
-
 }
 
 .voltar{
@@ -444,7 +518,6 @@ footer{
     text-decoration:none;
 
     font-size:12px;
-
 }
 
 
@@ -459,7 +532,6 @@ footer{
         position:absolute;
 
         top:78px;
-
         left:0;
 
         width:100%;
@@ -475,80 +547,56 @@ footer{
         gap:20px;
 
         border-bottom:1px solid #eee;
-
     }
 
     .nav-links.active{
 
         display:flex;
-
     }
 
     .menu-btn{
 
         display:block;
-
     }
 
     .depoimentos{
 
         padding:120px 6% 60px;
-
     }
 
     .section-title{
 
         font-size:42px;
-
     }
 
     .lista-comentarios{
 
         grid-template-columns:1fr;
+    }
 
+    .numbers{
+
+        padding:60px 6%;
+    }
+
+    .numbers-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:35px 0;
+    }
+
+    .number-item{
+
+        border-right:none;
+    }
+
+    .number{
+
+        font-size:40px;
     }
 
 }
-
-/* =========================
-   NÚMEROS
-========================= */
-
-.numbers{
-    background:var(--escuro);
-    color:white;
-    padding:75px 7%;
-}
-
-.numbers-grid{
-    max-width:1200px;
-    margin:auto;
-
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-}
-
-.number-item{
-    text-align:center;
-    border-right:1px solid rgba(255,255,255,.15);
-}
-
-.number-item:last-child{
-    border-right:none;
-}
-
-.number{
-    font-family:"DM Serif Display",serif;
-    color:var(--principal);
-    font-size:48px;
-}
-
-.number-label{
-    color:#c4bfbc;
-    font-size:11px;
-    margin-top:8px;
-}
-
 
 </style>
 
@@ -582,7 +630,8 @@ Amora <span>Studio</span>
 
 <button
 class="menu-btn"
-onclick="abrirMenu()">
+onclick="abrirMenu()"
+aria-label="Abrir menu">
 
 ☰
 
@@ -654,7 +703,9 @@ Conte-nos como foi a sua experiência.
 
 
 
-<!-- FORMULÁRIO -->
+<!-- =========================
+     FORMULÁRIO
+========================= -->
 
 <div class="comentario-form">
 
@@ -703,7 +754,9 @@ Enviar comentário
 
 
 
-<!-- COMENTÁRIOS -->
+<!-- =========================
+     COMENTÁRIOS
+========================= -->
 
 <div
 id="listaComentarios"
@@ -714,6 +767,7 @@ A carregar comentários...
 </p>
 
 </div>
+
 
 
 <!-- =========================
@@ -727,9 +781,12 @@ A carregar comentários...
 
 <div class="number-item">
 
+<div
+class="number"
+data-target="150">
 
-<div class="number" id="clientesFelizes" data-target="150">
 0+
+
 </div>
 
 <div class="number-label">
@@ -744,7 +801,7 @@ Projetos entregues
 <div
 class="number"
 id="clientesFelizes"
-data-target="250">
+data-target="0">
 
 0+
 
@@ -773,8 +830,15 @@ Anos de estúdio
 
 </div>
 
-<div class="number" id="clientesFelizes" data-target="100">
-0+
+
+<div class="number-item">
+
+<div
+class="number"
+data-target="100">
+
+0%
+
 </div>
 
 <div class="number-label">
@@ -821,6 +885,41 @@ class="voltar">
 
 
 <!-- =========================
+     JAVASCRIPT DO MENU
+========================= -->
+
+<script>
+
+function abrirMenu(){
+
+    document
+    .getElementById("menu")
+    .classList
+    .toggle("active");
+
+}
+
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(link => {
+
+    link.addEventListener("click",() => {
+
+        document
+        .getElementById("menu")
+        .classList
+        .remove("active");
+
+    });
+
+});
+
+</script>
+
+
+
+<!-- =========================
      FIREBASE
 ========================= -->
 
@@ -833,10 +932,10 @@ from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
 import {
 
-getDatabase,
-ref,
-push,
-onValue
+    getDatabase,
+    ref,
+    push,
+    onValue
 
 }
 
@@ -846,26 +945,26 @@ from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
 const firebaseConfig = {
 
-apiKey:
-"AIzaSyCWJzfI7ZyC56IWSN0CGf8N9etxVb0HPq0",
+    apiKey:
+    "AIzaSyCWJzfI7ZyC56IWSN0CGf8N9etxVb0HPq0",
 
-authDomain:
-"lista-de-presentes-da.firebaseapp.com",
+    authDomain:
+    "lista-de-presentes-da.firebaseapp.com",
 
-databaseURL:
-"https://lista-de-presentes-da-default-rtdb.firebaseio.com",
+    databaseURL:
+    "https://lista-de-presentes-da-default-rtdb.firebaseio.com",
 
-projectId:
-"lista-de-presentes-da",
+    projectId:
+    "lista-de-presentes-da",
 
-storageBucket:
-"lista-de-presentes-da.firebasestorage.app",
+    storageBucket:
+    "lista-de-presentes-da.firebasestorage.app",
 
-messagingSenderId:
-"884088309111",
+    messagingSenderId:
+    "884088309111",
 
-appId:
-"1:884088309111:web:14004f508ccccb563f8d72"
+    appId:
+    "1:884088309111:web:14004f508ccccb563f8d72"
 
 };
 
@@ -895,47 +994,33 @@ document
 .querySelectorAll("#estrelas span")
 .forEach(star => {
 
+    star.addEventListener("click",() => {
 
-star.addEventListener("click",() => {
+        estrelaSelecionada =
+        Number(star.dataset.star);
 
+        atualizarEstrelas();
 
-estrelaSelecionada =
-Number(star.dataset.star);
-
-
-atualizarEstrelas();
-
+    });
 
 });
-
-
-});
-
 
 
 function atualizarEstrelas(){
 
+    document
+    .querySelectorAll("#estrelas span")
+    .forEach(star => {
 
-document
-.querySelectorAll("#estrelas span")
-.forEach(star => {
+        const numero =
+        Number(star.dataset.star);
 
+        star.classList.toggle(
+            "ativa",
+            numero <= estrelaSelecionada
+        );
 
-const numero =
-Number(star.dataset.star);
-
-
-star.classList.toggle(
-
-"ativa",
-
-numero <= estrelaSelecionada
-
-);
-
-
-});
-
+    });
 
 }
 
@@ -951,98 +1036,88 @@ atualizarEstrelas();
 window.enviarComentario =
 function(){
 
-
-const nome =
-document
-.getElementById("nomeComentario")
-.value
-.trim();
-
-
-const texto =
-document
-.getElementById("textoComentario")
-.value
-.trim();
+    const nome =
+    document
+    .getElementById("nomeComentario")
+    .value
+    .trim();
 
 
-const mensagem =
-document
-.getElementById("mensagemComentario");
+    const texto =
+    document
+    .getElementById("textoComentario")
+    .value
+    .trim();
 
 
-
-if(!nome){
-
-mensagem.textContent =
-"Por favor, coloque o seu nome.";
-
-return;
-
-}
+    const mensagem =
+    document
+    .getElementById("mensagemComentario");
 
 
-if(!texto){
+    if(!nome){
 
-mensagem.textContent =
-"Por favor, escreva o seu comentário.";
+        mensagem.textContent =
+        "Por favor, coloque o seu nome.";
 
-return;
+        return;
 
-}
-
-
-
-push(
-
-comentariosRef,
-
-{
-
-nome:nome,
-
-comentario:texto,
-
-estrelas:estrelaSelecionada,
-
-data:Date.now()
-
-}
-
-)
+    }
 
 
-.then(() => {
+    if(!texto){
+
+        mensagem.textContent =
+        "Por favor, escreva o seu comentário.";
+
+        return;
+
+    }
 
 
-document
-.getElementById("nomeComentario")
-.value="";
+    push(
+
+        comentariosRef,
+
+        {
+
+            nome:nome,
+
+            comentario:texto,
+
+            estrelas:estrelaSelecionada,
+
+            data:Date.now()
+
+        }
+
+    )
+
+    .then(() => {
+
+        document
+        .getElementById("nomeComentario")
+        .value="";
 
 
-document
-.getElementById("textoComentario")
-.value="";
+        document
+        .getElementById("textoComentario")
+        .value="";
 
 
-mensagem.textContent =
-"Comentário enviado com sucesso! ❤️";
+        mensagem.textContent =
+        "Comentário enviado com sucesso! ❤️";
 
+    })
 
-})
+    .catch(error => {
 
+        console.error(error);
 
-.catch(error => {
+        mensagem.textContent =
+        "Não foi possível enviar o comentário.";
 
-
-console.error(error);
-
-
-mensagem.textContent =
-"Não foi possível enviar o comentário.";
-
-});
-
+    });
 
 };
 
@@ -1054,109 +1129,385 @@ mensagem.textContent =
 
 onValue(
 
-comentariosRef,
+    comentariosRef,
 
-snapshot => {
+    snapshot => {
 
-
-const lista =
-document
-.getElementById("listaComentarios");
-
-
-lista.innerHTML="";
+        const lista =
+        document
+        .getElementById("listaComentarios");
 
 
+        lista.innerHTML="";
 
-if(!snapshot.exists()){
+
+        if(!snapshot.exists()){
+
+            lista.innerHTML =
+            '<p class="carregando">Ainda não existem comentários. Seja o primeiro! ❤️</p>';
+
+            atualizarClientesFelizes(0);
+
+            return;
+
+        }
 
 
-lista.innerHTML =
+        const comentarios=[];
 
-'<p class="carregando">Ainda não existem comentários. Seja o primeiro! ❤️</p>';
 
-return;
+        snapshot.forEach(item => {
+
+            comentarios.push(item.val());
+
+        });
+
+
+        comentarios.reverse();
+
+
+        comentarios.forEach(item => {
+
+            let estrelas="";
+
+
+            for(let i=1;i<=5;i++){
+
+                estrelas +=
+                i <= item.estrelas
+                ? "★"
+                : "☆";
+
+            }
+
+
+            const card =
+            document.createElement("div");
+
+
+            card.className =
+            "comentario-card";
+
+
+            card.innerHTML = `
+
+                <div class="comentario-nome">
+                    ${escaparHTML(item.nome)}
+                </div>
+
+                <div class="comentario-estrelas">
+                    ${estrelas}
+                </div>
+
+                <div class="comentario-texto">
+                    ${escaparHTML(item.comentario)}
+                </div>
+
+            `;
+
+
+            lista.appendChild(card);
+
+        });
+
+
+        /*
+        O número de clientes felizes
+        é exatamente a quantidade
+        de comentários existentes.
+        */
+
+        atualizarClientesFelizes(
+            comentarios.length
+        );
+
+    }
+
+);
+
+
+
+/* =========================
+   CLIENTES FELIZES
+========================= */
+
+let valorClientes = 0;
+
+
+function atualizarClientesFelizes(novoValor){
+
+    const contador =
+    document.getElementById("clientesFelizes");
+
+
+    if(!contador)
+    return;
+
+
+    const valorAnterior =
+    valorClientes;
+
+
+    valorClientes =
+    novoValor;
+
+
+    contador.dataset.target =
+    novoValor;
+
+
+    /*
+    Primeira carga
+    */
+
+    if(valorAnterior === 0){
+
+        animarContador(
+            contador,
+            novoValor
+        );
+
+        return;
+
+    }
+
+
+    /*
+    Se aumentou,
+    anima até o novo número.
+    */
+
+    if(novoValor > valorAnterior){
+
+        animarDeValor(
+            contador,
+            valorAnterior,
+            novoValor
+        );
+
+        return;
+
+    }
+
+
+    /*
+    Se diminuiu,
+    atualiza imediatamente.
+    */
+
+    if(novoValor < valorAnterior){
+
+        contador.textContent =
+        novoValor + "+";
+
+    }
 
 }
 
 
 
-const comentarios=[];
+/* =========================
+   ANIMAÇÃO INICIAL
+========================= */
+
+function animarContador(
+    contador,
+    alvo
+){
+
+    let atual = 0;
 
 
+    if(alvo === 0){
 
-snapshot.forEach(item => {
+        contador.textContent =
+        "0+";
 
+        return;
 
-comentarios.push(item.val());
-
-
-});
-
-
-
-comentarios.reverse();
+    }
 
 
-
-comentarios.forEach(item => {
-
-
-let estrelas="";
+    const incremento =
+    alvo / 60;
 
 
-for(let i=1;i<=5;i++){
+    function atualizar(){
+
+        atual += incremento;
 
 
-estrelas +=
+        if(atual < alvo){
 
-i <= item.estrelas
-? "★"
-: "☆";
+            contador.textContent =
+            Math.floor(atual) + "+";
 
+            requestAnimationFrame(
+                atualizar
+            );
+
+        }else{
+
+            contador.textContent =
+            alvo + "+";
+
+        }
+
+    }
+
+
+    atualizar();
 
 }
 
 
 
-const card =
-document.createElement("div");
+/* =========================
+   ANIMAÇÃO DE NOVOS CLIENTES
+========================= */
+
+function animarDeValor(
+    contador,
+    inicio,
+    alvo
+){
+
+    let atual = inicio;
 
 
-card.className =
-"comentario-card";
+    function atualizar(){
+
+        if(atual < alvo){
+
+            atual++;
 
 
-card.innerHTML = `
-
-<div class="comentario-nome">
-
-${escaparHTML(item.nome)}
-
-</div>
-
-<div class="comentario-estrelas">
-
-${estrelas}
-
-</div>
-
-<div class="comentario-texto">
-
-${escaparHTML(item.comentario)}
-
-</div>
-
-`;
+            contador.textContent =
+            atual + "+";
 
 
-lista.appendChild(card);
+            setTimeout(
+                atualizar,
+                80
+            );
+
+        }
+
+    }
 
 
-});
+    atualizar();
+
+}
 
 
-});
+
+/* =========================
+   OUTROS CONTADORES
+========================= */
+
+const outrosContadores =
+document.querySelectorAll(
+    ".number:not(#clientesFelizes)"
+);
+
+
+let outrosIniciados = false;
+
+
+function iniciarOutrosContadores(){
+
+    if(outrosIniciados)
+    return;
+
+
+    outrosIniciados = true;
+
+
+    outrosContadores.forEach(
+    contador => {
+
+        const alvo =
+        Number(
+            contador.dataset.target
+        );
+
+
+        let atual = 0;
+
+
+        const incremento =
+        alvo / 60;
+
+
+        function atualizar(){
+
+            atual += incremento;
+
+
+            if(atual < alvo){
+
+                contador.textContent =
+                Math.floor(atual) +
+                (alvo === 100 ? "%" : "+");
+
+
+                requestAnimationFrame(
+                    atualizar
+                );
+
+            }else{
+
+                contador.textContent =
+                alvo +
+                (alvo === 100 ? "%" : "+");
+
+            }
+
+        }
+
+
+        atualizar();
+
+    });
+
+}
+
+
+
+/* =========================
+   OBSERVAR NÚMEROS
+========================= */
+
+const numberSection =
+document.querySelector(".numbers");
+
+
+if(numberSection){
+
+    const observer =
+    new IntersectionObserver(
+
+        entries => {
+
+            if(entries[0].isIntersecting){
+
+                iniciarOutrosContadores();
+
+            }
+
+        },
+
+        {
+            threshold:.4
+        }
+
+    );
+
+
+    observer.observe(numberSection);
+
+}
 
 
 
@@ -1166,296 +1517,19 @@ lista.appendChild(card);
 
 function escaparHTML(texto){
 
-const div =
-document.createElement("div");
+    const div =
+    document.createElement("div");
 
-div.textContent=texto;
 
-return div.innerHTML;
+    div.textContent =
+    texto;
+
+
+    return div.innerHTML;
 
 }
-
-
 
 </script>
-
-
-
-<!-- =========================
-     MENU JAVASCRIPT
-========================= -->
-
-<script>
-
-function abrirMenu(){
-
-document
-.getElementById("menu")
-.classList
-.toggle("active");
-
-}
-
-
-document
-.querySelectorAll(".nav-links a")
-.forEach(link => {
-
-
-link.addEventListener("click",() => {
-
-
-document
-.getElementById("menu")
-.classList
-.remove("active");
-
-
-});
-
-
-});
-
-/* =========================
-   CONTADORES
-========================= */
-
-const counters =
-document.querySelectorAll(".number");
-
-let countersStarted = false;
-
-
-function animarNumero(counter,target){
-
-    let current = 0;
-
-    const increment =
-    target / 60;
-
-
-    function update(){
-
-        current += increment;
-
-
-        if(current < target){
-
-            counter.textContent =
-            Math.floor(current) +
-            (target === 100 ? "%" : "+");
-
-            requestAnimationFrame(update);
-
-        }else{
-
-            counter.textContent =
-            target +
-            (target === 100 ? "%" : "+");
-
-        }
-
-    }
-
-    update();
-
-}
-
-
-function startCounters(){
-
-    if(countersStarted)
-    return;
-
-    countersStarted = true;
-
-
-    counters.forEach(function(counter){
-
-        if(counter.id === "clientesFelizes")
-        return;
-
-
-        const target =
-        Number(counter.dataset.target);
-
-
-        animarNumero(
-            counter,
-            target
-        );
-
-    });
-
-}
-
-
-/* Ativar contadores quando aparecem */
-
-const numberSection =
-document.querySelector(".numbers");
-
-
-if(numberSection){
-
-    const numberObserver =
-    new IntersectionObserver(
-
-        function(entries){
-
-            if(entries[0].isIntersecting){
-
-                startCounters();
-
-            }
-
-        },
-
-        {
-            threshold:.4
-        }
-
-    );
-
-
-    numberObserver.observe(numberSection);
-
-}
-/* =========================
-   OBSERVAR A SEÇÃO
-========================= */
-
-const numberSection =
-document.querySelector(".numbers");
-
-
-if(numberSection){
-
-    const numberObserver =
-    new IntersectionObserver(
-
-        (entries) => {
-
-            if(entries[0].isIntersecting){
-
-                startCounters();
-
-            }
-
-        },
-
-        {
-            threshold:.4
-        }
-
-    );
-
-
-    numberObserver.observe(numberSection);
-
-}
-
-
-/* =========================
-   CLIENTES FELIZES
-   LIGADO AOS COMENTÁRIOS
-========================= */
-
-onValue(
-
-    comentariosRef,
-
-    snapshot => {
-
-        const contador =
-        document.getElementById("clientesFelizes");
-
-
-        if(!contador) return;
-
-
-        let quantidade = 0;
-
-
-        if(snapshot.exists()){
-
-            snapshot.forEach(() => {
-
-                quantidade++;
-
-            });
-
-        }
-
-
-        /*
-        Atualiza o valor real
-        */
-
-        const valorAtual =
-        Number(contador.textContent.replace("+",""));
-
-
-        /*
-        Se ainda estiver em 0,
-        faz a animação desde zero.
-        */
-
-        if(valorAtual === 0){
-
-            animarNumero(
-                contador,
-                quantidade
-            );
-
-        }else{
-
-            /*
-            Quando entrar um novo comentário,
-            anima somente a diferença.
-            */
-
-            let atual = valorAtual;
-
-
-            function atualizar(){
-
-                if(atual < quantidade){
-
-                    atual++;
-
-                    contador.textContent =
-                    atual + "+";
-
-                    setTimeout(
-                        atualizar,
-                        100
-                    );
-
-                }
-
-            }
-
-
-            atualizar();
-
-        }
- 
-
-        /*
-        Atualiza também o data-target
-        */
-
-        contador.dataset.target =
-        quantidade;
-
-    }
-
-);
-
-</script>
-
 
 </body>
-
-</html>
+</html> 

@@ -1,22 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Amora Studio | Multiáreas, uma só Assinatura</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <style>
-
 :root{
     --principal:#C1A897;
     --principal-escuro:#a88e7c;
@@ -26,328 +20,130 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     --cinza:#716b67;
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
 body{
     font-family:"Montserrat",sans-serif;
-    color:black 
+    color:black;
     background:var(--branco);
     margin:0;
     font-size:17px;
 }
 
-
-/* =========================
-   MENU
-========================= */
-
+/* ========================= MENU ========================= */
 header{
     position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:1000;
+    top:0;left:0;width:100%;z-index:1000;
     background:rgba(255,255,255,.94);
     backdrop-filter:blur(12px);
     -webkit-backdrop-filter:blur(12px);
     border-bottom:1px solid rgba(193,168,151,.25);
 }
-
 .navbar{
-    max-width:1200px;
-    margin:auto;
-    height:78px;
-    padding:0 25px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+    max-width:1200px;margin:auto;height:78px;padding:0 25px;
+    display:flex;align-items:center;justify-content:space-between;
 }
-
 .logo{
-    font-family:"DM Serif Display",serif;
-    font-size:31px;
-    letter-spacing:-1px;
-    text-decoration:none;
-    color:var(--escuro);
+    font-family:"DM Serif Display",serif;font-size:31px;letter-spacing:-1px;
+    text-decoration:none;color:var(--escuro);
 }
-
 .logo img{
-    width:44px;
-    height:44px;
-    border-radius:50%;
-    object-fit:cover;
-    border:2px solid #C1A897;
+    width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid #C1A897;
 }
-
-.logo span{
-    color:#C1A897;
-}
-
-.nav-links{
-    display:flex;
-    gap:30px;
-    list-style:none;
-}
-
+.logo span{color:#C1A897;}
+.nav-links{display:flex;gap:30px;list-style:none;}
 .nav-links a{
-    text-decoration:none;
-    color:var(--escuro);
-    font-size:18px;
-    font-weight:500;
-    transition:.3s;
+    text-decoration:none;color:var(--escuro);font-size:18px;font-weight:500;transition:.3s;
 }
-
-.nav-links a:hover{
-    color:var(--principal-escuro);
-}
-
+.nav-links a:hover{color:var(--principal-escuro);}
 .menu-btn{
-    display:none;
-    border:0;
-    background:none;
-    font-size:28px;
-    cursor:pointer;
-    color:var(--escuro);
+    display:none;border:0;background:none;font-size:28px;cursor:pointer;color:var(--escuro);
 }
 
-
-/* =========================
-   HERO
-========================= */
-
+/* ========================= HERO ========================= */
 .hero{
-    min-height:100vh;
-    padding:120px 7% 70px;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    align-items:center;
-    gap:60px;
-
-    background:
-    linear-gradient(
-        90deg,
-        #f8f4f0 0%,
-        #f8f4f0 52%,
-        #eee4dc 52%,
-        #eee4dc 100%
-    );
+    min-height:100vh;padding:120px 7% 70px;display:grid;
+    grid-template-columns:1fr 1fr;align-items:center;gap:60px;
+    background:linear-gradient(90deg,#f8f4f0 0%,#f8f4f0 52%,#eee4dc 52%,#eee4dc 100%);
 }
-
-.hero-text{
-    max-width:600px;
-}
-
+.hero-text{max-width:600px;}
 .small-title{
-    text-transform:uppercase;
-    letter-spacing:4px;
-    font-size:12px;
-    color:var(--principal-escuro);
-    font-weight:600;
-    margin-bottom:12px;
+    text-transform:uppercase;letter-spacing:4px;font-size:12px;color:var(--principal-escuro);
+    font-weight:600;margin-bottom:12px;
 }
-
 .hero h1{
-    font-family:"DM Serif Display",serif;
-    font-size:clamp(50px,6vw,82px);
-    line-height:1;
-    font-weight:400;
-    margin-bottom:25px;
+    font-family:"DM Serif Display",serif;font-size:clamp(50px,6vw,82px);line-height:1;
+    font-weight:400;margin-bottom:25px;
 }
-
-.hero h1 span{
-    color:var(--principal-escuro);
-}
-
-.hero p{
-    color:var(--cinza);
-    line-height:1.8;
-    max-width:520px;
-    font-size:15px;
-    margin-bottom:35px;
-}
-
-.buttons{
-    display:flex;
-    gap:15px;
-    flex-wrap:wrap;
-}
-
+.hero h1 span{color:var(--principal-escuro);}
+.hero p{color:var(--cinza);line-height:1.8;max-width:520px;font-size:15px;margin-bottom:35px;}
+.buttons{display:flex;gap:15px;flex-wrap:wrap;}
 .btn{
-    display:inline-block;
-    padding:15px 25px;
-    text-decoration:none;
-    font-size:12px;
-    font-weight:600;
-    letter-spacing:.5px;
-    transition:.3s;
-    border-radius:20px;
+    display:inline-block;padding:15px 25px;text-decoration:none;font-size:12px;font-weight:600;
+    letter-spacing:.5px;transition:.3s;border-radius:20px;
 }
-
-.btn-primary{
-    background:var(--escuro);
-    color:white;
-}
-
-.btn-primary:hover{
-    background:var(--principal-escuro);
-}
-
-.btn-outline{
-    border:1px solid var(--escuro);
-    color:var(--escuro);
-}
-
-.btn-outline:hover{
-    background:var(--escuro);
-    color:white;
-}
-
-.hero-image{
-    height:650px;
-    overflow:hidden;
-    position:relative;
-}
-
-.hero-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    border-radius:10px;
-}
-
+.btn-primary{background:var(--escuro);color:white;}
+.btn-primary:hover{background:var(--principal-escuro);}
+.btn-outline{border:1px solid var(--escuro);color:var(--escuro);}
+.btn-outline:hover{background:var(--escuro);color:white;}
+.hero-image{height:650px;overflow:hidden;position:relative;}
+.hero-image img{width:100%;height:100%;object-fit:cover;border-radius:10px;}
 .hero-card{
-    position:absolute;
-    bottom:25px;
-    left:25px;
-
-    background:rgba(255,255,255,.35);
-    backdrop-filter:blur(10px);
-    -webkit-backdrop-filter:blur(10px);
-
-    padding:20px 25px;
-    max-width:250px;
-
-    box-shadow:0 15px 40px rgba(0,0,0,.12);
-    border-radius:20px;
+    position:absolute;bottom:25px;left:25px;background:rgba(255,255,255,.35);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:20px 25px;
+    max-width:250px;box-shadow:0 15px 40px rgba(0,0,0,.12);border-radius:20px;
 }
+.hero-card strong{display:block;font-family:"DM Serif Display",serif;font-size:22px;margin-bottom:5px;}
+.hero-card span{font-size:11px;color:var(--cinza);}
 
-.hero-card strong{
-    display:block;
-    font-family:"DM Serif Display",serif;
-    font-size:22px;
-    margin-bottom:5px;
+/* ========================= SOBRE ========================= */
+section{padding:100px 7%;}
+.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center;}
+.about-image{height:360px;overflow:hidden;border-radius:16px;}
+.about-image img{width:100%;height:100%;object-fit:cover;}
+.about-text h2,.section-title{
+    font-family:"DM Serif Display",serif;font-size:50px;font-weight:400;line-height:1.1;margin-bottom:25px;
 }
+.about-text h2 span,.section-title span{color:var(--principal-escuro);}
+.about-text p{color:var(--cinza);line-height:1.9;margin-bottom:18px;font-size:14px;}
+.signature{margin-top:30px;font-family:"DM Serif Display",serif;font-size:24px;}
 
-.hero-card span{
-    font-size:11px;
-    color:var(--cinza);
-}
-
-
-/* =========================
-   SOBRE
-========================= */
-
-section{
-    padding:100px 7%;
-}
-
-.about{
-    display:grid;
-    grid-template-columns:.9fr 1.1fr;
-    gap:80px;
-    align-items:center;
-}
-
-.about-image{
-    height:360px;
-    overflow:hidden;
-    border-radius:16px;
-}
-
-.about-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.about-text h2,
-.section-title{
-    font-family:"DM Serif Display",serif;
-    font-size:50px;
-    font-weight:400;
-    line-height:1.1;
-    margin-bottom:25px;
-}
-
-.about-text h2 span,
-.section-title span{
-    color:var(--principal-escuro);
-}
-
-.about-text p{
-    color:var(--cinza);
-    line-height:1.9;
-    margin-bottom:18px;
-    font-size:14px;
-}
-
-.signature{
-    margin-top:30px;
-    font-family:"DM Serif Display",serif;
-    font-size:24px;
-}
-
-
-/* =========================
-   SERVIÇOS
-========================= */
-
-.services-section{
-    background:var(--creme);
-}
-
-.section-heading{
-    text-align:center;
-    max-width:450px;
-    margin:0 auto 30px;
-}
-
-.section-heading p{
-    color:var(--cinza);
-    line-height:1.8;
-    font-size:14px;
-}
-
+/* ========================= SERVIÇOS ========================= */
+.services-section{background:var(--creme);}
+.section-heading{text-align:center;max-width:450px;margin:0 auto 30px;}
+.section-heading p{color:var(--cinza);line-height:1.8;font-size:14px;}
 .services{
-    max-width:1250px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:10px;
+    max-width:1250px;margin:auto;display:grid;grid-template-columns:repeat(5,1fr);gap:10px;
 }
 
+/* Cada serviço é clicável e contém a imagem escondida */
 .service{
+    position:relative;
+    isolation:isolate;
     background:rgba(193,168,151,.60);
     backdrop-filter:blur(10px);
     -webkit-backdrop-filter:blur(10px);
-
     padding:30px 20px;
     min-height:220px;
-
     transition:.35s;
     border-bottom:3px solid transparent;
     border-radius:15px;
-
     cursor:pointer;
+    overflow:visible;
+}
+
+/* A faixa mais escura na parte inferior, onde a imagem fica escondida */
+.service::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:26px;
+    background:rgba(168,142,124,.48);
+    border-radius:0 0 15px 15px;
+    z-index:-1;
+    transition:.35s;
 }
 
 .service:hover{
@@ -356,1702 +152,553 @@ section{
     box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
-.service-number{
-    font-family:"DM Serif Display",serif;
-    font-size:22px;
-    color:var(--principal-escuro);
-    margin-bottom:10px;
+.service.active{
+    z-index:30;
+    transform:translateY(-5px);
+    border-bottom:3px solid var(--principal);
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
 }
 
-.service h3{
-    font-family:"DM Serif Display",serif;
-    font-size:25px;
-    font-weight:400;
-    margin-bottom:15px;
-}
+.service-number{font-family:"DM Serif Display",serif;font-size:22px;color:var(--principal-escuro);margin-bottom:10px;}
+.service h3{font-family:"DM Serif Display",serif;font-size:25px;font-weight:400;margin-bottom:15px;}
+.service h4{font-size:13px;}
+.service p{color:var(--cinza);font-size:13px;line-height:1.8;}
 
-.service h4{
-    font-size:13px;
-}
-
-.service p{
-    color:var(--cinza);
-    font-size:13px;
-    line-height:1.8;
-}
- 
-
-/* =========================
-   DESTAQUE
-========================= */
-
-.highlight{
-    min-height:300px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-
-    background:
-    linear-gradient(
-        rgba(38,34,32,.75),
-        rgba(38,34,32,.75)
-    ),
-    url("pro.jpg");
-
-    background-size:cover;
-    background-position:center;
-
-    color:white;
-}
-
-.highlight-content{
-    max-width:750px;
-}
-
-.highlight h2{
-    font-family:"DM Serif Display",serif;
-    font-size:clamp(40px,5vw,65px);
-    font-weight:400;
-    margin-bottom:20px;
-}
-
-.highlight p{
-    line-height:1.8;
-    font-size:15px;
-    opacity:.9;
-}
-
-
-/* =========================
-   PORTFÓLIO
-========================= */
-
-.portfolio{
-    max-width:1250px;
-    margin:auto;
-}
-
-.portfolio-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
-}
-
-.portfolio-item{
-    height:380px;
-    overflow:hidden;
-    position:relative;
-    border-radius:12px;
-}
-
-.portfolio-item.large{
-    grid-column:span 2;
-}
-
-.portfolio-item img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:.6s;
-}
-
-.portfolio-item:hover img{
-    transform:scale(1.07);
-}
-
-.portfolio-overlay{
+.service-image{
     position:absolute;
-    bottom:0;
-    left:0;
-    width:100%;
-    padding:25px;
-
-    color:white;
-
-    background:
-    linear-gradient(
-        transparent,
-        rgba(0,0,0,.7)
-    );
+    width:78%;
+    height:185px;
+    right:-10%;
+    bottom:-30px;
+    object-fit:cover;
+    border-radius:14px;
+    opacity:0;
+    transform:translateY(55px) scale(.82);
+    transform-origin:center bottom;
+    box-shadow:0 18px 40px rgba(0,0,0,.25);
+    border:4px solid rgba(255,255,255,.85);
+    z-index:5;
+    pointer-events:none;
+    transition:opacity .35s ease,transform .45s cubic-bezier(.2,.8,.2,1);
 }
 
-.portfolio-overlay h3{
-    font-family:"DM Serif Display",serif;
-    font-size:25px;
-    font-weight:400;
+.service.active .service-image{
+    opacity:1;
+    transform:translateY(0) scale(1);
 }
 
-.con{
-    color:white;
-    font-size:12px;
-    font-family:"Montserrat",sans-serif;
-    line-height:1.6;
+/* ========================= DESTAQUE ========================= */
+.highlight{
+    min-height:300px;display:flex;align-items:center;justify-content:center;text-align:center;
+    background:linear-gradient(rgba(38,34,32,.75),rgba(38,34,32,.75)),url("pro.jpg");
+    background-size:cover;background-position:center;color:white;
 }
+.highlight-content{max-width:750px;}
+.highlight h2{font-family:"DM Serif Display",serif;font-size:clamp(40px,5vw,65px);font-weight:400;margin-bottom:20px;}
+.highlight p{line-height:1.8;font-size:15px;opacity:.9;}
 
-
-/* =========================
-   CONTACTO
-========================= */
-
-.contact{
-    background:var(--creme);
-    text-align:center;
+/* ========================= PORTFÓLIO ========================= */
+.portfolio{max-width:1250px;margin:auto;}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;}
+.portfolio-item{height:380px;overflow:hidden;position:relative;border-radius:12px;}
+.portfolio-item.large{grid-column:span 2;}
+.portfolio-item img{width:100%;height:100%;object-fit:cover;transition:.6s;}
+.portfolio-item:hover img{transform:scale(1.07);}
+.portfolio-overlay{
+    position:absolute;bottom:0;left:0;width:100%;padding:25px;color:white;
+    background:linear-gradient(transparent,rgba(0,0,0,.7));
 }
+.portfolio-overlay h3{font-family:"DM Serif Display",serif;font-size:25px;font-weight:400;}
+.con{color:white;font-size:12px;font-family:"Montserrat",sans-serif;line-height:1.6;}
 
-.contact h2{
-    font-family:"DM Serif Display",serif;
-    font-size:55px;
-    font-weight:400;
-    margin-bottom:20px;
-}
-
-.contact p{
-    max-width:600px;
-    margin:0 auto 30px;
-    color:var(--cinza);
-    line-height:1.8;
-}
-
+/* ========================= CONTACTO ========================= */
+.contact{background:var(--creme);text-align:center;}
+.contact h2{font-family:"DM Serif Display",serif;font-size:55px;font-weight:400;margin-bottom:20px;}
+.contact p{max-width:600px;margin:0 auto 30px;color:var(--cinza);line-height:1.8;}
 .whatsapp{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-
-    background:black;
-    color:white;
-
-    text-decoration:none;
-    padding:16px 28px;
-
-    font-weight:600;
-    font-size:13px;
-
-    transition:.3s;
-    border-radius:16px;
+    display:inline-flex;align-items:center;gap:10px;background:black;color:white;text-decoration:none;
+    padding:16px 28px;font-weight:600;font-size:13px;transition:.3s;border-radius:16px;
 }
+.whatsapp:hover{transform:translateY(-3px);}
 
-.whatsapp:hover{
-    transform:translateY(-3px);
-}
+/* ========================= NÚMEROS ========================= */
+.numbers{background:var(--escuro);color:white;padding:75px 7%;}
+.numbers-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);}
+.number-item{text-align:center;border-right:1px solid rgba(255,255,255,.15);}
+.number-item:last-child{border-right:none;}
+.number{font-family:"DM Serif Display",serif;color:var(--principal);font-size:48px;}
+.number-label{color:#c4bfbc;font-size:11px;margin-top:8px;}
 
+/* ========================= FOOTER ========================= */
+footer{background:var(--escuro);color:white;padding:55px 7% 25px;}
+.footer-grid{max-width:1200px;margin:auto;display:flex;flex-direction:column;align-items:flex-start;gap:35px;}
+.footer-brand,.footer-column{width:100%;}
+.footer-logo{font-family:"DM Serif Display",serif;font-size:32px;}
+.footer-logo span{color:var(--principal);}
+.footer-description{max-width:350px;color:#aaa39e;font-size:11px;line-height:1.8;}
+.footer-column h4{color:white;font-size:16px;font-weight:600;margin-bottom:20px;}
+.footer-column a{display:block;color:#aaa39e;font-size:12px;line-height:2.2;text-decoration:none;}
+.footer-column a:hover{color:#C1A897;}
+.social-icons{display:flex;justify-content:center;align-items:center;gap:25px;margin-top:25px;}
+.social-icons a{color:#C1A897;font-size:27px;line-height:1;}
+.footer-bottom{max-width:1200px;margin:45px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;color:#77716d;font-size:9px;}
 
-/* =========================
-   NÚMEROS
-========================= */
-
-.numbers{
-    background:var(--escuro);
-    color:white;
-    padding:75px 7%;
-}
-
-.numbers-grid{
-    max-width:1200px;
-    margin:auto;
-
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-}
-
-.number-item{
-    text-align:center;
-    border-right:1px solid rgba(255,255,255,.15);
-}
-
-.number-item:last-child{
-    border-right:none;
-}
-
-.number{
-    font-family:"DM Serif Display",serif;
-    color:var(--principal);
-    font-size:48px;
-}
-
-.number-label{
-    color:#c4bfbc;
-    font-size:11px;
-    margin-top:8px;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-    background:var(--escuro);
-    color:white;
-    padding:55px 7% 25px;
-}
-
-.footer-grid{
-    max-width:1200px;
-    margin:auto;
-
-    display:flex;
-    flex-direction:column;
-
-    align-items:flex-start;
-    gap:35px;
-}
-
-.footer-brand{
-    width:100%;
-}
-
-.footer-column{
-    width:100%;
-}
-
-.footer-logo{
-    font-family:"DM Serif Display",serif;
-    font-size:32px;
-}
-
-.footer-logo span{
-    color:var(--principal);
-}
-
-.footer-description{
-    max-width:350px;
-    color:#aaa39e;
-    font-size:11px;
-    line-height:1.8;
-}
-
-.footer-column h4{
-    color:white;
-    font-size:16px;
-    font-weight:600;
-    margin-bottom:20px;
-}
-
-.footer-column a{
-    display:block;
-    color:#aaa39e;
-    font-size:12px;
-    line-height:2.2;
-    text-decoration:none;
-}
-
-.footer-column a:hover{
-    color:#C1A897;
-}
-
-.social-icons{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:25px;
-    margin-top:25px;
-}
-
-.social-icons a{
-    color:#C1A897;
-    font-size:27px;
-    line-height:1;
-}
-
-.footer-bottom{
-    max-width:1200px;
-    margin:45px auto 0;
-    padding-top:20px;
-
-    border-top:1px solid rgba(255,255,255,.1);
-
-    display:flex;
-    justify-content:space-between;
-
-    color:#77716d;
-    font-size:9px;
-}
-
-
-/* =========================
-   WHATSAPP FLUTUANTE
-========================= */
-
+/* ========================= WHATSAPP FLUTUANTE ========================= */
 .whatsapp-float{
-    position:fixed;
-    right:22px;
-    bottom:22px;
-
-    width:58px;
-    height:58px;
-
-    border-radius:50%;
-
-    background:black;
-    color:white;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-decoration:none;
-    font-size:25px;
-
-    box-shadow:0 8px 25px rgba(0,0,0,.2);
-
-    z-index:999;
-    transition:.3s;
+    position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;background:black;color:white;
+    display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.2);z-index:999;transition:.3s;
 }
+.whatsapp-float:hover{transform:scale(1.08);}
 
-.whatsapp-float:hover{
-    transform:scale(1.08);
-}
-
-
-/* =========================
-   RESPONSIVO
-========================= */
-
+/* ========================= RESPONSIVO ========================= */
 @media(max-width:1000px){
-
-    .services{
-        grid-template-columns:repeat(2,1fr);
-    }
-
+    .services{grid-template-columns:repeat(2,1fr);}
 }
 
 @media(max-width:800px){
-
     .nav-links{
-        position:absolute;
-        top:78px;
-        left:0;
-
-        width:100%;
-
-        background:white;
-
-        display:none;
-
-        flex-direction:column;
-
-        padding:25px;
-        gap:20px;
-
-        border-bottom:1px solid #eee;
+        position:absolute;top:78px;left:0;width:100%;background:white;display:none;flex-direction:column;
+        padding:25px;gap:20px;border-bottom:1px solid #eee;
     }
+    .nav-links.active{display:flex;}
+    .menu-btn{display:block;}
+    .hero{grid-template-columns:1fr;background:#f8f4f0;padding-top:120px;padding-left:6%;padding-right:6%;}
+    .hero-image{height:420px;}
+    .about{grid-template-columns:1fr;gap:40px;}
+    .about-image{height:450px;}
+    .portfolio-grid{grid-template-columns:1fr;}
+    .portfolio-item.large{grid-column:span 1;}
+    section{padding:70px 6%;}
+    .hero h1{font-size:52px;}
+    .services{grid-template-columns:1fr;}
+    .service{min-height:240px;}
+    .about-text h2,.section-title{font-size:42px;}
+    .contact h2{font-size:43px;}
+    .portfolio-item{height:300px;}
+    .numbers-grid{grid-template-columns:repeat(2,1fr);gap:30px;}
+    .number-item{border-right:none;}
+    .footer-bottom{flex-direction:column;gap:10px;}
 
-    .nav-links.active{
-        display:flex;
+    .service-image{
+        width:72%;
+        height:190px;
+        right:-5%;
+        bottom:-35px;
     }
-
-    .menu-btn{
-        display:block;
-    }
-
-    .hero{
-        grid-template-columns:1fr;
-        background:#f8f4f0;
-        padding-top:120px;
-    }
-
-    .hero-image{
-        height:500px;
-    }
-
-    .about{
-        grid-template-columns:1fr;
-        gap:40px;
-    }
-
-    .about-image{
-        height:450px;
-    }
-
-    .portfolio-grid{
-        grid-template-columns:1fr;
-    }
-
-    .portfolio-item.large{
-        grid-column:span 1;
-    }
-
-    section{
-        padding:70px 6%;
-    }
-
-    .hero{
-        padding-left:6%;
-        padding-right:6%;
-    }
-
-    .hero h1{
-        font-size:52px;
-    }
-
-    .hero-image{
-        height:420px;
-    }
-
-    .services{
-        grid-template-columns:1fr;
-    }
-
-    .service{
-        min-height:auto;
-    }
-
-    .about-text h2,
-    .section-title{
-        font-size:42px;
-    }
-
-    .contact h2{
-        font-size:43px;
-    }
-
-    .portfolio-item{
-        height:300px;
-    }
-
-    .numbers-grid{
-        grid-template-columns:repeat(2,1fr);
-        gap:30px;
-    }
-
-    .number-item{
-        border-right:none;
-    }
-
-    .footer-bottom{
-        flex-direction:column;
-        gap:10px;
-    }
-
 }
 
-/* =========================
-   MODAL DAS IMAGENS
-========================= */
-
-.imagem-modal{
-    display:none;
-    position:fixed;
-    z-index:5000;
-    inset:0;
-
-    background:rgba(38,34,32,.88);
-
-    align-items:center;
-    justify-content:center;
-
-    padding:30px;
+@media(max-width:420px){
+    .service-image{width:76%;height:175px;}
 }
-
-.imagem-modal.ativo{
-    display:flex;
-}
-
-.imagem-modal img{
-    max-width:90%;
-    max-height:85vh;
-
-    object-fit:contain;
-
-    border-radius:15px;
-
-    box-shadow:
-        0 20px 60px rgba(0,0,0,.4);
-}
-
-.fechar-modal{
-    position:absolute;
-    top:20px;
-    right:30px;
-
-    color:white;
-
-    font-size:45px;
-    font-weight:300;
-
-    cursor:pointer;
-
-    line-height:1;
-
-    z-index:5001;
-}
-
-.fechar-modal:hover{
-    color:#C1A897;
-}
-
-.service{
-    cursor:pointer;
-}
-
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- =========================
-     MENU
-========================= -->
-
+<!-- ========================= MENU ========================= -->
 <header>
-
 <nav class="navbar">
 
 <a href="#inicio" class="logo">
     <img src="logoamora.png" alt="Amora Studio">
 </a>
 
-<a href="#inicio" class="logo">
-    Amora <span>Studio</span>
-</a>
+<a href="#inicio" class="logo">Amora <span>Studio</span></a>
 
-<button
-class="menu-btn"
-onclick="abrirMenu()"
-aria-label="Abrir menu">
-
-☰
-
-</button>
+<button class="menu-btn" onclick="abrirMenu()" aria-label="Abrir menu">☰</button>
 
 <ul class="nav-links" id="menu">
-
-<li>
-<a href="#inicio">Início</a>
-</li>
-
-<li>
-<a href="#sobre">Quem Somos</a>
-</li>
-
-<li>
-<a href="#servicos">Serviços</a>
-</li>
-
-<li>
-<a href="#portfolio">Portfólio</a>
-</li>
-
-<li>
-<a href="#contacto">Contacto</a>
-</li>
-
-<li>
-<a href="s.html">Depoimentos</a>
-</li>
-
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#sobre">Quem Somos</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#portfolio">Portfólio</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="s.html">Depoimentos</a></li>
 </ul>
 
 </nav>
-
 </header>
 
-
-<!-- =========================
-     HERO
-========================= -->
-
+<!-- ========================= HERO ========================= -->
 <section class="hero" id="inicio">
-
 <div class="hero-text">
-
-<div class="small-title">
-Amora Studio
+    <div class="small-title">Amora Studio</div>
+    <h1>A Universe<br><span>of Creation.</span></h1>
+    <p>
+        Unimos Design, arquitetura, interiores, Programação
+        e soluções criativas desenvolvidas com identidade,
+        propósito e exclusividade.
+    </p>
+    <div class="buttons">
+        <a href="#servicos" class="btn btn-primary">Conhecer serviços</a>
+        <a href="https://wa.me/244951031634?text=Olá%20Amora%20Studio,%20gostaria%20de%20solicitar%20um%20orçamento." class="btn btn-outline">Solicitar orçamento</a>
+    </div>
 </div>
-
-<h1>
-A Universe<br>
-<span>of Creation.</span>
-</h1>
-
-<p>
-Unimos Design, arquitetura, interiores, Programação
-e soluções criativas desenvolvidas com identidade,
-propósito e exclusividade.
-</p>
-
-<div class="buttons">
-
-<a href="#servicos" class="btn btn-primary">
-Conhecer serviços
-</a>
-
-<a
-href="https://wa.me/244951031634?text=Olá%20Amora%20Studio,%20gostaria%20de%20solicitar%20um%20orçamento."
-class="btn btn-outline">
-
-Solicitar orçamento
-
-</a>
-
-</div>
-
-</div>
-
 
 <div class="hero-image">
-
-<img
-src="abertura.jpg"
-alt="Projeto de interiores">
-
-<div class="hero-card">
-
-<strong>
-Multiáreas, uma só Assinatura
-</strong>
-
-<span>
-Criamos. Projetamos. Transformamos.
-</span>
-
+    <img src="abertura.jpg" alt="Projeto de interiores">
+    <div class="hero-card">
+        <strong>Multiáreas, uma só Assinatura</strong>
+        <span>Criamos. Projetamos. Transformamos.</span>
+    </div>
 </div>
-
-</div>
-
 </section>
 
-
-<!-- =========================
-     SOBRE
-========================= -->
-
+<!-- ========================= SOBRE ========================= -->
 <section id="sobre">
-
 <div class="about">
-
-<div class="about-image">
-
-<img
-src="segunda.jpg"
-alt="Interior sofisticado">
-
+    <div class="about-image">
+        <img src="segunda.jpg" alt="Interior sofisticado">
+    </div>
+    <div class="about-text">
+        <div class="small-title">Sobre a Amora Studio</div>
+        <h2>Criamos com<br><span>propósito.</span></h2>
+        <p>A Amora Studio é uma empresa criativa especializada em Design Gráfico, Design de Interiores, Arquitetura e Programação.</p>
+        <p>Unimos diferentes áreas de design para transformar ideias em experiências únicas.</p>
+        <p>Mais do que prestar serviços, buscamos compreender cada projeto, desenvolver conceitos e transformar ideias em resultados funcionais, marcantes e únicos.</p>
+        <div class="signature">Amora Studio</div>
+    </div>
 </div>
-
-
-<div class="about-text">
-
-<div class="small-title">
-Sobre a Amora Studio
-</div>
-
-<h2>
-Criamos com<br>
-<span>propósito.</span>
-</h2>
-
-<p>
-A Amora Studio é uma empresa criativa especializada
-em Design Gráfico, Design de Interiores, Arquitetura
-e Programação.
-</p>
-
-<p>
-Unimos diferentes áreas de design para transformar
-ideias em experiências únicas.
-</p>
-
-<p>
-Mais do que prestar serviços, buscamos compreender
-cada projeto, desenvolver conceitos e transformar
-ideias em resultados funcionais, marcantes e únicos.
-</p>
-
-<div class="signature">
-Amora Studio
-</div>
-
-</div>
-
-</div>
-
 </section>
 
-
-<!-- =========================
-     SERVIÇOS
-========================= -->
-
+<!-- ========================= SERVIÇOS ========================= -->
 <section class="services-section" id="servicos">
-
 <div class="section-heading">
-
-<div class="small-title">
-O que fazemos
+    <div class="small-title">O que fazemos</div>
+    <h2 class="section-title">Nossos <span>serviços</span></h2>
+    <p>Soluções criativas para transformar ideias em projetos visuais, espaços e experiências memoráveis.</p>
 </div>
-
-<h2 class="section-title">
-Nossos <span>serviços</span>
-</h2>
-
-<p>
-Soluções criativas para transformar ideias em projetos
-visuais, espaços e experiências memoráveis.
-</p>
-
-</div>
-
 
 <div class="services">
 
-<div class="service" onclick="abrirImagem('ga.jpg')">
+    <div class="service" data-image="ga.jpg" onclick="alternarImagem(this)">
+        <div class="service-number">01</div>
+        <h3>Design Gráfico</h3>
+        <p>• Identidade visual<br>• Criação de flyers<br>• Materiais personalizados</p>
+        <img class="service-image" src="ga.jpg" alt="Projeto de Design Gráfico">
+    </div>
 
-<div class="service-number">01</div>
+    <div class="service" data-image="fotoc.jpg" onclick="alternarImagem(this)">
+        <div class="service-number">02</div>
+        <h3>Convites</h3>
+        <p>• Convites físicos<br>• Convites digitais<br>• Convites interativos</p>
+        <img class="service-image" src="fotoc.jpg" alt="Projeto de Convites">
+    </div>
 
-<h3>Design Gráfico</h3>
+    <div class="service" data-image="arq.jpg" onclick="alternarImagem(this)">
+        <div class="service-number">03</div>
+        <h3>Projetos Arquitetônicos</h3>
+        <p>• Projetos arquitetônicos<br>• Acompanhamento técnico<br>• Renderizações 3D<br>• Consultoria</p>
+        <img class="service-image" src="arq.jpg" alt="Projeto Arquitetônico">
+    </div>
 
-<p>
-• Identidade visual<br>
-• Criação de flyers<br>
-• Materiais personalizados
-</p>
+    <div class="service" data-image="inter.jpg" onclick="alternarImagem(this)">
+        <div class="service-number">04</div>
+        <h3>Design de Interiores</h3>
+        <p>• Projetos personalizados<br>• Ambientes funcionais<br>• Organização dos espaços</p>
+        <img class="service-image" src="inter.jpg" alt="Projeto de Design de Interiores">
+    </div>
 
-</div>
-
-
-<div class="service" onclick="abrirImagem('fotoc.jpg')">
-
-<div class="service-number">02</div>
-
-<h3>Convites</h3>
-
-<p>
-• Convites físicos<br>
-• Convites digitais<br>
-• Convites interativos
-</p>
-
-</div>
-
-
-<div class="service" onclick="abrirImagem('arq.jpg')">
-
-<div class="service-number">03</div>
-
-<h3>Projetos Arquitetônicos</h3>
-
-<p>
-• Projetos arquitetônicos<br>
-• Acompanhamento técnico<br>
-• Renderizações 3D<br>
-• Consultoria
-</p>
+    <div class="service" data-image="web.jpg" onclick="alternarImagem(this)">
+        <div class="service-number">05</div>
+        <h3>Programação</h3>
+        <p>• Websites corporativos<br>• Lojas virtuais<br>• Sites personalizados</p>
+        <img class="service-image" src="web.jpg" alt="Projeto de Programação">
+    </div>
 
 </div>
-
-
-<div class="service" onclick="abrirImagem('inter.jpg')">
-
-<div class="service-number">04</div>
-
-<h3>Design de Interiores</h3>
-
-<p>
-• Projetos personalizados<br>
-• Ambientes funcionais<br>
-• Organização dos espaços
-</p>
-
-</div>
-
-
-<div class="service" onclick="abrirImagem('web.jpg')">
-
-<div class="service-number">05</div>
-
-<h3>Programação</h3>
-
-<p>
-• Websites corporativos<br>
-• Lojas virtuais<br>
-• Sites personalizados
-</p>
-
-</div>
-
-</div>
-
 </section>
-
-<!-- =========================
-     MODAL DAS IMAGENS
-========================= -->
-
-<div id="imagemModal" class="imagem-modal">
-
-    <span class="fechar-modal" onclick="fecharImagem()">
-        &times;
-    </span>
-
-    <img id="imagemModalImg" src="" alt="Projeto Amora Studio">
-
-</div>
 
 <!-- BOTÃO ORÇAMENTO -->
-
 <div class="buttons">
-
-<a
-href="https://wa.me/244951031634?text=Olá%20Amora%20Studio,%20gostaria%20de%20solicitar%20um%20orçamento."
-class="btn btn-outline"
-style="display:block;width:max-content;margin:30px auto;">
-
-Solicitar orçamento
-
-</a>
-
+<a href="https://wa.me/244951031634?text=Olá%20Amora%20Studio,%20gostaria%20de%20solicitar%20um%20orçamento." class="btn btn-outline" style="display:block;width:max-content;margin:30px auto;">Solicitar orçamento</a>
 </div>
 
-
-<!-- =========================
-     DESTAQUE
-========================= -->
-
+<!-- ========================= DESTAQUE ========================= -->
 <section class="highlight">
-
 <div class="highlight-content">
-
-<div class="small-title">
-Do conceito à realidade
+    <div class="small-title">Do conceito à realidade</div>
+    <h2>A sua ideia merece<br>um design exclusivo.</h2>
+    <p>Projetamos experiências que unem criatividade, sofisticação e funcionalidade.</p>
 </div>
-
-<h2>
-A sua ideia merece<br>
-um design exclusivo.
-</h2>
-
-<p>
-Projetamos experiências que unem criatividade,
-sofisticação e funcionalidade.
-</p>
-
-</div>
-
 </section>
 
-
-<!-- =========================
-     PORTFÓLIO
-========================= -->
-
+<!-- ========================= PORTFÓLIO ========================= -->
 <section id="portfolio">
-
 <div class="portfolio">
-
 <div class="section-heading">
-
-<div class="small-title">
-Projetos selecionados
+    <div class="small-title">Projetos selecionados</div>
+    <h2 class="section-title">Nosso <span>portfólio</span></h2>
+    <p>Algumas das áreas onde transformamos ideias em soluções visuais.</p>
 </div>
-
-<h2 class="section-title">
-Nosso <span>portfólio</span>
-</h2>
-
-<p>
-Algumas das áreas onde transformamos ideias
-em soluções visuais.
-</p>
-
-</div>
-
 
 <div class="portfolio-grid">
-
-
-<div class="portfolio-item large">
-
-<img
-src="inter.jpg"
-alt="Design de interiores">
-
-<div class="portfolio-overlay">
-
-<h3>
-Design de Interiores
-</h3>
-
+    <div class="portfolio-item large">
+        <img src="inter.jpg" alt="Design de interiores">
+        <div class="portfolio-overlay"><h3>Design de Interiores</h3></div>
+    </div>
+    <div class="portfolio-item">
+        <img src="arq.jpg" alt="Arquitetura">
+        <div class="portfolio-overlay"><h3>Arquitetura</h3></div>
+    </div>
+    <div class="portfolio-item">
+        <img src="ga.jpg" alt="Design gráfico">
+        <div class="portfolio-overlay"><h3>Design Gráfico</h3></div>
+    </div>
+    <div class="portfolio-item">
+        <img src="fotoc.jpg" alt="Convites digitais">
+        <div class="portfolio-overlay">
+            <h3>Convites digitais e interativos</h3>
+            <h5 class="con">A partir de 6.000 Kz</h5>
+        </div>
+    </div>
 </div>
-
 </div>
-
-
-<div class="portfolio-item">
-
-<img
-src="arq.jpg"
-alt="Arquitetura">
-
-<div class="portfolio-overlay">
-
-<h3>
-Arquitetura
-</h3>
-
-</div>
-
-</div>
-
-
-<div class="portfolio-item">
-
-<img
-src="ga.jpg"
-alt="Design gráfico">
-
-<div class="portfolio-overlay">
-
-<h3>
-Design Gráfico
-</h3>
-
-</div>
-
-</div>
-
-
-<div class="portfolio-item">
-
-<img
-src="fotoc.jpg"
-alt="Convites digitais">
-
-<div class="portfolio-overlay">
-
-<h3>
-Convites digitais e interativos
-</h3>
-
-<h5 class="con">
-A partir de 6.000 Kz
-</h5>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
 </section>
 
-
-<!-- =========================
-     NÚMEROS
-========================= -->
-
+<!-- ========================= NÚMEROS ========================= -->
 <section class="numbers">
-
 <div class="numbers-grid">
 
+    <!-- Este contador é fixo e não é ligado ao Firebase -->
+    <div class="number-item">
+        <div class="number" data-target="350">0+</div>
+        <div class="number-label">Projetos entregues</div>
+    </div>
 
-<div class="number-item">
+    <!-- Este é o único contador ligado aos depoimentos -->
+    <div class="number-item">
+        <div class="number" id="clientesFelizes" data-base="250" data-target="250">0+</div>
+        <div class="number-label">Clientes felizes</div>
+    </div>
 
+    <div class="number-item">
+        <div class="number" data-target="5">0+</div>
+        <div class="number-label">Anos de estúdio</div>
+    </div>
 
-<div class="number" id="clientesFelizes" data-target="150">
-0+
-</div>
-
-<div class="number-label">
-Projetos entregues
-</div>
-
-</div>
-
-
-<div class="number-item">
-
-<div
-class="number"
-id="clientesFelizes"
-data-target="250">
-
-0+
+    <div class="number-item">
+        <div class="number" data-target="100">0%</div>
+        <div class="number-label">Satisfação</div>
+    </div>
 
 </div>
-
-<div class="number-label">
-Clientes felizes
-</div>
-
-</div>
-
-
-<div class="number-item">
-
-<div
-class="number"
-data-target="5">
-
-0+
-
-</div>
-
-<div class="number-label">
-Anos de estúdio
-</div>
-
-</div>
-
-<div class="number" id="clientesFelizes" data-target="100">
-0+
-</div>
-
-<div class="number-label">
-Satisfação
-</div>
-
-</div>
-
-
-</div>
-
 </section>
 
-
-<!-- =========================
-     CONTACTO
-========================= -->
-
-<section
-class="contact"
-id="contacto">
-
-<div class="small-title">
-Vamos criar juntos
-</div>
-
-<h2>
-Tem um projeto<br>
-em mente?
-</h2>
-
-<p>
-Fale connosco e conte-nos a sua ideia.
-Será um prazer transformar o seu projeto em algo único.
-</p>
-
-<a
-href="https://wa.me/244951031634?text=Olá%20Amora%20Studio,%20vim%20através%20do%20site%20e%20gostaria%20de%20falar%20sobre%20um%20projeto."
-class="whatsapp">
-
-WhatsApp · 951 031 634
-
-</a>
-
+<!-- ========================= CONTACTO ========================= -->
+<section class="contact" id="contacto">
+    <div class="small-title">Vamos criar juntos</div>
+    <h2>Tem um projeto<br>em mente?</h2>
+    <p>Fale connosco e conte-nos a sua ideia. Será um prazer transformar o seu projeto em algo único.</p>
+    <a href="https://wa.me/244951031634?text=Olá%20Amora%20Studio,%20vim%20através%20do%20site%20e%20gostaria%20de%20falar%20sobre%20um%20projeto." class="whatsapp">WhatsApp · 951 031 634</a>
 </section>
 
-
-<!-- =========================
-     FOOTER
-========================= -->
-
+<!-- ========================= FOOTER ========================= -->
 <footer>
-
 <div class="footer-grid">
+    <div class="footer-brand">
+        <div class="footer-logo">Amora <span>Studio</span></div>
+        <p class="footer-description">Design & Arquitetura exclusiva. Convites digitais interativos, interiores premium e artes gráficas que valorizam o seu negócio.</p>
+    </div>
 
+    <div class="footer-column">
+        <h4>Explorar</h4>
+        <a href="#sobre">Quem Somos</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="s.html">Depoimentos</a>
+        <a href="#contacto">Contacto</a>
 
-<div class="footer-brand">
-
-<div class="footer-logo">
-Amora <span>Studio</span>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/amorastudio3" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:hello@amorastudio.ao" aria-label="E-mail"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://wa.me/244951031634" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </div>
 </div>
-
-<p class="footer-description">
-
-Design & Arquitetura exclusiva.
-Convites digitais interativos,
-interiores premium e artes gráficas
-que valorizam o seu negócio.
-
-</p>
-
-</div>
-
-
-<div class="footer-column">
-
-<h4>
-Explorar
-</h4>
-
-<a href="#sobre">
-Quem Somos
-</a>
-
-<a href="#servicos">
-Serviços
-</a>
-
-<a href="#portfolio">
-Portfólio
-</a>
-
-<a href="s.html">
-Depoimentos
-</a>
-
-<a href="#contacto">
-Contacto
-</a>
-
-
-<div class="social-icons">
-
-<a
-href="https://www.instagram.com/amorastudio3"
-target="_blank"
-aria-label="Instagram">
-
-<i class="fa-brands fa-instagram"></i>
-
-</a>
-
-
-<a
-href="mailto:hello@amorastudio.ao"
-aria-label="E-mail">
-
-<i class="fa-solid fa-envelope"></i>
-
-</a>
-
-
-<a
-href="https://wa.me/244951031634"
-target="_blank"
-aria-label="WhatsApp">
-
-<i class="fa-brands fa-whatsapp"></i>
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
 
 <div class="footer-bottom">
-
-<span>
-© Amora Studio.<br>
-Desde 2021
-</span>
-
-<span>
-Um universo de criação
-</span>
-
+    <span>© Amora Studio.<br>Desde 2021</span>
+    <span>Um universo de criação</span>
 </div>
-
 </footer>
 
-
-<!-- =========================
-     WHATSAPP FLUTUANTE
-========================= -->
-
-<a
-class="whatsapp-float"
-href="https://wa.me/244951031634?text=Olá%20Amora%20Studio,%20gostaria%20de%20solicitar%20informações."
-aria-label="Falar com a Amora Studio pelo WhatsApp">
-
-<i class="fa-brands fa-whatsapp"></i>
-
+<!-- ========================= WHATSAPP FLUTUANTE ========================= -->
+<a class="whatsapp-float" href="https://wa.me/244951031634?text=Olá%20Amora%20Studio,%20gostaria%20de%20solicitar%20informações." aria-label="Falar com a Amora Studio pelo WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
 </a>
 
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
+<!-- ========================= JAVASCRIPT ========================= -->
 <script>
-
-function abrirMenu(){
-
-    const menu =
-    document.getElementById("menu");
-
-    menu.classList.toggle("active");
-
-}
-
-
-/* Fechar menu depois de clicar */
-
-document
-.querySelectorAll(".nav-links a")
-.forEach(function(link){
-
-    link.addEventListener("click",function(){
-
-        document
-        .getElementById("menu")
-        .classList
-        .remove("active");
-
-    });
-
-});
-
-
-/* =========================
-   CONTADORES
-========================= */
-
-const counters =
-document.querySelectorAll(".number");
-
-let countersStarted = false;
-
-
-function animarNumero(counter,target){
-
-    let current = 0;
-
-    const increment =
-    target / 60;
-
-
-    function update(){
-
-        current += increment;
-
-
-        if(current < target){
-
-            counter.textContent =
-            Math.floor(current) +
-            (target === 100 ? "%" : "+");
-
-            requestAnimationFrame(update);
-
-        }else{
-
-            counter.textContent =
-            target +
-            (target === 100 ? "%" : "+");
-
-        }
-
-    }
-
-    update();
-
-}
-
-
-function startCounters(){
-
-    if(countersStarted)
-    return;
-
-    countersStarted = true;
-
-
-    counters.forEach(function(counter){
-
-        if(counter.id === "clientesFelizes")
-        return;
-
-
-        const target =
-        Number(counter.dataset.target);
-
-
-        animarNumero(
-            counter,
-            target
-        );
-
-    });
-
-}
-
-
-/* Ativar contadores quando aparecem */
-
-const numberSection =
-document.querySelector(".numbers");
-
-
-if(numberSection){
-
-    const numberObserver =
-    new IntersectionObserver(
-
-        function(entries){
-
-            if(entries[0].isIntersecting){
-
-                startCounters();
-
-            }
-
-        },
-
-        {
-            threshold:.4
-        }
-
-    );
-
-
-    numberObserver.observe(numberSection);
-
-}
-
-
-/* =========================
-   ABRIR IMAGEM DOS SERVIÇOS
-========================= */
-
-function abrirImagem(imagem){
-
-    window.open(
-        imagem,
-        "_blank"
-    );
-
-}
-
-</script>
-
-
-<!-- =========================
-     FIREBASE
-========================= -->
-
-<script type="module">
-
-import { initializeApp }
-
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-
-
-import {
-
-    getDatabase,
-    ref,
-    onValue
-
-} 
-
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
-
-
-const firebaseConfig = {
-
-    apiKey:
-    "AIzaSyCWJzfI7ZyC56IWSN0CGf8N9etxVb0HPq0",
-
-    authDomain:
-    "lista-de-presentes-da.firebaseapp.com",
-
-    databaseURL:
-    "https://lista-de-presentes-da-default-rtdb.firebaseio.com",
-
-    projectId:
-    "lista-de-presentes-da",
-
-    storageBucket:
-    "lista-de-presentes-da.firebasestorage.app",
-
-    messagingSenderId:
-    "884088309111",
-
-    appId:
-    "1:884088309111:web:14004f508ccccb563f8d72"
-
-};
-
-
-const app =
-initializeApp(firebaseConfig);
-
-
-const database =
-getDatabase(app);
-
-
-const comentariosRef =
-ref(database,"comentarios");
-
-
-/* =========================
-   CLIENTES FELIZES
-========================= */
-
-onValue(
-
-    comentariosRef,
-
-    function(snapshot){
-
-        const contador =
-        document.getElementById(
-            "clientesFelizes"
-        );
-
-
-        if(!contador)
-        return;
-
-
-        let quantidade = 250;
-
-
-        if(snapshot.exists()){
-
-            snapshot.forEach(function(){
-
-                quantidade++;
-
-            });
-
-        }
-
-
-        contador.dataset.target =
-        quantidade;
-
-
-        animarClientes(
-            contador,
-            quantidade
-        );
-
-    }
-
-);
-
-
-function animarClientes(
-    contador,
-    target
-){
-
-    let atual = 250;
-
-    const incremento =
-    target / 40;
-
-
-    function atualizar(){
-
-        atual += incremento;
-
-
-        if(atual < target){
-
-            contador.textContent =
-            Math.floor(atual) + "+";
-
-            requestAnimationFrame(
-                atualizar
-            );
-
-        }else{
-
-            contador.textContent =
-            target + "+";
-
-        }
-
-    }
-
-
-    atualizar();
-
-}
-
-
 /* =========================
    MENU
 ========================= */
-
 function abrirMenu(){
-
-    const menu = document.getElementById("menu");
-
-    menu.classList.toggle("active");
-
+    document.getElementById("menu").classList.toggle("active");
 }
-
-
-/* Fecha o menu quando clicar numa opção */
 
 document.querySelectorAll(".nav-links a").forEach(function(link){
-
-    link.addEventListener("click", function(){
-
-        document
-        .getElementById("menu")
-        .classList
-        .remove("active");
-
+    link.addEventListener("click",function(){
+        document.getElementById("menu").classList.remove("active");
     });
-
 });
-
 
 /* =========================
-   MODAL DAS IMAGENS
+   IMAGENS DOS SERVIÇOS
+   1.º clique = aparece
+   2.º clique = desaparece
 ========================= */
+function alternarImagem(servico){
+    const estavaAberto = servico.classList.contains("active");
 
-function abrirImagem(imagem){
+    /* Fecha os outros serviços para manter apenas uma imagem aberta */
+    document.querySelectorAll(".service.active").forEach(function(item){
+        item.classList.remove("active");
+    });
 
-    const modal =
-    document.getElementById("imagemModal");
-
-    const img =
-    document.getElementById("imagemModalImg");
-
-    img.src = imagem;
- 
-    modal.classList.add("ativo");
-
-    document.body.style.overflow = "hidden";
-}
-
-function fecharImagem(){
-
-    const modal =
-    document.getElementById("imagemModal");
-
-    modal.classList.remove("ativo");
-
-    document.body.style.overflow = "";
-}
-
-document
-.getElementById("imagemModal")
-.addEventListener("click", function(event){
-
-    if(event.target === this){
-
-        fecharImagem();
-
+    /* Se estava fechado, abre. Se estava aberto, fica fechado. */
+    if(!estavaAberto){
+        servico.classList.add("active");
     }
-
-});
-
-document.addEventListener("keydown", function(event){
-
-    if(event.key === "Escape"){
-
-        fecharImagem();
-
-    }
-
-});
+}
 
 /* =========================
    CONTADORES
 ========================= */
-
-const counters =
-document.querySelectorAll(".number");
-
+const counters = document.querySelectorAll(".number");
+const numberSection = document.querySelector(".numbers");
 let countersStarted = false;
 
+function animarNumero(counter,target,valorInicial=0){
+    target = Number(target);
+    valorInicial = Number(valorInicial);
 
-function animarNumero(counter, target){
-
-    let current = 0;
-
-    const increment =
-    target / 60;
-
-
-    function update(){
-
-        current += increment;
-
-
-        if(current < target){
-
-            counter.textContent =
-            Math.floor(current) +
-            (target === 100 ? "%" : "+");
-
-            requestAnimationFrame(update);
-
-        }else{
-
-            counter.textContent =
-            target +
-            (target === 100 ? "%" : "+");
-
-        }
-
+    if(target <= valorInicial){
+        counter.textContent = target + (target === 100 ? "%" : "+");
+        return;
     }
 
-    update();
+    let current = valorInicial;
+    const duracao = 1200;
+    const inicio = performance.now();
 
+    function update(agora){
+        const progresso = Math.min((agora - inicio) / duracao,1);
+        const valor = Math.floor(current + (target-current)*progresso);
+
+        counter.textContent = valor + (target === 100 ? "%" : "+");
+
+        if(progresso < 1){
+            requestAnimationFrame(update);
+        }else{
+            counter.textContent = target + (target === 100 ? "%" : "+");
+        }
+    }
+
+    requestAnimationFrame(update);
 }
-
 
 function startCounters(){
-
     if(countersStarted) return;
-
     countersStarted = true;
 
-
     counters.forEach(function(counter){
-
-        const target =
-        Number(counter.dataset.target);
-
-        animarNumero(counter,target);
-
+        if(counter.id === "clientesFelizes") return;
+        const target = Number(counter.dataset.target);
+        animarNumero(counter,target,0);
     });
-
 }
-
-
-const numberSection =
-document.querySelector(".numbers");
-
 
 if(numberSection){
-
-    const observer =
-    new IntersectionObserver(
-
-        function(entries){
-
-            if(entries[0].isIntersecting){
-
-                startCounters();
-
-            }
-
-        },
-
-        {
-            threshold:0.4
+    const observer = new IntersectionObserver(function(entries){
+        if(entries[0].isIntersecting){
+            startCounters();
         }
-
-    );
-
+    },{threshold:.4});
 
     observer.observe(numberSection);
-
 }
+</script>
 
+<!-- ========================= FIREBASE ========================= -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
+const firebaseConfig = {
+    apiKey:"AIzaSyCWJzfI7ZyC56IWSN0CGf8N9etxVb0HPq0",
+    authDomain:"lista-de-presentes-da.firebaseapp.com",
+    databaseURL:"https://lista-de-presentes-da-default-rtdb.firebaseio.com",
+    projectId:"lista-de-presentes-da",
+    storageBucket:"lista-de-presentes-da.firebasestorage.app",
+    messagingSenderId:"884088309111",
+    appId:"1:884088309111:web:14004f508ccccb563f8d72"
+};
 
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+const comentariosRef = ref(database,"comentarios");
+
+/*
+   O contador começa em 250 clientes.
+   Cada novo depoimento acrescenta 1 em tempo real.
+   Assim, quando entrar um novo comentário na página de depoimentos,
+   este contador também é atualizado.
+*/
+let ultimoTotalComentarios = 0;
+let primeiroCarregamento = true;
+let animacaoClientes = null;
+
+onValue(comentariosRef,function(snapshot){
+    const contador = document.getElementById("clientesFelizes");
+    if(!contador) return;
+
+    let quantidadeComentarios = 0;
+
+    if(snapshot.exists()){
+        snapshot.forEach(function(){
+            quantidadeComentarios++;
+        });
+    }
+
+    const base = Number(contador.dataset.base) || 250;
+    const novoTotal = base + quantidadeComentarios;
+    const textoAtual = Number(contador.textContent.replace(/[^0-9]/g,"")) || 0;
+
+    if(animacaoClientes){
+        cancelAnimationFrame(animacaoClientes);
+    }
+
+    /* No primeiro carregamento, anima a partir de zero. */
+    const inicio = primeiroCarregamento ? 0 : textoAtual;
+    primeiroCarregamento = false;
+
+    if(inicio === novoTotal){
+        contador.textContent = novoTotal + "+";
+    }else{
+        const duracao = 900;
+        const inicioTempo = performance.now();
+
+        function atualizar(agora){
+            const progresso = Math.min((agora-inicioTempo)/duracao,1);
+            const valor = Math.floor(inicio + (novoTotal-inicio)*progresso);
+            contador.textContent = valor + "+";
+
+            if(progresso < 1){
+                animacaoClientes = requestAnimationFrame(atualizar);
+            }else{
+                contador.textContent = novoTotal + "+";
+                animacaoClientes = null;
+            }
+        }
+
+        animacaoClientes = requestAnimationFrame(atualizar);
+    }
+
+    ultimoTotalComentarios = quantidadeComentarios;
+    contador.dataset.target = novoTotal;
+});
 </script>
 
 </body>
