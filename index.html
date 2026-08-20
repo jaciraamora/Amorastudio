@@ -38,7 +38,7 @@ html{
 
 body{
     font-family:"Montserrat",sans-serif;
-    color:var(--escuro);
+    color:black 
     background:var(--branco);
     margin:0;
     font-size:17px;
@@ -379,7 +379,7 @@ section{
     font-size:13px;
     line-height:1.8;
 }
-
+ 
 
 /* =========================
    DESTAQUE
@@ -1807,7 +1807,7 @@ onValue(
         return;
 
 
-        let quantidade = 0;
+        let quantidade = 250;
 
 
         if(snapshot.exists()){
@@ -1840,7 +1840,7 @@ function animarClientes(
     target
 ){
 
-    let atual = 0;
+    let atual = 250;
 
     const incremento =
     target / 40;
@@ -1917,13 +1917,11 @@ function abrirImagem(imagem){
     document.getElementById("imagemModalImg");
 
     img.src = imagem;
-
+ 
     modal.classList.add("ativo");
 
     document.body.style.overflow = "hidden";
-
 }
-
 
 function fecharImagem(){
 
@@ -1933,11 +1931,7 @@ function fecharImagem(){
     modal.classList.remove("ativo");
 
     document.body.style.overflow = "";
-
 }
-
-
-/* Fechar clicando fora da imagem */
 
 document
 .getElementById("imagemModal")
@@ -1951,9 +1945,6 @@ document
 
 });
 
-
-/* Fechar com ESC */
-
 document.addEventListener("keydown", function(event){
 
     if(event.key === "Escape"){
@@ -1963,7 +1954,6 @@ document.addEventListener("keydown", function(event){
     }
 
 });
-
 
 /* =========================
    CONTADORES
