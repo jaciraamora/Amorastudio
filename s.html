@@ -511,7 +511,7 @@ footer{
 }
 
 /* =========================
-   NUMBERS
+   NÚMEROS
 ========================= */
 
 .numbers{
@@ -539,7 +539,7 @@ footer{
 
 .number{
     font-family:"DM Serif Display",serif;
-    color:var(--bege);
+    color:var(--principal);
     font-size:48px;
 }
 
@@ -724,9 +724,11 @@ A carregar comentários...
 
 <div class="numbers-grid">
 
+
 <div class="number-item">
 
-<div class="number" data-target="150">
+
+<div class="number" id="clientesFelizes" data-target="150">
 0+
 </div>
 
@@ -736,10 +738,16 @@ Projetos entregues
 
 </div>
 
+
 <div class="number-item">
 
-<div class="number" data-target="200">
+<div
+class="number"
+id="clientesFelizes"
+data-target="250">
+
 0+
+
 </div>
 
 <div class="number-label">
@@ -748,10 +756,15 @@ Clientes felizes
 
 </div>
 
+
 <div class="number-item">
 
-<div class="number" data-target="7">
-0
+<div
+class="number"
+data-target="5">
+
+0+
+
 </div>
 
 <div class="number-label">
@@ -760,18 +773,20 @@ Anos de estúdio
 
 </div>
 
-<div class="number-item">
-
-<div class="number" data-target="100">
-0%
+<div class="number" id="clientesFelizes" data-target="100">
+0+
 </div>
 
 <div class="number-label">
 Satisfação
 </div>
-</div>
 
 </div>
+
+
+</div>
+
+</section>
 
 
 
@@ -1200,54 +1215,9 @@ document
 
 
 });
-/* =========================
-   CONTADORES FIXOS
-========================= */
-
-
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-
-import {
-    getDatabase,
-    ref,
-    onValue
-}
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
-
-
-const firebaseConfig = {
-
-    apiKey: "AIzaSyCWJzfI7ZyC56IWSN0CGf8N9etxVb0HPq0",
-
-    authDomain: "lista-de-presentes-da.firebaseapp.com",
-
-    databaseURL:
-    "https://lista-de-presentes-da-default-rtdb.firebaseio.com",
-
-    projectId: "lista-de-presentes-da",
-
-    storageBucket:
-    "lista-de-presentes-da.firebasestorage.app",
-
-    messagingSenderId: "884088309111",
-
-    appId:
-    "1:884088309111:web:14004f508ccccb563f8d72"
-
-};
-
-
-const app = initializeApp(firebaseConfig);
-
-const database = getDatabase(app);
-
-const comentariosRef =
-ref(database, "comentarios");
-
 
 /* =========================
-   CONTADORES FIXOS
+   CONTADORES
 ========================= */
 
 const counters =
@@ -1256,11 +1226,12 @@ document.querySelectorAll(".number");
 let countersStarted = false;
 
 
-function animarNumero(counter, target){
+function animarNumero(counter,target){
 
     let current = 0;
 
-    const increment = target / 60;
+    const increment =
+    target / 60;
 
 
     function update(){
@@ -1291,40 +1262,65 @@ function animarNumero(counter, target){
 }
 
 
-/* =========================
-   INICIAR CONTADORES
-========================= */
-
 function startCounters(){
 
-    if(countersStarted) return;
+    if(countersStarted)
+    return;
 
     countersStarted = true;
 
 
-    counters.forEach(counter => {
+    counters.forEach(function(counter){
 
-        /*
-        O contador de Clientes felizes
-        será controlado pelo Firebase.
-        */
-
-        if(counter.id === "clientesFelizes"){
-            return;
-        }
+        if(counter.id === "clientesFelizes")
+        return;
 
 
         const target =
         Number(counter.dataset.target);
 
 
-        animarNumero(counter, target);
+        animarNumero(
+            counter,
+            target
+        );
 
     });
 
 }
 
 
+/* Ativar contadores quando aparecem */
+
+const numberSection =
+document.querySelector(".numbers");
+
+
+if(numberSection){
+
+    const numberObserver =
+    new IntersectionObserver(
+
+        function(entries){
+
+            if(entries[0].isIntersecting){
+
+                startCounters();
+
+            }
+
+        },
+
+        {
+            threshold:.4
+        }
+
+    );
+
+
+    numberObserver.observe(numberSection);
+
+}
 /* =========================
    OBSERVAR A SEÇÃO
 ========================= */

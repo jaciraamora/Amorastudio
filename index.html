@@ -827,6 +827,65 @@ footer{
 
 }
 
+/* =========================
+   MODAL DAS IMAGENS
+========================= */
+
+.imagem-modal{
+    display:none;
+    position:fixed;
+    z-index:5000;
+    inset:0;
+
+    background:rgba(38,34,32,.88);
+
+    align-items:center;
+    justify-content:center;
+
+    padding:30px;
+}
+
+.imagem-modal.ativo{
+    display:flex;
+}
+
+.imagem-modal img{
+    max-width:90%;
+    max-height:85vh;
+
+    object-fit:contain;
+
+    border-radius:15px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.4);
+}
+
+.fechar-modal{
+    position:absolute;
+    top:20px;
+    right:30px;
+
+    color:white;
+
+    font-size:45px;
+    font-weight:300;
+
+    cursor:pointer;
+
+    line-height:1;
+
+    z-index:5001;
+}
+
+.fechar-modal:hover{
+    color:#C1A897;
+}
+
+.service{
+    cursor:pointer;
+}
+
 </style>
 
 </head>
@@ -1018,9 +1077,7 @@ Amora Studio
      SERVIÇOS
 ========================= -->
 
-<section
-class="services-section"
-id="servicos">
+<section class="services-section" id="servicos">
 
 <div class="section-heading">
 
@@ -1042,115 +1099,72 @@ visuais, espaços e experiências memoráveis.
 
 <div class="services">
 
+<div class="service" onclick="abrirImagem('ga.jpg')">
 
-<div
-class="service"
-onclick="abrirImagem('ga.jpg')">
+<div class="service-number">01</div>
 
-<div class="service-number">
-01
-</div>
-
-<h3>
-Design Gráfico
-</h3>
+<h3>Design Gráfico</h3>
 
 <p>
 • Identidade visual<br>
-• Criação de flyer<br>
+• Criação de flyers<br>
 • Materiais personalizados
 </p>
 
 </div>
 
 
-<div
-class="service"
-onclick="abrirImagem('fotoc.jpg')">
+<div class="service" onclick="abrirImagem('fotoc.jpg')">
 
-<div class="service-number">
-02
-</div>
+<div class="service-number">02</div>
 
-<h3>
-Convites
-</h3>
+<h3>Convites</h3>
 
 <p>
 • Convites físicos<br>
-• Convites digitais
+• Convites digitais<br>
+• Convites interativos
 </p>
+
+</div>
+
+
+<div class="service" onclick="abrirImagem('arq.jpg')">
+
+<div class="service-number">03</div>
+
+<h3>Projetos Arquitetônicos</h3>
 
 <p>
-Modernos, elegantes e personalizados.
+• Projetos arquitetônicos<br>
+• Acompanhamento técnico<br>
+• Renderizações 3D<br>
+• Consultoria
 </p>
 
-<h4>
-Inclui:
-</h4>
+</div>
+
+
+<div class="service" onclick="abrirImagem('inter.jpg')">
+
+<div class="service-number">04</div>
+
+<h3>Design de Interiores</h3>
 
 <p>
-• Confirmação de presença com lista dos confirmados<br>
-• Localização via GPS<br>
-• Nomes dos convidados ou modelo único
+• Projetos personalizados<br>
+• Ambientes funcionais<br>
+• Organização dos espaços
 </p>
 
 </div>
 
 
-<div
-class="service"
-onclick="abrirImagem('arq.jpg')">
+<div class="service" onclick="abrirImagem('web.jpg')">
 
-<div class="service-number">
-03
-</div>
+<div class="service-number">05</div>
 
-<h3>
-Projetos Arquitetônicos
-</h3>
-
-<p>
-• Desenvolvimento de projetos arquitetônicos<br>
-• Acompanhamento técnico de obras<br>
-• Renderizações 3D realistas<br>
-• Consultoria de projetos
-</p>
-
-</div>
-
-
-<div
-class="service"
-onclick="abrirImagem('inter.jpg.jpg')">
-
-<div class="service-number">
-04
-</div>
-
-<h3>
-Design de Interiores
-</h3>
-
-<p>
-• Ambientes elegantes e funcionais<br>
-• Projetos personalizados sob medida
-</p>
-
-</div>
-
-
-<div
-class="service"
-onclick="abrirImagem('web.jpg')">
-
-<div class="service-number">
-05
-</div>
-
-<h3>
-Programação
-</h3>
+<h3>Programação</h3>
 
 <p>
 • Websites corporativos<br>
@@ -1160,11 +1174,23 @@ Programação
 
 </div>
 
-
 </div>
 
 </section>
 
+<!-- =========================
+     MODAL DAS IMAGENS
+========================= -->
+
+<div id="imagemModal" class="imagem-modal">
+
+    <span class="fechar-modal" onclick="fecharImagem()">
+        &times;
+    </span>
+
+    <img id="imagemModalImg" src="" alt="Projeto Amora Studio">
+
+</div>
 
 <!-- BOTÃO ORÇAMENTO -->
 
@@ -1328,12 +1354,9 @@ A partir de 6.000 Kz
 
 <div class="number-item">
 
-<div
-class="number"
-data-target="150">
 
+<div class="number" id="clientesFelizes" data-target="150">
 0+
-
 </div>
 
 <div class="number-label">
@@ -1348,7 +1371,7 @@ Projetos entregues
 <div
 class="number"
 id="clientesFelizes"
-data-target="0">
+data-target="250">
 
 0+
 
@@ -1365,7 +1388,7 @@ Clientes felizes
 
 <div
 class="number"
-data-target="7">
+data-target="5">
 
 0+
 
@@ -1377,15 +1400,8 @@ Anos de estúdio
 
 </div>
 
-
-<div class="number-item">
-
-<div
-class="number"
-data-target="100">
-
-0%
-
+<div class="number" id="clientesFelizes" data-target="100">
+0+
 </div>
 
 <div class="number-label">
@@ -1728,7 +1744,7 @@ import {
     ref,
     onValue
 
-}
+} 
 
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
@@ -1857,6 +1873,194 @@ function animarClientes(
     atualizar();
 
 }
+
+
+/* =========================
+   MENU
+========================= */
+
+function abrirMenu(){
+
+    const menu = document.getElementById("menu");
+
+    menu.classList.toggle("active");
+
+}
+
+
+/* Fecha o menu quando clicar numa opção */
+
+document.querySelectorAll(".nav-links a").forEach(function(link){
+
+    link.addEventListener("click", function(){
+
+        document
+        .getElementById("menu")
+        .classList
+        .remove("active");
+
+    });
+
+});
+
+
+/* =========================
+   MODAL DAS IMAGENS
+========================= */
+
+function abrirImagem(imagem){
+
+    const modal =
+    document.getElementById("imagemModal");
+
+    const img =
+    document.getElementById("imagemModalImg");
+
+    img.src = imagem;
+
+    modal.classList.add("ativo");
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+function fecharImagem(){
+
+    const modal =
+    document.getElementById("imagemModal");
+
+    modal.classList.remove("ativo");
+
+    document.body.style.overflow = "";
+
+}
+
+
+/* Fechar clicando fora da imagem */
+
+document
+.getElementById("imagemModal")
+.addEventListener("click", function(event){
+
+    if(event.target === this){
+
+        fecharImagem();
+
+    }
+
+});
+
+
+/* Fechar com ESC */
+
+document.addEventListener("keydown", function(event){
+
+    if(event.key === "Escape"){
+
+        fecharImagem();
+
+    }
+
+});
+
+
+/* =========================
+   CONTADORES
+========================= */
+
+const counters =
+document.querySelectorAll(".number");
+
+let countersStarted = false;
+
+
+function animarNumero(counter, target){
+
+    let current = 0;
+
+    const increment =
+    target / 60;
+
+
+    function update(){
+
+        current += increment;
+
+
+        if(current < target){
+
+            counter.textContent =
+            Math.floor(current) +
+            (target === 100 ? "%" : "+");
+
+            requestAnimationFrame(update);
+
+        }else{
+
+            counter.textContent =
+            target +
+            (target === 100 ? "%" : "+");
+
+        }
+
+    }
+
+    update();
+
+}
+
+
+function startCounters(){
+
+    if(countersStarted) return;
+
+    countersStarted = true;
+
+
+    counters.forEach(function(counter){
+
+        const target =
+        Number(counter.dataset.target);
+
+        animarNumero(counter,target);
+
+    });
+
+}
+
+
+const numberSection =
+document.querySelector(".numbers");
+
+
+if(numberSection){
+
+    const observer =
+    new IntersectionObserver(
+
+        function(entries){
+
+            if(entries[0].isIntersecting){
+
+                startCounters();
+
+            }
+
+        },
+
+        {
+            threshold:0.4
+        }
+
+    );
+
+
+    observer.observe(numberSection);
+
+}
+
+
 
 </script>
 
