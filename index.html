@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Amora Studio | Multiáreas uma só Assinatura </title>
+<title>Amora Studio | Multiáreas, uma só Assinatura</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,13 +15,7 @@
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
 <style>
-
 
 :root{
     --principal:#C1A897;
@@ -40,14 +35,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 html{
     scroll-behavior:smooth;
 }
- 
+
 body{
-    font-family:"Inter", sans-serif;
+    font-family:"Montserrat",sans-serif;
     color:var(--escuro);
     background:var(--branco);
     margin:0;
-    font-size:15px
+    font-size:17px;
 }
+
 
 /* =========================
    MENU
@@ -59,9 +55,10 @@ header{
     left:0;
     width:100%;
     z-index:1000;
-    background:rgba(255,255,255,0.94);
+    background:rgba(255,255,255,.94);
     backdrop-filter:blur(12px);
-    border-bottom:1px solid rgba(193,168,151,0.25);
+    -webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(193,168,151,.25);
 }
 
 .navbar{
@@ -78,6 +75,8 @@ header{
     font-family:"DM Serif Display",serif;
     font-size:31px;
     letter-spacing:-1px;
+    text-decoration:none;
+    color:var(--escuro);
 }
 
 .logo img{
@@ -90,10 +89,6 @@ header{
 
 .logo span{
     color:#C1A897;
-}
-
-.nav-links.active{
-    display:flex;
 }
 
 .nav-links{
@@ -120,7 +115,9 @@ header{
     background:none;
     font-size:28px;
     cursor:pointer;
+    color:var(--escuro);
 }
+
 
 /* =========================
    HERO
@@ -133,6 +130,7 @@ header{
     grid-template-columns:1fr 1fr;
     align-items:center;
     gap:60px;
+
     background:
     linear-gradient(
         90deg,
@@ -155,7 +153,7 @@ header{
     font-weight:600;
     margin-bottom:12px;
 }
- 
+
 .hero h1{
     font-family:"DM Serif Display",serif;
     font-size:clamp(50px,6vw,82px);
@@ -180,9 +178,8 @@ header{
     display:flex;
     gap:15px;
     flex-wrap:wrap;
-    border-radius:20px;
 }
- 
+
 .btn{
     display:inline-block;
     padding:15px 25px;
@@ -197,23 +194,19 @@ header{
 .btn-primary{
     background:var(--escuro);
     color:white;
-    border-radius:20px;
 }
 
 .btn-primary:hover{
     background:var(--principal-escuro);
-    border-radius:20px;
 }
 
 .btn-outline{
     border:1px solid var(--escuro);
     color:var(--escuro);
-    border-radius:20px;
 }
 
 .btn-outline:hover{
     background:var(--escuro);
-    border-radius:20px;
     color:white;
 }
 
@@ -234,11 +227,14 @@ header{
     position:absolute;
     bottom:25px;
     left:25px;
-    background:rgba(255,255,255,0.35);
+
+    background:rgba(255,255,255,.35);
     backdrop-filter:blur(10px);
     -webkit-backdrop-filter:blur(10px);
+
     padding:20px 25px;
     max-width:250px;
+
     box-shadow:0 15px 40px rgba(0,0,0,.12);
     border-radius:20px;
 }
@@ -254,6 +250,7 @@ header{
     font-size:11px;
     color:var(--cinza);
 }
+
 
 /* =========================
    SOBRE
@@ -309,6 +306,7 @@ section{
     font-size:24px;
 }
 
+
 /* =========================
    SERVIÇOS
 ========================= */
@@ -338,14 +336,18 @@ section{
 }
 
 .service{
-    background: rgba(193, 168, 151, 0.80);
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
+    background:rgba(193,168,151,.60);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+
     padding:30px 20px;
     min-height:220px;
+
     transition:.35s;
     border-bottom:3px solid transparent;
     border-radius:15px;
+
+    cursor:pointer;
 }
 
 .service:hover{
@@ -368,11 +370,16 @@ backdrop-filter: blur(10px);
     margin-bottom:15px;
 }
 
+.service h4{
+    font-size:13px;
+}
+
 .service p{
     color:var(--cinza);
     font-size:13px;
     line-height:1.8;
 }
+
 
 /* =========================
    DESTAQUE
@@ -380,6 +387,7 @@ backdrop-filter: blur(10px);
 
 .highlight{
     min-height:300px;
+
     display:flex;
     align-items:center;
     justify-content:center;
@@ -394,6 +402,7 @@ backdrop-filter: blur(10px);
 
     background-size:cover;
     background-position:center;
+
     color:white;
 }
 
@@ -414,6 +423,7 @@ backdrop-filter: blur(10px);
     opacity:.9;
 }
 
+
 /* =========================
    PORTFÓLIO
 ========================= */
@@ -433,6 +443,7 @@ backdrop-filter: blur(10px);
     height:380px;
     overflow:hidden;
     position:relative;
+    border-radius:12px;
 }
 
 .portfolio-item.large{
@@ -456,32 +467,29 @@ backdrop-filter: blur(10px);
     left:0;
     width:100%;
     padding:25px;
+
     color:white;
-    background:linear-gradient(transparent,rgba(0,0,0,.7));
+
+    background:
+    linear-gradient(
+        transparent,
+        rgba(0,0,0,.7)
+    );
 }
 
-.portfolio-overlay2{
-    position:absolute;
-    bottom:0;
-    left:0;
-    width:100%;
-    padding:25px;
-    color:black;
-    background:linear-gradient(transparent,rgba(0,0,0,.7));
-    top:-8px;
-    
-}
-
- 
-
-.portfolio-overlay h3,
-.portfolio-overlay2 h3{
+.portfolio-overlay h3{
     font-family:"DM Serif Display",serif;
     font-size:25px;
     font-weight:400;
 }
 
+.con{
+    color:white;
+    font-size:12px;
+    font-family:"Montserrat",sans-serif;
+    line-height:1.6;
 }
+
 
 /* =========================
    CONTACTO
@@ -510,20 +518,64 @@ backdrop-filter: blur(10px);
     display:inline-flex;
     align-items:center;
     gap:10px;
+
     background:black;
     color:white;
+
     text-decoration:none;
     padding:16px 28px;
+
     font-weight:600;
     font-size:13px;
+
     transition:.3s;
     border-radius:16px;
 }
 
 .whatsapp:hover{
     transform:translateY(-3px);
-    box-shadow:0 10px 25px rgba(37,211,102,.25);
 }
+
+
+/* =========================
+   NÚMEROS
+========================= */
+
+.numbers{
+    background:var(--escuro);
+    color:white;
+    padding:75px 7%;
+}
+
+.numbers-grid{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
+
+.number-item{
+    text-align:center;
+    border-right:1px solid rgba(255,255,255,.15);
+}
+
+.number-item:last-child{
+    border-right:none;
+}
+
+.number{
+    font-family:"DM Serif Display",serif;
+    color:var(--principal);
+    font-size:48px;
+}
+
+.number-label{
+    color:#c4bfbc;
+    font-size:11px;
+    margin-top:8px;
+}
+
 
 /* =========================
    FOOTER
@@ -538,8 +590,10 @@ footer{
 .footer-grid{
     max-width:1200px;
     margin:auto;
+
     display:flex;
     flex-direction:column;
+
     align-items:flex-start;
     gap:35px;
 }
@@ -572,7 +626,7 @@ footer{
     color:white;
     font-size:16px;
     font-weight:600;
-    margin:0 0 20px 0;
+    margin-bottom:20px;
 }
 
 .footer-column a{
@@ -580,7 +634,6 @@ footer{
     color:#aaa39e;
     font-size:12px;
     line-height:2.2;
-    margin:0;
     text-decoration:none;
 }
 
@@ -588,16 +641,34 @@ footer{
     color:#C1A897;
 }
 
+.social-icons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:25px;
+    margin-top:25px;
+}
+
+.social-icons a{
+    color:#C1A897;
+    font-size:27px;
+    line-height:1;
+}
+
 .footer-bottom{
     max-width:1200px;
     margin:45px auto 0;
     padding-top:20px;
+
     border-top:1px solid rgba(255,255,255,.1);
+
     display:flex;
     justify-content:space-between;
+
     color:#77716d;
     font-size:9px;
 }
+
 
 /* =========================
    WHATSAPP FLUTUANTE
@@ -607,63 +678,32 @@ footer{
     position:fixed;
     right:22px;
     bottom:22px;
+
     width:58px;
     height:58px;
+
     border-radius:50%;
+
     background:black;
     color:white;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     text-decoration:none;
     font-size:25px;
+
     box-shadow:0 8px 25px rgba(0,0,0,.2);
+
     z-index:999;
     transition:.3s;
 }
 
 .whatsapp-float:hover{
     transform:scale(1.08);
-    border-radius:20px;
 }
 
-/* =========================
-   NUMBERS
-========================= */
-
-.numbers{
-    background:var(--escuro);
-    color:white;
-    padding:75px 7%;
-}
-
-.numbers-grid{
-    max-width:1200px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-}
-
-.number-item{
-    text-align:center;
-    border-right:1px solid rgba(255,255,255,.15);
-}
-
-.number-item:last-child{
-    border-right:none;
-}
-
-.number{
-    font-family:"DM Serif Display",serif;
-    color:var(--principal);
-    font-size:48px;
-}
-
-.number-label{
-    color:#c4bfbc;
-    font-size:11px;
-    margin-top:8px;
-}
 
 /* =========================
    RESPONSIVO
@@ -683,12 +723,18 @@ footer{
         position:absolute;
         top:78px;
         left:0;
+
         width:100%;
+
         background:white;
+
         display:none;
+
         flex-direction:column;
+
         padding:25px;
         gap:20px;
+
         border-bottom:1px solid #eee;
     }
 
@@ -765,67 +811,29 @@ footer{
         height:300px;
     }
 
-.service{
-    cursor:pointer;
+    .numbers-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:30px;
+    }
+
+    .number-item{
+        border-right:none;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        gap:10px;
+    }
+
 }
-
-.portfolio-overlay2{
-    position:absolute;
-    inset:0;
-    padding:25px;
-    color:white;
-    background:linear-gradient(
-        transparent 30%,
-        rgba(0,0,0,.75)
-    );
-
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-}
-
-.portfolio-overlay2 h3{
-    font-family:"DM Serif Display",serif;
-    font-size:26px;
-    font-weight:400;
-    margin-bottom:200px;
-}
-
-.portfolio-overlay2 .con{
-    font-size:15px;
-    font-family:"DM Serif Display",serif;
-    line-height:1.6;
-    margin:0;
-}
-
-.con { 
-color:White;
-font-size:12px;
-top:-2px;
-position:relative;
-margin-bottom:5px;
-}
-.portfolio-overlay3{
-    position:absolute;
-    inset:0;
-    padding:25px;
-    color:white;
-    background:linear-gradient(
-        transparent 30%,
-        rgba(0,0,0,.75)
-    );
-
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-}
-
-
 
 </style>
+
 </head>
 
+
 <body>
+
 
 <!-- =========================
      MENU
@@ -839,31 +847,56 @@ margin-bottom:5px;
     <img src="logoamora.png" alt="Amora Studio">
 </a>
 
-<a class="logo">
-Amora <span>Studio</span>
+<a href="#inicio" class="logo">
+    Amora <span>Studio</span>
 </a>
 
-<button class="menu-btn" onclick="abrirMenu()">☰</button>
+<button
+class="menu-btn"
+onclick="abrirMenu()"
+aria-label="Abrir menu">
+
+☰
+
+</button>
 
 <ul class="nav-links" id="menu">
 
-<li><a href="#inicio">Início</a></li>
-<li><a href="#sobre">Quem Somos </a></li>
-<li><a href="#servicos">Serviços</a></li>
-<li><a href="#portfolio">Portfólio</a></li>
-<li><a href="#contacto">Contacto</a></li>
+<li>
+<a href="#inicio">Início</a>
+</li>
 
-<li><a href="#s.html">Depoimentos</a></li>
+<li>
+<a href="#sobre">Quem Somos</a>
+</li>
+
+<li>
+<a href="#servicos">Serviços</a>
+</li>
+
+<li>
+<a href="#portfolio">Portfólio</a>
+</li>
+
+<li>
+<a href="#contacto">Contacto</a>
+</li>
+
+<li>
+<a href="s.html">Depoimentos</a>
+</li>
+
 </ul>
 
 </nav>
 
 </header>
 
+
 <!-- =========================
      HERO
 ========================= -->
- 
+
 <section class="hero" id="inicio">
 
 <div class="hero-text">
@@ -873,12 +906,14 @@ Amora Studio
 </div>
 
 <h1>
-A Universe <br>
+A Universe<br>
 <span>of Creation.</span>
 </h1>
 
 <p>
-Unimos Design, arquitetura, interiores, Programação e soluções criativas desenvolvidas com identidade, propósito e exclusividade.
+Unimos Design, arquitetura, interiores, Programação
+e soluções criativas desenvolvidas com identidade,
+propósito e exclusividade.
 </p>
 
 <div class="buttons">
@@ -887,14 +922,18 @@ Unimos Design, arquitetura, interiores, Programação e soluções criativas des
 Conhecer serviços
 </a>
 
-<a href="https://wa.me/244951031634?text=Olá%20Amora%20Studio,%20gostaria%20de%20solicitar%20um%20orçamento."
+<a
+href="https://wa.me/244951031634?text=Olá%20Amora%20Studio,%20gostaria%20de%20solicitar%20um%20orçamento."
 class="btn btn-outline">
+
 Solicitar orçamento
+
 </a>
 
 </div>
 
 </div>
+
 
 <div class="hero-image">
 
@@ -904,10 +943,12 @@ alt="Projeto de interiores">
 
 <div class="hero-card">
 
-<strong>Multiáreas, uma só Assinatura </strong>
+<strong>
+Multiáreas, uma só Assinatura
+</strong>
 
 <span>
-    Criamos. Projetamos. Transformamos
+Criamos. Projetamos. Transformamos.
 </span>
 
 </div>
@@ -915,6 +956,7 @@ alt="Projeto de interiores">
 </div>
 
 </section>
+
 
 <!-- =========================
      SOBRE
@@ -932,6 +974,7 @@ alt="Interior sofisticado">
 
 </div>
 
+
 <div class="about-text">
 
 <div class="small-title">
@@ -944,13 +987,21 @@ Criamos com<br>
 </h2>
 
 <p>
-A Amora Studio é uma empresa criativa especializada em Design Gráfico, Design de Interiores, Arquitetura e Programação. Unimos diferentes áreas de design para transformar ideias em experiências únicas.
+A Amora Studio é uma empresa criativa especializada
+em Design Gráfico, Design de Interiores, Arquitetura
+e Programação.
 </p>
 
 <p>
-Mais do que prestar serviços, buscamos compreender cada projeto, desenvolver conceitos e transformar ideias em resultados que sejam funcionais, marcantes e únicos.
+Unimos diferentes áreas de design para transformar
+ideias em experiências únicas.
 </p>
 
+<p>
+Mais do que prestar serviços, buscamos compreender
+cada projeto, desenvolver conceitos e transformar
+ideias em resultados funcionais, marcantes e únicos.
+</p>
 
 <div class="signature">
 Amora Studio
@@ -967,7 +1018,9 @@ Amora Studio
      SERVIÇOS
 ========================= -->
 
-<section class="services-section" id="servicos">
+<section
+class="services-section"
+id="servicos">
 
 <div class="section-heading">
 
@@ -989,25 +1042,35 @@ visuais, espaços e experiências memoráveis.
 
 <div class="services">
 
-<div class="service" onclick="abrirImagem('ga.jpg')">
 
-<div class="service-number">01</div>
+<div
+class="service"
+onclick="abrirImagem('ga.jpg')">
+
+<div class="service-number">
+01
+</div>
 
 <h3>
 Design Gráfico
 </h3>
 
 <p>
-• Identidade visual<br> 
-• criação de flyer <br>
-• Materiais personalizados<br>
+• Identidade visual<br>
+• Criação de flyer<br>
+• Materiais personalizados
 </p>
 
 </div>
 
-<div class="service" onclick="abrirImagem('fotoc.jpg')">
 
-<div class="service-number">02</div>
+<div
+class="service"
+onclick="abrirImagem('fotoc.jpg')">
+
+<div class="service-number">
+02
+</div>
 
 <h3>
 Convites
@@ -1015,67 +1078,83 @@ Convites
 
 <p>
 • Convites físicos<br>
-• Convites digitais<br>
-</p>
-<p>
-Modernos - elegantes - e - personalizados.<br>
+• Convites digitais
 </p>
 
-<h4>Inclui:</h4><br>
+<p>
+Modernos, elegantes e personalizados.
+</p>
+
+<h4>
+Inclui:
+</h4>
+
 <p>
 • Confirmação de presença com lista dos confirmados<br>
 • Localização via GPS<br>
-• Nomes dos convidados ou modelo único, e muito mais<br>
+• Nomes dos convidados ou modelo único
 </p>
 
 </div>
 
 
-<div class="service" onclick="abrirImagem('arq.jpg')">
+<div
+class="service"
+onclick="abrirImagem('arq.jpg')">
 
-<div class="service-number">03</div>
+<div class="service-number">
+03
+</div>
 
 <h3>
 Projetos Arquitetônicos
 </h3>
 
 <p>
-• Desenvolvimento de projetos arquitetônicos<br> 
+• Desenvolvimento de projetos arquitetônicos<br>
 • Acompanhamento técnico de obras<br>
-• Renderizações 3D realistas<br> 
-• Consultoria de projetos<br>
+• Renderizações 3D realistas<br>
+• Consultoria de projetos
 </p>
 
 </div>
 
 
-<div class="service" onclick="abrirImagem('inter.jpg.jpg')">
+<div
+class="service"
+onclick="abrirImagem('inter.jpg.jpg')">
 
-<div class="service-number">04</div>
+<div class="service-number">
+04
+</div>
+
 <h3>
 Design de Interiores
 </h3>
 
 <p>
-• Projetamos ambientes elegantes, funcionais e funcionalidade e organização dos espaços.<br> 
-• Fazemos projetos personalizados sob medidas
-
+• Ambientes elegantes e funcionais<br>
+• Projetos personalizados sob medida
 </p>
 
 </div>
 
 
-<div class="service" onclick="abrirImagem('web.jpg')">
+<div
+class="service"
+onclick="abrirImagem('web.jpg')">
 
-<div class="service-number">05</div>
+<div class="service-number">
+05
+</div>
 
 <h3>
-Programação 
+Programação
 </h3>
 
 <p>
-• Criação de websites Corporativos<br> 
-• Lojas virtuais <br>
+• Websites corporativos<br>
+• Lojas virtuais<br>
 • Sites personalizados
 </p>
 
@@ -1087,19 +1166,17 @@ Programação
 </section>
 
 
-<!-- =========================
-     MODAL DAS IMAGENS
-========================= -->
-
-
-</div>
+<!-- BOTÃO ORÇAMENTO -->
 
 <div class="buttons">
 
-<a href="https://wa.me/244951031634?text=Olá%20Amora%20Studio,%20gostaria%20de%20solicitar%20um%20orçamento."
+<a
+href="https://wa.me/244951031634?text=Olá%20Amora%20Studio,%20gostaria%20de%20solicitar%20um%20orçamento."
 class="btn btn-outline"
-style="display:block; width:max-content; margin:30px auto 30px;">
+style="display:block;width:max-content;margin:30px auto;">
+
 Solicitar orçamento
+
 </a>
 
 </div>
@@ -1122,7 +1199,7 @@ A sua ideia merece<br>
 um design exclusivo.
 </h2>
 
-<p class="con">
+<p>
 Projetamos experiências que unem criatividade,
 sofisticação e funcionalidade.
 </p>
@@ -1130,6 +1207,7 @@ sofisticação e funcionalidade.
 </div>
 
 </section>
+
 
 <!-- =========================
      PORTFÓLIO
@@ -1156,7 +1234,9 @@ em soluções visuais.
 
 </div>
 
+
 <div class="portfolio-grid">
+
 
 <div class="portfolio-item large">
 
@@ -1165,10 +1245,15 @@ src="inter.jpg"
 alt="Design de interiores">
 
 <div class="portfolio-overlay">
-<h3>Design de Interiores</h3>
+
+<h3>
+Design de Interiores
+</h3>
+
 </div>
 
 </div>
+
 
 <div class="portfolio-item">
 
@@ -1177,10 +1262,15 @@ src="arq.jpg"
 alt="Arquitetura">
 
 <div class="portfolio-overlay">
-<h3>Arquitetura</h3>
+
+<h3>
+Arquitetura
+</h3>
+
 </div>
 
 </div>
+
 
 <div class="portfolio-item">
 
@@ -1189,7 +1279,11 @@ src="ga.jpg"
 alt="Design gráfico">
 
 <div class="portfolio-overlay">
-<h3>Design Gráfico</h3>
+
+<h3>
+Design Gráfico
+</h3>
+
 </div>
 
 </div>
@@ -1202,14 +1296,19 @@ src="fotoc.jpg"
 alt="Convites digitais">
 
 <div class="portfolio-overlay">
-<h3>Convites digitais e interativos </h3><br>
-<h5 class="con">A partir de 6.000 Kz</h5>
 
-</div> 
+<h3>
+Convites digitais e interativos
+</h3>
+
+<h5 class="con">
+A partir de 6.000 Kz
+</h5>
 
 </div>
 
 </div>
+
 
 </div>
 
@@ -1217,20 +1316,24 @@ alt="Convites digitais">
 
 </section>
 
+
 <!-- =========================
      NÚMEROS
 ========================= -->
 
 <section class="numbers">
-<div class="footer-column">
-<a href="#s.html"<h4>Abrir depoimentos</h4></a>
-</div>
+
 <div class="numbers-grid">
+
 
 <div class="number-item">
 
-<div class="number" data-target="150">
+<div
+class="number"
+data-target="150">
+
 0+
+
 </div>
 
 <div class="number-label">
@@ -1239,10 +1342,16 @@ Projetos entregues
 
 </div>
 
+
 <div class="number-item">
 
-<div class="number" data-target="200">
+<div
+class="number"
+id="clientesFelizes"
+data-target="0">
+
 0+
+
 </div>
 
 <div class="number-label">
@@ -1251,10 +1360,15 @@ Clientes felizes
 
 </div>
 
+
 <div class="number-item">
 
-<div class="number" data-target="7">
-0
+<div
+class="number"
+data-target="7">
+
+0+
+
 </div>
 
 <div class="number-label">
@@ -1263,10 +1377,15 @@ Anos de estúdio
 
 </div>
 
+
 <div class="number-item">
 
-<div class="number" data-target="100">
+<div
+class="number"
+data-target="100">
+
 0%
+
 </div>
 
 <div class="number-label">
@@ -1275,15 +1394,19 @@ Satisfação
 
 </div>
 
+
 </div>
 
 </section>
+
 
 <!-- =========================
      CONTACTO
 ========================= -->
 
-<section class="contact" id="contacto">
+<section
+class="contact"
+id="contacto">
 
 <div class="small-title">
 Vamos criar juntos
@@ -1309,6 +1432,7 @@ WhatsApp · 951 031 634
 
 </section>
 
+
 <!-- =========================
      FOOTER
 ========================= -->
@@ -1317,6 +1441,7 @@ WhatsApp · 951 031 634
 
 <div class="footer-grid">
 
+
 <div class="footer-brand">
 
 <div class="footer-logo">
@@ -1324,66 +1449,96 @@ Amora <span>Studio</span>
 </div>
 
 <p class="footer-description">
+
 Design & Arquitetura exclusiva.
-Convites digitais interativos, interiores premium
-e artes gráficas que valorizam o seu negócio.
+Convites digitais interativos,
+interiores premium e artes gráficas
+que valorizam o seu negócio.
+
 </p>
 
 </div>
 
-</section>
+
 <div class="footer-column">
 
-<h4>Explorar</h4>
+<h4>
+Explorar
+</h4>
 
-<a href="#sobre">Sobre nós</a>
-<a href="#servicos">Serviços</a>
-<a href="#portfolio">Portfólio</a>
-<a href="#s.html">Depoimentos</a>
-<a href="#contacto">Contacto</a>
- <div style="display:flex; justify-content:center; align-items:center; gap:25px; margin-top:25px;">
- </div>
- 
-    <div style="display:flex; justify-content:center; align-items:center; gap:25px; margin-top:25px;">
+<a href="#sobre">
+Quem Somos
+</a>
 
-    <a href="https://www.instagram.com/amorastudio3"
-       target="_blank"
-       style="color:#C1A897; font-size:27px;">
-        <i class="fa-brands fa-instagram"></i>
-    </a>
+<a href="#servicos">
+Serviços
+</a>
 
-    <a href="mailto:hello@amorastudio.ao"
-       style="color:#C1A897; font-size:27px;">
-        <i class="fa-solid fa-envelope"></i>
-    </a>
+<a href="#portfolio">
+Portfólio
+</a>
 
-    <a href="https://wa.me/244951031634"
-       target="_blank"
-       style="color:#C1A897; font-size:27px;">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
+<a href="s.html">
+Depoimentos
+</a>
+
+<a href="#contacto">
+Contacto
+</a>
+
+
+<div class="social-icons">
+
+<a
+href="https://www.instagram.com/amorastudio3"
+target="_blank"
+aria-label="Instagram">
+
+<i class="fa-brands fa-instagram"></i>
+
+</a>
+
+
+<a
+href="mailto:hello@amorastudio.ao"
+aria-label="E-mail">
+
+<i class="fa-solid fa-envelope"></i>
+
+</a>
+
+
+<a
+href="https://wa.me/244951031634"
+target="_blank"
+aria-label="WhatsApp">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
 
 </div>
- 
-</div>
 
 </div>
 
 </div>
+
 
 <div class="footer-bottom">
 
 <span>
-© 2026 Amora Studio. Todos os direitos reservados.
+© Amora Studio.<br>
+Desde 2021
 </span>
 
 <span>
-Design & Arquitetura Exclusiva
+Um universo de criação
 </span>
 
 </div>
 
 </footer>
+
 
 <!-- =========================
      WHATSAPP FLUTUANTE
@@ -1394,74 +1549,47 @@ class="whatsapp-float"
 href="https://wa.me/244951031634?text=Olá%20Amora%20Studio,%20gostaria%20de%20solicitar%20informações."
 aria-label="Falar com a Amora Studio pelo WhatsApp">
 
-☏
+<i class="fa-brands fa-whatsapp"></i>
 
 </a>
 
-<script>
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 <script>
 
-function abrirMenu() {
-    const menu = document.getElementById("menu");
+function abrirMenu(){
+
+    const menu =
+    document.getElementById("menu");
+
     menu.classList.toggle("active");
+
 }
 
-document.querySelectorAll(".nav-links a").forEach(function(link) {
-    link.addEventListener("click", function() {
-        document.getElementById("menu").classList.remove("active");
+
+/* Fechar menu depois de clicar */
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        document
+        .getElementById("menu")
+        .classList
+        .remove("active");
+
     });
+
 });
+
 
 /* =========================
    CONTADORES
-========================= */
-
-<script type="module">
-
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-
-import {
-    getDatabase,
-    ref,
-    onValue
-}
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
-
-
-const firebaseConfig = {
-
-    apiKey: "AIzaSyCWJzfI7ZyC56IWSN0CGf8N9etxVb0HPq0",
-
-    authDomain: "lista-de-presentes-da.firebaseapp.com",
-
-    databaseURL:
-    "https://lista-de-presentes-da-default-rtdb.firebaseio.com",
-
-    projectId: "lista-de-presentes-da",
-
-    storageBucket:
-    "lista-de-presentes-da.firebasestorage.app",
-
-    messagingSenderId: "884088309111",
-
-    appId:
-    "1:884088309111:web:14004f508ccccb563f8d72"
-
-};
-
-
-const app = initializeApp(firebaseConfig);
-
-const database = getDatabase(app);
-
-const comentariosRef =
-ref(database, "comentarios");
-
-
-/* =========================
-   CONTADORES FIXOS
 ========================= */
 
 const counters =
@@ -1470,11 +1598,12 @@ document.querySelectorAll(".number");
 let countersStarted = false;
 
 
-function animarNumero(counter, target){
+function animarNumero(counter,target){
 
     let current = 0;
 
-    const increment = target / 60;
+    const increment =
+    target / 60;
 
 
     function update(){
@@ -1505,43 +1634,35 @@ function animarNumero(counter, target){
 }
 
 
-/* =========================
-   INICIAR CONTADORES
-========================= */
-
 function startCounters(){
 
-    if(countersStarted) return;
+    if(countersStarted)
+    return;
 
     countersStarted = true;
 
 
-    counters.forEach(counter => {
+    counters.forEach(function(counter){
 
-        /*
-        O contador de Clientes felizes
-        será controlado pelo Firebase.
-        */
-
-        if(counter.id === "clientesFelizes"){
-            return;
-        }
+        if(counter.id === "clientesFelizes")
+        return;
 
 
         const target =
         Number(counter.dataset.target);
 
 
-        animarNumero(counter, target);
+        animarNumero(
+            counter,
+            target
+        );
 
     });
 
 }
 
 
-/* =========================
-   OBSERVAR A SEÇÃO
-========================= */
+/* Ativar contadores quando aparecem */
 
 const numberSection =
 document.querySelector(".numbers");
@@ -1552,7 +1673,7 @@ if(numberSection){
     const numberObserver =
     new IntersectionObserver(
 
-        (entries) => {
+        function(entries){
 
             if(entries[0].isIntersecting){
 
@@ -1575,21 +1696,99 @@ if(numberSection){
 
 
 /* =========================
+   ABRIR IMAGEM DOS SERVIÇOS
+========================= */
+
+function abrirImagem(imagem){
+
+    window.open(
+        imagem,
+        "_blank"
+    );
+
+}
+
+</script>
+
+
+<!-- =========================
+     FIREBASE
+========================= -->
+
+<script type="module">
+
+import { initializeApp }
+
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+
+import {
+
+    getDatabase,
+    ref,
+    onValue
+
+}
+
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+
+const firebaseConfig = {
+
+    apiKey:
+    "AIzaSyCWJzfI7ZyC56IWSN0CGf8N9etxVb0HPq0",
+
+    authDomain:
+    "lista-de-presentes-da.firebaseapp.com",
+
+    databaseURL:
+    "https://lista-de-presentes-da-default-rtdb.firebaseio.com",
+
+    projectId:
+    "lista-de-presentes-da",
+
+    storageBucket:
+    "lista-de-presentes-da.firebasestorage.app",
+
+    messagingSenderId:
+    "884088309111",
+
+    appId:
+    "1:884088309111:web:14004f508ccccb563f8d72"
+
+};
+
+
+const app =
+initializeApp(firebaseConfig);
+
+
+const database =
+getDatabase(app);
+
+
+const comentariosRef =
+ref(database,"comentarios");
+
+
+/* =========================
    CLIENTES FELIZES
-   LIGADO AOS COMENTÁRIOS
 ========================= */
 
 onValue(
 
     comentariosRef,
 
-    snapshot => {
+    function(snapshot){
 
         const contador =
-        document.getElementById("clientesFelizes");
+        document.getElementById(
+            "clientesFelizes"
+        );
 
 
-        if(!contador) return;
+        if(!contador)
+        return;
 
 
         let quantidade = 0;
@@ -1597,7 +1796,7 @@ onValue(
 
         if(snapshot.exists()){
 
-            snapshot.forEach(() => {
+            snapshot.forEach(function(){
 
                 quantidade++;
 
@@ -1606,70 +1805,58 @@ onValue(
         }
 
 
-        /*
-        Atualiza o valor real
-        */
-
-        const valorAtual =
-        Number(contador.textContent.replace("+",""));
-
-
-        /*
-        Se ainda estiver em 0,
-        faz a animação desde zero.
-        */
-
-        if(valorAtual === 0){
-
-            animarNumero(
-                contador,
-                quantidade
-            );
-
-        }else{
-
-            /*
-            Quando entrar um novo comentário,
-            anima somente a diferença.
-            */
-
-            let atual = valorAtual;
-
-
-            function atualizar(){
-
-                if(atual < quantidade){
-
-                    atual++;
-
-                    contador.textContent =
-                    atual + "+";
-
-                    setTimeout(
-                        atualizar,
-                        100
-                    );
-
-                }
-
-            }
-
-
-            atualizar();
-
-        }
-
-
-        /*
-        Atualiza também o data-target
-        */
-
         contador.dataset.target =
         quantidade;
+
+
+        animarClientes(
+            contador,
+            quantidade
+        );
 
     }
 
 );
+
+
+function animarClientes(
+    contador,
+    target
+){
+
+    let atual = 0;
+
+    const incremento =
+    target / 40;
+
+
+    function atualizar(){
+
+        atual += incremento;
+
+
+        if(atual < target){
+
+            contador.textContent =
+            Math.floor(atual) + "+";
+
+            requestAnimationFrame(
+                atualizar
+            );
+
+        }else{
+
+            contador.textContent =
+            target + "+";
+
+        }
+
+    }
+
+
+    atualizar();
+
+}
 
 </script>
 
