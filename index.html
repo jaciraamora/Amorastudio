@@ -187,7 +187,25 @@ section{padding:100px 7%;}
     pointer-events:none;
     transition:opacity .35s ease,transform .45s cubic-bezier(.2,.8,.2,1);
 }
-
+  
+  .service-image1{
+    position:absolute;
+    width:100%;
+    height:auto !important;
+    right:-10%;
+    bottom:-30px;
+    object-fit:contain !important; 
+    border-radius:14px;
+    opacity:0;
+    transform:translateY(55px) scale(.82);
+    transform-origin:center bottom;
+    box-shadow:0 18px 40px rgba(0,0,0,.25);
+    border:4px solid rgba(255,255,255,.85);
+    z-index:5;
+    pointer-events:none;
+    transition:opacity .35s ease,transform .45s cubic-bezier(.2,.8,.2,1);
+}
+  
 .service.active .service-image{
     opacity:1;
     transform:translateY(0) scale(1);
@@ -205,16 +223,27 @@ section{padding:100px 7%;}
 
 /* ========================= PORTFÓLIO ========================= */
 .portfolio{max-width:1250px;margin:auto;}
-.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;} 
+
 .portfolio-item{height:380px;overflow:hidden;position:relative;border-radius:12px;}
+
 .portfolio-item.large{grid-column:span 2;}
-.portfolio-item img{width:100%;height:100%;object-fit:cover;transition:.6s;}
-.portfolio-item:hover img{transform:scale(1.07);}
+
+.portfolio-item1 img{width:100%;height:100%;object-fit:contain;transition:.6s;} 
+
+}
+.portfolio-item img{width:100%;height:100%;object-fit:cover;transition:.6s;} 
+
+.portfolio-item:hover img{transform:scale(1.07);} 
+
 .portfolio-overlay{
     position:absolute;bottom:0;left:0;width:100%;padding:25px;color:white;
     background:linear-gradient(transparent,rgba(0,0,0,.7));
 }
+
 .portfolio-overlay h3{font-family:"DM Serif Display",serif;font-size:25px;font-weight:400;}
+
+
 .con{color:white;font-size:12px;font-family:"Montserrat",sans-serif;line-height:1.6;}
 
 /* ========================= CONTACTO ========================= */
@@ -403,7 +432,7 @@ footer{background:var(--escuro);color:white;padding:55px 7% 25px;}
         <div class="service-number">04</div>
         <h3>Design de Interiores</h3>
         <p>• Projetos personalizados<br>• Ambientes funcionais<br>• Organização dos espaços</p>
-        <img class="service-image" src="inter.jpg" alt="Projeto de Design de Interiores">
+        <img class="service-image1" src="inter.jpg" alt="Projeto de Design de Interiores">
     </div>
 
     <div class="service" data-image="web.jpg" onclick="alternarImagem(this)">
@@ -448,7 +477,7 @@ footer{background:var(--escuro);color:white;padding:55px 7% 25px;}
         <img src="arq.jpg" alt="Arquitetura">
         <div class="portfolio-overlay"><h3>Arquitetura</h3></div>
     </div>
-    <div class="portfolio-item">
+    <div class="portfolio-item1">
         <img src="ga.jpg" alt="Design gráfico">
         <div class="portfolio-overlay"><h3>Design Gráfico</h3></div>
     </div>
