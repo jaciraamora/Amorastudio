@@ -348,6 +348,39 @@ footer{
 
 }
 
+/* ========================= MENU ========================= */
+header{
+    position:fixed;
+    top:0;left:0;width:100%;z-index:1000;
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(193,168,151,.25);
+}
+
+.navbar{
+    max-width:1200px;margin:auto;height:78px;padding:0 25px;
+    display:flex;align-items:center;justify-content:space-between;
+}
+.logo{
+    font-family:"DM Serif Display",serif;font-size:31px;letter-spacing:-1px;
+    text-decoration:none;color:var(--escuro);
+}
+.logo img{
+    width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid #C1A897;
+}
+
+.logo span{color:#C1A897;}
+.nav-links{display:flex;gap:30px;list-style:none;}
+.nav-links a{
+    text-decoration:none;color:var(--escuro);font-size:18px;font-weight:500;transition:.3s;
+}
+.nav-links a:hover{color:var(--principal-escuro);}
+.menu-btn{
+
+display:none;border:0;background:none;font-size:18px;cursor:pointer;color:var(--escuro);
+} 
+
 </style>
 
 </head>
@@ -359,22 +392,28 @@ footer{
 ========================= -->
 
 <header>
-
 <nav class="navbar">
 
-<a href="index.html" class="logo">
+<a href="#inicio" class="logo">
     <img src="logoamora.png" alt="Amora Studio">
 </a>
 
-<a href="index.html" class="logo">
-    Amora <span>Studio</span>
-</a>
+<a href="#inicio" class="logo">Amora <span>Studio</span></a>
 
-<button class="menu-btn" onclick="abrirMenu()">
-    ☰
-</button>
+<button class="menu-btn" onclick="abrirMenu()" aria-label="Abrir menu">☰</button>
+
+<ul class="nav-links" id="menu">
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#sobre">Quem Somos</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#portfolio">Portfólio</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="s.html">Depoimentos</a></li>
+    <li><a href="pergunta.html">Perguntas Frequentes</a></li>
+</ul>
 
 </nav>
+
 
 </header>
 
