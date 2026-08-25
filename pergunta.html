@@ -14,6 +14,10 @@
 
 <style>
 
+/* =========================
+   VARIÁVEIS
+========================= */
+
 :root{
     --principal:#C1A897;
     --principal-escuro:#a88e7c;
@@ -22,6 +26,11 @@
     --branco:#ffffff;
     --cinza:#716b67;
 }
+
+
+/* =========================
+   RESET
+========================= */
 
 *{
     margin:0;
@@ -39,6 +48,7 @@ body{
     background:var(--creme);
 }
 
+
 /* =========================
    CABEÇALHO
 ========================= */
@@ -50,7 +60,8 @@ header{
     width:100%;
     z-index:1000;
 
-    background:rgba(255,255,255,.92);
+    background:rgba(255,255,255,.94);
+
     backdrop-filter:blur(12px);
     -webkit-backdrop-filter:blur(12px);
 
@@ -68,9 +79,16 @@ header{
     justify-content:space-between;
 }
 
+
+/* =========================
+   LOGO
+========================= */
+
 .logo{
     font-family:"DM Serif Display",serif;
     font-size:30px;
+    letter-spacing:-1px;
+
     text-decoration:none;
     color:var(--escuro);
 }
@@ -82,22 +100,62 @@ header{
 .logo img{
     width:44px;
     height:44px;
+
     border-radius:50%;
     object-fit:cover;
+
     border:2px solid var(--principal);
 }
 
-.menu-btn{
-    display:none;
-    border:0;
-    background:none;
-    font-size:28px;
-    cursor:pointer;
-    color:var(--escuro);
-}
 
 /* =========================
-   PÁGINA
+   LINKS DO MENU
+========================= */
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:25px;
+
+    list-style:none;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:var(--escuro);
+
+    font-size:13px;
+    font-weight:500;
+
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--principal-escuro);
+}
+
+
+/* =========================
+   BOTÃO MENU MOBILE
+========================= */
+
+.menu-btn{
+    display:none;
+
+    border:0;
+    background:none;
+
+    font-size:28px;
+    cursor:pointer;
+
+    color:var(--escuro);
+
+    padding:5px;
+}
+
+
+/* =========================
+   PÁGINA FAQ
 ========================= */
 
 .faq-page{
@@ -105,26 +163,38 @@ header{
     padding:140px 7% 100px;
 }
 
+
+/* =========================
+   CABEÇALHO FAQ
+========================= */
+
 .faq-header{
     max-width:700px;
     margin:0 auto 55px;
+
     text-align:center;
 }
 
 .small-title{
     text-transform:uppercase;
+
     letter-spacing:4px;
     font-size:11px;
     font-weight:600;
+
     color:var(--principal-escuro);
+
     margin-bottom:15px;
 }
 
 .faq-header h1{
     font-family:"DM Serif Display",serif;
+
     font-size:clamp(45px,6vw,70px);
     font-weight:400;
+
     line-height:1.1;
+
     margin-bottom:20px;
 }
 
@@ -134,12 +204,14 @@ header{
 
 .faq-header p{
     color:var(--cinza);
+
     font-size:14px;
     line-height:1.8;
 }
 
+
 /* =========================
-   PERGUNTAS
+   CONTAINER DAS PERGUNTAS
 ========================= */
 
 .faq-container{
@@ -147,22 +219,36 @@ header{
     margin:auto;
 }
 
+
+/* =========================
+   ITEM FAQ
+========================= */
+
 .faq-item{
     background:rgba(255,255,255,.75);
+
     backdrop-filter:blur(10px);
     -webkit-backdrop-filter:blur(10px);
 
     border:1px solid rgba(193,168,151,.25);
+
     border-radius:15px;
 
     margin-bottom:14px;
+
     overflow:hidden;
 
     box-shadow:0 8px 25px rgba(50,40,35,.04);
 }
 
+
+/* =========================
+   PERGUNTA
+========================= */
+
 .faq-question{
     width:100%;
+
     padding:22px 25px;
 
     border:0;
@@ -173,9 +259,11 @@ header{
     justify-content:space-between;
 
     text-align:left;
+
     cursor:pointer;
 
     color:var(--escuro);
+
     font-family:"Montserrat",sans-serif;
     font-size:14px;
     font-weight:600;
@@ -185,16 +273,28 @@ header{
     color:var(--principal-escuro);
 }
 
+
+/* =========================
+   ÍCONE +
+========================= */
+
 .faq-icon{
     font-size:24px;
     font-weight:300;
+
     color:var(--principal-escuro);
 
     transition:.3s;
 }
 
+
+/* =========================
+   RESPOSTA
+========================= */
+
 .faq-answer{
     max-height:0;
+
     overflow:hidden;
 
     transition:max-height .4s ease;
@@ -204,11 +304,15 @@ header{
     padding:0 25px 24px;
 
     color:var(--cinza);
+
     font-size:13px;
     line-height:1.8;
 }
 
-/* pergunta aberta */
+
+/* =========================
+   PERGUNTA ABERTA
+========================= */
 
 .faq-item.active .faq-answer{
     max-height:300px;
@@ -218,12 +322,14 @@ header{
     transform:rotate(45deg);
 }
 
+
 /* =========================
    BOTÃO VOLTAR
 ========================= */
 
 .back-button{
     display:block;
+
     width:max-content;
 
     margin:45px auto 0;
@@ -245,8 +351,10 @@ header{
 
 .back-button:hover{
     background:var(--principal-escuro);
+
     transform:translateY(-3px);
 }
+
 
 /* =========================
    RODAPÉ
@@ -254,21 +362,26 @@ header{
 
 footer{
     background:var(--escuro);
+
     color:white;
+
     padding:45px 7% 25px;
 }
 
 .footer-content{
     max-width:1200px;
+
     margin:auto;
 
     display:flex;
     flex-direction:column;
+
     gap:25px;
 }
 
 .footer-logo{
     font-family:"DM Serif Display",serif;
+
     font-size:30px;
 }
 
@@ -278,25 +391,32 @@ footer{
 
 .footer-description{
     max-width:350px;
+
     color:#aaa39e;
+
     font-size:11px;
     line-height:1.8;
 }
 
 .footer-bottom{
     max-width:1200px;
+
     margin:30px auto 0;
+
     padding-top:18px;
 
     border-top:1px solid rgba(255,255,255,.1);
 
     display:flex;
     justify-content:space-between;
+
     gap:20px;
 
     color:#77716d;
+
     font-size:9px;
 }
+
 
 /* =========================
    RESPONSIVO
@@ -306,7 +426,11 @@ footer{
 
     .navbar{
         height:70px;
+        padding:0 20px;
     }
+
+
+    /* LOGO */
 
     .logo{
         font-size:25px;
@@ -317,9 +441,79 @@ footer{
         height:40px;
     }
 
+
+    /* ESCONDE LINKS */
+
+    .nav-links{
+        display:none;
+
+        position:absolute;
+
+        top:70px;
+        right:20px;
+
+        width:230px;
+
+        padding:12px;
+
+        background:rgba(255,255,255,.97);
+
+        backdrop-filter:blur(12px);
+        -webkit-backdrop-filter:blur(12px);
+
+        border:1px solid rgba(193,168,151,.25);
+
+        border-radius:15px;
+
+        box-shadow:0 15px 35px rgba(50,40,35,.12);
+
+        flex-direction:column;
+        align-items:stretch;
+
+        gap:3px;
+    }
+
+
+    /* MENU ABERTO */
+
+    .nav-links.active{
+        display:flex;
+    }
+
+
+    /* LINKS MOBILE */
+
+    .nav-links li{
+        width:100%;
+    }
+
+    .nav-links a{
+        display:block;
+
+        width:100%;
+
+        padding:14px 15px;
+
+        border-radius:10px;
+
+        font-size:13px;
+    }
+
+    .nav-links a:hover{
+        background:var(--creme);
+
+        color:var(--principal-escuro);
+    }
+
+
+    /* BOTÃO ☰ */
+
     .menu-btn{
         display:block;
     }
+
+
+    /* FAQ */
 
     .faq-page{
         padding:120px 6% 70px;
@@ -335,6 +529,7 @@ footer{
 
     .faq-question{
         padding:20px;
+
         font-size:13px;
     }
 
@@ -342,80 +537,100 @@ footer{
         padding:0 20px 22px;
     }
 
+
+    /* RODAPÉ */
+
     .footer-bottom{
         flex-direction:column;
     }
 
 }
 
-/* ========================= MENU ========================= */
-header{
-    position:fixed;
-    top:0;left:0;width:100%;z-index:1000;
-    background:rgba(255,255,255,.94);
-    backdrop-filter:blur(12px);
-    -webkit-backdrop-filter:blur(12px);
-    border-bottom:1px solid rgba(193,168,151,.25);
-}
-
-.navbar{
-    max-width:1200px;margin:auto;height:78px;padding:0 25px;
-    display:flex;align-items:center;justify-content:space-between;
-}
-.logo{
-    font-family:"DM Serif Display",serif;font-size:31px;letter-spacing:-1px;
-    text-decoration:none;color:var(--escuro);
-}
-.logo img{
-    width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid #C1A897;
-}
-
-.logo span{color:#C1A897;}
-.nav-links{display:flex;gap:30px;list-style:none;}
-.nav-links a{
-    text-decoration:none;color:var(--escuro);font-size:18px;font-weight:500;transition:.3s;
-}
-.nav-links a:hover{color:var(--principal-escuro);}
-.menu-btn{
-
-display:none;border:0;background:none;font-size:18px;cursor:pointer;color:var(--escuro);
-} 
-
 </style>
 
 </head>
 
+
 <body>
+
 
 <!-- =========================
      CABEÇALHO
 ========================= -->
 
 <header>
+
 <nav class="navbar">
 
-<a href="#inicio" class="logo">
+
+<!-- LOGO IMAGEM -->
+
+<a href="index.html" class="logo">
+
     <img src="logoamora.png" alt="Amora Studio">
+
 </a>
 
-<a href="#inicio" class="logo">Amora <span>Studio</span></a>
 
-<button class="menu-btn" onclick="abrirMenu()" aria-label="Abrir menu">☰</button>
+<!-- LOGO TEXTO -->
+
+<a href="index.html" class="logo">
+
+    Amora <span>Studio</span>
+
+</a>
+
+
+<!-- BOTÃO MENU -->
+
+<button
+    class="menu-btn"
+    onclick="abrirMenu()"
+    aria-label="Abrir menu">
+
+    ☰
+
+</button>
+
+
+<!-- MENU -->
 
 <ul class="nav-links" id="menu">
-    <li><a href="#inicio">Início</a></li>
-    <li><a href="#sobre">Quem Somos</a></li>
-    <li><a href="#servicos">Serviços</a></li>
-    <li><a href="#portfolio">Portfólio</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-    <li><a href="s.html">Depoimentos</a></li>
-    <li><a href="pergunta.html">Perguntas Frequentes</a></li>
+
+    <li>
+        <a href="index.html">Início</a>
+    </li>
+
+    <li>
+        <a href="index.html#sobre">Quem Somos</a>
+    </li>
+
+    <li>
+        <a href="index.html#servicos">Serviços</a>
+    </li>
+
+    <li>
+        <a href="index.html#portfolio">Portfólio</a>
+    </li>
+
+    <li>
+        <a href="index.html#contacto">Contacto</a>
+    </li>
+
+    <li>
+        <a href="s.html">Depoimentos</a>
+    </li>
+
+    <li>
+        <a href="pergunta.html">Perguntas Frequentes</a>
+    </li>
+
 </ul>
 
 </nav>
 
-
 </header>
+
 
 
 <!-- =========================
@@ -424,23 +639,29 @@ display:none;border:0;background:none;font-size:18px;cursor:pointer;color:var(--
 
 <main class="faq-page">
 
+
+<!-- CABEÇALHO -->
+
 <div class="faq-header">
 
-<div class="small-title">
-Amora Studio
+    <div class="small-title">
+        Amora Studio
+    </div>
+
+    <h1>
+        Perguntas <span>frequentes</span>
+    </h1>
+
+    <p>
+        Encontrou alguma dúvida? Aqui estão algumas das perguntas
+        mais frequentes sobre os nossos serviços e a forma como trabalhamos.
+    </p>
+
 </div>
 
-<h1>
-Perguntas <span>frequentes</span>
-</h1>
 
-<p>
-Encontrou alguma dúvida? Aqui estão algumas das perguntas
-mais frequentes sobre os nossos serviços e a forma como trabalhamos.
-</p>
 
-</div>
-
+<!-- LISTA DE PERGUNTAS -->
 
 <div class="faq-container">
 
@@ -449,294 +670,338 @@ mais frequentes sobre os nossos serviços e a forma como trabalhamos.
 
 <div class="faq-item">
 
-<button class="faq-question" onclick="abrirPergunta(this)">
+    <button
+        class="faq-question"
+        onclick="abrirPergunta(this)">
 
-<span>
-01 — Que serviços a Amora Studio oferece?
-</span>
+        <span>
+            01 — Que serviços a Amora Studio oferece?
+        </span>
 
-<span class="faq-icon">
-+
-</span>
+        <span class="faq-icon">
+            +
+        </span>
 
-</button>
+    </button>
 
-<div class="faq-answer">
 
-<p>
-A Amora Studio trabalha com Design Gráfico,
-Convites, Projetos Arquitetónicos, Design de Interiores
-e Programação.
-</p>
+    <div class="faq-answer">
+
+        <p>
+            A Amora Studio trabalha com Design Gráfico,
+            Convites, Projetos Arquitetónicos, Design de Interiores
+            e Programação.
+        </p>
+
+    </div>
 
 </div>
 
-</div>
 
 
 <!-- 02 -->
 
 <div class="faq-item">
 
-<button class="faq-question" onclick="abrirPergunta(this)">
+    <button
+        class="faq-question"
+        onclick="abrirPergunta(this)">
 
-<span>
-02 — Como posso solicitar um orçamento?
-</span>
+        <span>
+            02 — Como posso solicitar um orçamento?
+        </span>
 
-<span class="faq-icon">
-+
-</span>
+        <span class="faq-icon">
+            +
+        </span>
 
-</button>
+    </button>
 
-<div class="faq-answer">
 
-<p>
-Pode entrar em contacto connosco através do WhatsApp
-e enviar os detalhes do projeto que pretende realizar.
-</p>
+    <div class="faq-answer">
+
+        <p>
+            Pode entrar em contacto connosco através do WhatsApp
+            e enviar os detalhes do projeto que pretende realizar.
+        </p>
+
+    </div>
 
 </div>
 
-</div>
 
 
 <!-- 03 -->
 
 <div class="faq-item">
 
-<button class="faq-question" onclick="abrirPergunta(this)">
+    <button
+        class="faq-question"
+        onclick="abrirPergunta(this)">
 
-<span>
-03 — Os convites digitais são personalizados?
-</span>
+        <span>
+            03 — Os convites digitais são personalizados?
+        </span>
 
-<span class="faq-icon">
-+
-</span>
+        <span class="faq-icon">
+            +
+        </span>
 
-</button>
+    </button>
 
-<div class="faq-answer">
 
-<p>
-Sim. Os convites podem ser desenvolvidos de acordo
-com o estilo, cores, informações e necessidades
-de cada evento.
-</p>
+    <div class="faq-answer">
+
+        <p>
+            Sim. Os convites podem ser desenvolvidos de acordo
+            com o estilo, cores, informações e necessidades
+            de cada evento.
+        </p>
+
+    </div>
 
 </div>
 
-</div>
 
 
 <!-- 04 -->
 
 <div class="faq-item">
 
-<button class="faq-question" onclick="abrirPergunta(this)">
+    <button
+        class="faq-question"
+        onclick="abrirPergunta(this)">
 
-<span>
-04 — O que são convites digitais interativos?
-</span>
+        <span>
+            04 — O que são convites digitais interativos?
+        </span>
 
-<span class="faq-icon">
-+
-</span>
+        <span class="faq-icon">
+            +
+        </span>
 
-</button>
+    </button>
 
-<div class="faq-answer">
 
-<p>
-São convites que podem incluir confirmação de presença,
-localização GPS, lista de convidados, programação
-e outras funcionalidades interativas.
-</p>
+    <div class="faq-answer">
+
+        <p>
+            São convites que podem incluir confirmação de presença,
+            localização GPS, lista de convidados, programação
+            e outras funcionalidades interativas.
+        </p>
+
+    </div>
 
 </div>
 
-</div>
 
 
 <!-- 05 -->
 
 <div class="faq-item">
 
-<button class="faq-question" onclick="abrirPergunta(this)">
+    <button
+        class="faq-question"
+        onclick="abrirPergunta(this)">
 
-<span>
-05 — Como funciona um projeto de Design de Interiores?
-</span>
+        <span>
+            05 — Como funciona um projeto de Design de Interiores?
+        </span>
 
-<span class="faq-icon">
-+
-</span>
+        <span class="faq-icon">
+            +
+        </span>
 
-</button>
+    </button>
 
-<div class="faq-answer">
 
-<p>
-Primeiro compreendemos as necessidades do cliente,
-depois desenvolvemos o conceito e o projeto de acordo
-com o espaço, estilo e funcionalidade pretendidos.
-</p>
+    <div class="faq-answer">
+
+        <p>
+            Primeiro compreendemos as necessidades do cliente,
+            depois desenvolvemos o conceito e o projeto de acordo
+            com o espaço, estilo e funcionalidade pretendidos.
+        </p>
+
+    </div>
 
 </div>
 
-</div>
 
 
 <!-- 06 -->
 
 <div class="faq-item">
 
-<button class="faq-question" onclick="abrirPergunta(this)">
+    <button
+        class="faq-question"
+        onclick="abrirPergunta(this)">
 
-<span>
-06 — A Amora Studio desenvolve websites?
-</span>
+        <span>
+            06 — A Amora Studio desenvolve websites?
+        </span>
 
-<span class="faq-icon">
-+
-</span>
+        <span class="faq-icon">
+            +
+        </span>
 
-</button>
+    </button>
 
-<div class="faq-answer">
 
-<p>
-Sim. Desenvolvemos websites corporativos,
-lojas virtuais e sites personalizados.
-</p>
+    <div class="faq-answer">
+
+        <p>
+            Sim. Desenvolvemos websites corporativos,
+            lojas virtuais e sites personalizados.
+        </p>
+
+    </div>
 
 </div>
 
-</div>
 
 
 <!-- 07 -->
 
 <div class="faq-item">
 
-<button class="faq-question" onclick="abrirPergunta(this)">
+    <button
+        class="faq-question"
+        onclick="abrirPergunta(this)">
 
-<span>
-07 — Como posso entrar em contacto com a Amora Studio?
-</span>
+        <span>
+            07 — Como posso entrar em contacto com a Amora Studio?
+        </span>
 
-<span class="faq-icon">
-+
-</span>
+        <span class="faq-icon">
+            +
+        </span>
 
-</button>
+    </button>
 
-<div class="faq-answer">
 
-<p>
-Pode falar connosco através do WhatsApp, Instagram
-ou e-mail disponíveis no site.
-</p>
+    <div class="faq-answer">
+
+        <p>
+            Pode falar connosco através do WhatsApp, Instagram
+            ou e-mail disponíveis no site.
+        </p>
+
+    </div>
 
 </div>
 
-</div>
 
 
 <!-- 08 -->
 
 <div class="faq-item">
 
-<button class="faq-question" onclick="abrirPergunta(this)">
+    <button
+        class="faq-question"
+        onclick="abrirPergunta(this)">
 
-<span>
-08 — Posso solicitar alterações depois de receber o projeto?
-</span>
+        <span>
+            08 — Posso solicitar alterações depois de receber o projeto?
+        </span>
 
-<span class="faq-icon">
-+
-</span>
+        <span class="faq-icon">
+            +
+        </span>
 
-</button>
+    </button>
 
-<div class="faq-answer">
 
-<p>
-Sim. As alterações são avaliadas de acordo com o tipo
-de projeto e o serviço contratado.
-</p>
+    <div class="faq-answer">
+
+        <p>
+            Sim. As alterações são avaliadas de acordo com o tipo
+            de projeto e o serviço contratado.
+        </p>
+
+    </div>
 
 </div>
 
-</div>
 
 
 <!-- 09 -->
 
 <div class="faq-item">
 
-<button class="faq-question" onclick="abrirPergunta(this)">
+    <button
+        class="faq-question"
+        onclick="abrirPergunta(this)">
 
-<span>
-09 — Quanto tempo demora a realização de um projeto?
-</span>
+        <span>
+            09 — Quanto tempo demora a realização de um projeto?
+        </span>
 
-<span class="faq-icon">
-+
-</span>
+        <span class="faq-icon">
+            +
+        </span>
 
-</button>
+    </button>
 
-<div class="faq-answer">
 
-<p>
-O prazo depende do tipo e da complexidade do projeto.
-Após analisarmos o pedido, informamos o prazo estimado.
-</p>
+    <div class="faq-answer">
+
+        <p>
+            O prazo depende do tipo e da complexidade do projeto.
+            Após analisarmos o pedido, informamos o prazo estimado.
+        </p>
+
+    </div>
 
 </div>
 
-</div>
 
 
 <!-- 10 -->
 
 <div class="faq-item">
 
-<button class="faq-question" onclick="abrirPergunta(this)">
+    <button
+        class="faq-question"
+        onclick="abrirPergunta(this)">
 
-<span>
-10 — A Amora Studio atende projetos personalizados?
-</span>
+        <span>
+            10 — A Amora Studio atende projetos personalizados?
+        </span>
 
-<span class="faq-icon">
-+
-</span>
+        <span class="faq-icon">
+            +
+        </span>
 
-</button>
+    </button>
 
-<div class="faq-answer">
 
-<p>
-Sim. Cada projeto é desenvolvido de acordo com as
-necessidades, objetivos e identidade de cada cliente.
-</p>
+    <div class="faq-answer">
+
+        <p>
+            Sim. Cada projeto é desenvolvido de acordo com as
+            necessidades, objetivos e identidade de cada cliente.
+        </p>
+
+    </div>
 
 </div>
 
 </div>
 
 
-</div>
 
+<!-- BOTÃO VOLTAR -->
 
 <a href="index.html" class="back-button">
-← Voltar para a Amora Studio
+
+    ← Voltar para a Amora Studio
+
 </a>
 
 </main>
+
 
 
 <!-- =========================
@@ -747,65 +1012,79 @@ necessidades, objetivos e identidade de cada cliente.
 
 <div class="footer-content">
 
-<div class="footer-logo">
-Amora <span>Studio</span>
-</div>
+    <div class="footer-logo">
+        Amora <span>Studio</span>
+    </div>
 
-<p class="footer-description">
-Design & Arquitetura exclusiva.
-Convites digitais interativos, interiores premium
-e artes gráficas que valorizam o seu negócio.
-</p>
+    <p class="footer-description">
+        Design & Arquitetura exclusiva.
+        Convites digitais interativos, interiores premium
+        e artes gráficas que valorizam o seu negócio.
+    </p>
 
 </div>
 
 
 <div class="footer-bottom">
 
-<span>
-© Amora Studio. Desde 2021
-</span>
+    <span>
+        © Amora Studio. Desde 2021
+    </span>
 
-<span>
-Um universo de criação
-</span>
+    <span>
+        Um universo de criação
+    </span>
 
 </div>
 
 </footer>
 
 
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
 <script>
 
+
 /* =========================
-   ABRIR MENU
+   ABRIR / FECHAR MENU
 ========================= */
 
 function abrirMenu(){
 
-    const menu =
-    document.getElementById("menu");
+    const menu = document.getElementById("menu");
 
-    if(menu){
-
-        menu.classList.toggle("active");
-
-    }
+    menu.classList.toggle("active");
 
 }
 
 
 /* =========================
-   ABRIR PERGUNTA
+   FECHAR MENU AO CLICAR NUM LINK
+========================= */
+
+document.querySelectorAll(".nav-links a").forEach(function(link){
+
+    link.addEventListener("click", function(){
+
+        document.getElementById("menu").classList.remove("active");
+
+    });
+
+});
+
+
+/* =========================
+   ABRIR / FECHAR PERGUNTA
 ========================= */
 
 function abrirPergunta(botao){
 
-    const item =
-    botao.parentElement;
+    const item = botao.parentElement;
 
-    const todos =
-    document.querySelectorAll(".faq-item");
+    const todos = document.querySelectorAll(".faq-item");
 
 
     todos.forEach(function(outroItem){
@@ -824,6 +1103,7 @@ function abrirPergunta(botao){
 }
 
 </script>
+
 
 </body>
 </html>
