@@ -834,22 +834,20 @@ setInterval(() => {
 }, 2000); 
 
 
+
 (function () {
   const loader = document.getElementById('amora-loader');
   const message = document.getElementById('amora-network-message');
 
-  let loadingTimer;
+  let offlineTimer;
   let messageTimer;
   let wasOffline = !navigator.onLine;
 
   function showLoader() {
-    if (navigator.onLine) {
-      loader.style.display = 'flex';
-    }
+    loader.style.display = 'flex';
   }
 
   function hideLoader() {
-    clearTimeout(loadingTimer);
     loader.style.display = 'none';
   }
 
@@ -865,56 +863,63 @@ setInterval(() => {
     }
   }
 
-  // Carregamento inicial
-  if (document.readyState === 'loading') {
-    loadingTimer = setTimeout(showLoader, 2000);
+  function startOfflineProcess() {
+    clearTimeout(offlineTimer);
+    showLoader();
 
-    document.addEventListener('DOMContentLoaded', hideLoader, {
-      once: true
-    });
+    offlineTimer = setTimeout(() => {
+      if (!navigator.onLine) {
+        hideLoader();
+        showMessage('Sem ligação à internet.', 0);
+      }
+    }, 5000);
   }
 
-  // Apenas links que abrem outra página
+  function stopOfflineProcess() {
+    clearTimeout(offlineTimer);
+    hideLoader();
+  }
+
+  // Verifica a ligação ao abrir o site
+  if (!navigator.onLine) {
+    startOfflineProcess();
+  }
+
+  // Bloqueia cliques em links quando não há internet
   document.addEventListener('click', function (event) {
-    const link = event.target.closest('a[href]');
+    if (navigator.onLine) return;
 
-    if (
-      !link ||
-      link.target === '_blank' ||
-      link.hasAttribute('download') ||
-      event.ctrlKey ||
-      event.metaKey ||
-      event.shiftKey ||
-      event.altKey
-    ) return;
+    const element = event.target.closest(
+      'a[href], button, input[type="submit"]'
+    );
 
-    const url = new URL(link.href, location.href);
+    if (!element) return;
 
-    if (
-      url.origin !== location.origin ||
-      url.pathname === location.pathname &&
-      url.search === location.search &&
-      url.hash
-    ) return;
+    event.preventDefault();
+    event.stopPropagation();
 
-    clearTimeout(loadingTimer);
-    loadingTimer = setTimeout(showLoader, 2000);
-  });
+    if (!wasOffline) {
+      wasOffline = true;
+      startOfflineProcess();
+    } else if (message.style.display === 'none') {
+      startOfflineProcess();
+    }
+  }, true);
 
-  // Sem ligação à internet
+  // Quando a ligação cai
   window.addEventListener('offline', function () {
     wasOffline = true;
-    hideLoader();
-    showMessage('Sem ligação à internet.', 0);
+    message.style.display = 'none';
+    startOfflineProcess();
   });
 
-  // Ligação restabelecida
+  // Quando a ligação volta
   window.addEventListener('online', function () {
-    hideLoader();
+    stopOfflineProcess();
 
     if (wasOffline) {
       wasOffline = false;
-      showMessage('Ligação estabelecida.');
+      showMessage('Ligação restabelecida.');
     }
   });
 })();
