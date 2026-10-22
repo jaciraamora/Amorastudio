@@ -340,6 +340,47 @@ footer{background:var(--escuro);color:white;padding:55px 7% 25px;}
     opacity: 1;
 }
 
+#amora-loader {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 99999;
+}
+
+#amora-loader .spinner {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 3px solid rgba(193, 168, 151, 0.2);
+  border-top-color: #C1A897;
+  animation: amora-spin 0.8s linear infinite;
+}
+
+@keyframes amora-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#amora-network-message {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  padding: 10px 18px;
+  background: rgba(38, 34, 32, 0.92);
+  color: white;
+  font: 13px Montserrat, sans-serif;
+  border-radius: 8px;
+  z-index: 100000;
+}
+
 </style>
 </head>
 
@@ -596,6 +637,12 @@ footer{background:var(--escuro);color:white;padding:55px 7% 25px;}
     <i class="fa-brands fa-whatsapp"></i>
 </a>
 
+<div id="amora-loader">
+  <div class="spinner"></div>
+</div>
+
+<div id="amora-network-message"></div>
+
 <!-- ========================= JAVASCRIPT ========================= -->
 <script>
 /* =========================
@@ -784,6 +831,91 @@ setInterval(() => {
     fotosAbertura[fotoAtual].classList.add('ativa');
 
 }, 2000); 
+
+
+(function () {
+  const loader = document.getElementById('amora-loader');
+  const message = document.getElementById('amora-network-message');
+
+  let loadingTimer;
+  let messageTimer;
+  let activeAction = 0;
+  let wasOffline = !navigator.onLine;
+
+  function showLoaderAfterDelay() {
+    clearTimeout(loadingTimer);
+
+    loadingTimer = setTimeout(() => {
+      if (navigator.onLine) {
+        loader.style.display = 'flex';
+      }
+    }, 2000);
+  }
+
+  function hideLoader() {
+    clearTimeout(loadingTimer);
+    loader.style.display = 'none';
+  }
+
+  function showMessage(text, duration = 3000) {
+    clearTimeout(messageTimer);
+    message.textContent = text;
+    message.style.display = 'block';
+
+    if (duration > 0) {
+      messageTimer = setTimeout(() => {
+        message.style.display = 'none';
+      }, duration);
+    }
+  }
+
+  // Carregamento inicial
+  if (document.readyState === 'loading') {
+    showLoaderAfterDelay();
+
+    document.addEventListener('DOMContentLoaded', hideLoader, {
+      once: true
+    });
+  }
+
+  // Cliques em botões e links
+  document.addEventListener('click', function (event) {
+    const element = event.target.closest(
+      'button, a, input[type="submit"]'
+    );
+
+    if (!element || element.disabled) return;
+
+    const action = ++activeAction;
+
+    showLoaderAfterDelay();
+
+    setTimeout(() => {
+      if (action === activeAction) {
+        hideLoader();
+      }
+    }, 10000);
+  });
+
+  // Perda de ligação
+  window.addEventListener('offline', function () {
+    wasOffline = true;
+    activeAction++;
+    hideLoader();
+    showMessage('Sem ligação à internet.', 0);
+  });
+
+  // Ligação restabelecida
+  window.addEventListener('online', function () {
+    hideLoader();
+
+    if (wasOffline) {
+      wasOffline = false;
+      showMessage('Ligação estabelecida.');
+    }
+  });
+})();
+
 
 </script>
 
