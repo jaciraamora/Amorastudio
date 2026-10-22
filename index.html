@@ -369,15 +369,16 @@ footer{background:var(--escuro);color:white;padding:55px 7% 25px;}
 
 #amora-network-message {
   position: fixed;
-  bottom: 25px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   display: none;
-  padding: 10px 18px;
+  padding: 12px 20px;
   background: rgba(38, 34, 32, 0.92);
   color: white;
   font: 13px Montserrat, sans-serif;
   border-radius: 8px;
+  text-align: center;
   z-index: 100000;
 }
 
@@ -839,17 +840,12 @@ setInterval(() => {
 
   let loadingTimer;
   let messageTimer;
-  let activeAction = 0;
   let wasOffline = !navigator.onLine;
 
-  function showLoaderAfterDelay() {
-    clearTimeout(loadingTimer);
-
-    loadingTimer = setTimeout(() => {
-      if (navigator.onLine) {
-        loader.style.display = 'flex';
-      }
-    }, 2000);
+  function showLoader() {
+    if (navigator.onLine) {
+      loader.style.display = 'flex';
+    }
   }
 
   function hideLoader() {
@@ -871,36 +867,43 @@ setInterval(() => {
 
   // Carregamento inicial
   if (document.readyState === 'loading') {
-    showLoaderAfterDelay();
+    loadingTimer = setTimeout(showLoader, 2000);
 
     document.addEventListener('DOMContentLoaded', hideLoader, {
       once: true
     });
   }
 
-  // Cliques em botões e links
+  // Apenas links que abrem outra página
   document.addEventListener('click', function (event) {
-    const element = event.target.closest(
-      'button, a, input[type="submit"]'
-    );
+    const link = event.target.closest('a[href]');
 
-    if (!element || element.disabled) return;
+    if (
+      !link ||
+      link.target === '_blank' ||
+      link.hasAttribute('download') ||
+      event.ctrlKey ||
+      event.metaKey ||
+      event.shiftKey ||
+      event.altKey
+    ) return;
 
-    const action = ++activeAction;
+    const url = new URL(link.href, location.href);
 
-    showLoaderAfterDelay();
+    if (
+      url.origin !== location.origin ||
+      url.pathname === location.pathname &&
+      url.search === location.search &&
+      url.hash
+    ) return;
 
-    setTimeout(() => {
-      if (action === activeAction) {
-        hideLoader();
-      }
-    }, 10000);
+    clearTimeout(loadingTimer);
+    loadingTimer = setTimeout(showLoader, 2000);
   });
 
-  // Perda de ligação
+  // Sem ligação à internet
   window.addEventListener('offline', function () {
     wasOffline = true;
-    activeAction++;
     hideLoader();
     showMessage('Sem ligação à internet.', 0);
   });
