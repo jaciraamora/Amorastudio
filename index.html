@@ -396,17 +396,32 @@ footer{background:var(--escuro);color:white;padding:55px 7% 25px;}
     left: 50%;
     transform: translate(-50%, -50%);
     display: none;
-    padding: 15px 22px;
+    padding: 12px 16px;
     background: rgba(38, 34, 32, 0.95);
     color: #ffffff;
     font-family: "Montserrat", sans-serif;
     font-size: 14px;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 12px;
     z-index: 1000000;
-    max-width: 90%;
+    max-width: 85%;
+	width: max-content;
 }
 
+#amora-network-message.ligacao-restabelecida {
+    background: #198754;
+    color: #ffffff;
+}
+
+
+html, body {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+body > *:last-child {
+    margin-bottom: 0;
+}
 
 </style>
 </head>
@@ -486,7 +501,7 @@ footer{background:var(--escuro);color:white;padding:55px 7% 25px;}
         <p>Mais do que prestar serviços, buscamos compreender cada projeto, desenvolver conceitos e transformar ideias em resultados funcionais, marcantes e únicos.</p>
         <div class="signature">Amora Studio</div>
     </div>
-</div>
+	
 </section>
 
 <!-- ========================= SERVIÇOS ========================= -->
@@ -639,7 +654,7 @@ footer{background:var(--escuro);color:white;padding:55px 7% 25px;}
         <a href="#portfolio">Portfólio</a>
         <a href="s.html">Depoimentos</a>
          <li><a href="pergunta.html">Perguntas Frequentes</a></li>
-</ul> 
+</ul>
         <a href="#contacto">Contacto</a>
 
         <div class="social-icons">
@@ -920,7 +935,9 @@ setInterval(() => {
         stopOfflineProcess();
         wasOffline = false;
 
-        showMessage('Ligação restabelecida.', 3000);
+showMessage('Ligação restabelecida.', 3000);
+message.classList.add('ligacao-restabelecida');
+        
     });
 
     document.addEventListener('click', function (event) {
