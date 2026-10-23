@@ -843,58 +843,97 @@ setInterval(() => {
 (function () {
     const loader = document.getElementById('amora-loader');
     const message = document.getElementById('amora-network-message');
+
     let offlineTimer;
     let messageTimer;
     let wasOffline = !navigator.onLine;
+
     function showLoader() {
         clearTimeout(messageTimer);
         message.style.display = 'none';
         loader.style.display = 'flex';
     }
+
     function hideLoader() {
         loader.style.display = 'none';
     }
-    function showMessage(text, duration = 3000) {
+
+    function showMessage(text, duration = 0) {
         clearTimeout(messageTimer);
+
         message.textContent = text;
         message.style.display = 'block';
+
         if (duration > 0) {
             messageTimer = setTimeout(function () {
                 message.style.display = 'none';
             }, duration);
         }
     }
+
     function startOfflineProcess() {
         clearTimeout(offlineTimer);
         showLoader();
+
         offlineTimer = setTimeout(function () {
             if (!navigator.onLine) {
                 hideLoader();
-                showMessage('Sem ligação à internet.', 0);
+                showMessage('Sem ligação à internet.');
             }
         }, 5000);
     }
+
     function stopOfflineProcess() {
         clearTimeout(offlineTimer);
         hideLoader();
     }
+
     if (!navigator.onLine) {
         startOfflineProcess();
     }
+
     window.addEventListener('offline', function () {
         wasOffline = true;
-        message.style.display = 'none';
         startOfflineProcess();
     });
+
     window.addEventListener('online', function () {
         if (!wasOffline) return;
+
         stopOfflineProcess();
         wasOffline = false;
-        message.style.display = 'none';
+
         showMessage('Ligação restabelecida.', 3000);
     });
-})();
 
+    document.addEventListener('click', function (event) {
+        if (navigator.onLine) return;
+
+        const button = event.target.closest(
+            'button, a, input[type="submit"], [role="button"]'
+        );
+
+        if (!button) return;
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (event.stopImmediatePropagation) {
+            event.stopImmediatePropagation();
+        }
+
+        showLoader();
+        clearTimeout(offlineTimer);
+
+        offlineTimer = setTimeout(function () {
+            if (!navigator.onLine) {
+                hideLoader();
+                showMessage('Sem ligação à internet.');
+            }
+        }, 5000);
+    }, true);
+})();
+ 
 </script>
 
 </body>
